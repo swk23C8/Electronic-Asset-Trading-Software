@@ -1,7 +1,7 @@
 /**
  * This class represents an admin and inherits from Users.
  */
-public class Admin extends Users {
+public class Admin extends User {
 
     /**
      * Creates username and password for "admin" users(inherited from Users).
@@ -18,7 +18,7 @@ public class Admin extends Users {
      */
     public void addAsset(String assetName) {
         // I'm not sure this is the right way to add new asset.
-        Assets newAsset = new Assets(assetName);
+        Asset newAsset = new Asset(assetName);
     }
 
     /**
@@ -35,7 +35,8 @@ public class Admin extends Users {
      * @param credits Initial number of credit.
      */
     public void addOU(String ouName, double credits) {
-
+        /** Should make overloads with varying arguments using "this"
+         */
     }
 
     /**
@@ -47,5 +48,41 @@ public class Admin extends Users {
         //..
     }
 
+    /**
+     * Establish a new asset to an organisational unit
+     * @param organisationalUnit
+     * @param asset
+     * @param assetNum
+     */
+    public void changeOUAsset(OU organisationalUnit, Asset asset, Integer assetNum){
+        organisationalUnit.numberOfAssets.put(asset, assetNum);
+    }
+
+    /**
+     * Overload of addOUasse in case the value is not specified
+     * @param organisationalUnit
+     * @param asset
+     */
+    public void changeOUAsset(OU organisationalUnit, Asset asset){
+        this.changeOUAsset(organisationalUnit, asset, 0);
+    }
+
+    /**
+     * Method assigns a user to a unit, returns true if successful
+     * @param user
+     * @param theirUnit
+     */
+    public boolean assignUser(User user, OU theirUnit) {
+        return theirUnit.addMember(user);
+    }
+
+    /**
+     * Admin changing User's Password
+     * @param user
+     * @param newPassword
+     */
+    public void changePassword(User user, String newPassword) {
+        user.changeOwnPassword(newPassword);
+    }
 
 }

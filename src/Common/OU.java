@@ -97,7 +97,7 @@ public class OU{
      * @param newUser Common.User object being added
 
      public boolean addMember(User newUser) {
-         newUser.organisationalUnit = this;
+         newUser.ou = this;
          return unitMembers.add(newUser);
      }
 

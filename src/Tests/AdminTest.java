@@ -69,7 +69,7 @@ public class AdminTest {
         HashSet<User> testUsers = new HashSet<>();
         testUsers.add(anAdmin);
         assertEquals(testUsers, newOU.returnUsers());
-        assertEquals(newOU, anAdmin.returnOrganisationalUnit());
+        assertEquals(newOU, anAdmin.returnOU());
     }
 
     @Test

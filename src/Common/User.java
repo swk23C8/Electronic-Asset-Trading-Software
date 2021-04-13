@@ -7,7 +7,7 @@ public class User {
     private String username;
     private String password;
     /** Assume can only be in one Common.OU, not sure if this should be kept*/
-    OU organisationalUnit;
+    OU ou;
 
     /**
      * Creates username and password for users.
@@ -31,8 +31,8 @@ public class User {
      * Create a buy offer, return null if not able
      */
     public Buy makeBuy(Asset asset, Integer quantity, Integer creditsEach) {
-        Integer newTotal = this.organisationalUnit.returnUnitCredits() - (creditsEach * quantity);
-        if (this.organisationalUnit.modifyCredits(newTotal)) {
+        Integer newTotal = this.ou.returnUnitCredits() - (creditsEach * quantity);
+        if (this.ou.modifyCredits(newTotal)) {
             Buy newBuy = new Buy(this, asset, quantity, creditsEach);
             return newBuy;
         }
@@ -48,7 +48,7 @@ public class User {
      * @param creditsEach
      */
     public Sell makeSell(Asset asset, Integer quantity, Integer creditsEach) {
-        if (this.organisationalUnit.returnAssetQuantity(asset) >= quantity) {
+        if (this.ou.returnAssetQuantity(asset) >= quantity) {
             Sell newSell = new Sell(this, asset, quantity, creditsEach);
             return newSell;
         }
@@ -84,7 +84,7 @@ public class User {
      * Return organisational unit of the user to external methods
      * @return
      */
-    public OU returnOrganisationalUnit() {
-        return this.organisationalUnit;
+    public OU returnOU() {
+        return this.ou;
     }
 }

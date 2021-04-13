@@ -54,12 +54,12 @@ public class Admin extends User {
 
     /**
      * Change an organisational unit's current quantity of an asset/ add an asset to it
-     * @param organisationalUnit
+     * @param ou
      * @param asset
      * @param assetNum
      */
-    public void changeOUAsset(OU organisationalUnit, Asset asset, Integer assetNum){
-        organisationalUnit.assetHashMap.put(asset, assetNum);
+    public void changeOUAsset(OU ou, Asset asset, Integer assetNum){
+        ou.assetHashMap.put(asset, assetNum);
     }
 
     /**
@@ -73,11 +73,11 @@ public class Admin extends User {
 
     /**
      * This method edits the number of the Organizational unit's credit, returns true on success
-     * @param organisationalUnit Name of the Common.OU admin user wants to edit.
+     * @param ou Name of the Common.OU admin user wants to edit.
      * @param credits Number of the credits admin user wants to set.
      */
-    public boolean changeOUCredits(OU organisationalUnit, Integer credits) {
-        return organisationalUnit.modifyCredits(credits);
+    public boolean changeOUCredits(OU ou, Integer credits) {
+        return ou.modifyCredits(credits);
     }
 
 

@@ -1,0 +1,3 @@
+jdbc:mysql://database-1.c4eceq88oul1.us-east-2.rds.amazonaws.com/CAB302
+admin
+12345678

@@ -5,7 +5,6 @@ import org.junit.jupiter.api.*;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Hashtable;
 
 
 public class AdminTest {
@@ -23,7 +22,7 @@ public class AdminTest {
     public void addNewAsset() {
         Admin anAdmin = new Admin("username", "password");
         Asset newAsset = anAdmin.addAsset("software license");
-        assertEquals("software license", newAsset.returnName());
+        assertEquals("software license", newAsset.getAsset());
     }
 
     @Test
@@ -36,8 +35,8 @@ public class AdminTest {
     public void addNewOU() {
         Admin anAdmin = new Admin("username", "password");
         OU newOU = anAdmin.addOU("newTeam", testNum);
-        assertEquals("newTeam", newOU.returnOUName());
-        assertEquals(testNum, newOU.returnUnitCredits());
+        assertEquals("newTeam", newOU.getOuName());
+        assertEquals(testNum, newOU.getUnitCredits());
     }
 
 
@@ -58,7 +57,7 @@ public class AdminTest {
         Admin anAdmin = new Admin("username", "password");
         OU newOU = anAdmin.addOU("newTeam", testNum);
         assertTrue(anAdmin.changeOUCredits(newOU, testNum2));
-        assertEquals(testNum2, newOU.returnUnitCredits());
+        assertEquals(testNum2, newOU.getUnitCredits());
     }
 
     @Test

@@ -1,56 +1,58 @@
 package Common;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
 
 public class DBConnection {
-    private Connection con;
-    private Statement st;
-    private PreparedStatement pst;
-    private ResultSet rs;
 
-    public DBConnection() {
-        try{
-            Scanner configfile = new Scanner(new File("dbconfig.txt"));
-            ArrayList<String> configlist = new ArrayList<String>();
-            while (configfile.hasNextLine())
-            {
-                configlist.add(configfile.nextLine());
-            }
-            configfile.close();
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(configlist.get(0), configlist.get(1), configlist.get(2));
-            st = con.createStatement();
-        }
-        catch (Exception e){
-            System.out.println("Database connection error" + e.getMessage());
-        }
-    }
+    /**
+     * The singleton instance of the database connection.
+     */
+    private static Connection instance = null;
 
-    public void insertAsset(String asset) {
-        String sql = "INSERT INTO ASSET VALUE (?)";
+    /**
+     * Constructor intializes the connection.
+     */
+    private DBConnection() {
+        Properties props = new Properties();
+        FileInputStream in = null;
         try {
-            pst = con.prepareStatement(sql);
-            pst.setString(1, asset);
-            pst.execute();
-        } catch (Exception e) {
-            e.printStackTrace();
+            in = new FileInputStream("dbconfig.props");
+            props.load(in);
+            in.close();
+
+            // specify the data source, username and password
+            String url = props.getProperty("jdbc.url");
+            String username = props.getProperty("jdbc.username");
+            String password = props.getProperty("jdbc.password");
+            String schema = props.getProperty("jdbc.schema");
+
+            // get a connection
+            instance = DriverManager.getConnection(url + "/" + schema, username,
+                    password);
+        } catch (SQLException sqle) {
+            System.err.println(sqle);
+        } catch (FileNotFoundException fnfe) {
+            System.err.println(fnfe);
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 
-    public void deleteAsset(String asset) {
-        String sql = "DELETE FROM ASSET WHERE assetName = ?";
-        try {
-            pst = con.prepareStatement(sql);
-            pst.setString(1, asset);
-            pst.execute();
+    /**
+     * Provides global access to the singleton instance of the UrlSet.
+     *
+     * @return a handle to the singleton instance of the UrlSet.
+     */
+    public static Connection getInstance() {
+        if (instance == null) {
+            new DBConnection();
         }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+        return instance;
     }
-
-
 }

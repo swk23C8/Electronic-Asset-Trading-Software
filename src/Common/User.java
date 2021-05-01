@@ -31,7 +31,7 @@ public class User {
      * Create a buy offer, return null if not able
      */
     public Buy makeBuy(Asset asset, Integer quantity, Integer creditsEach) {
-        Integer newTotal = this.ou.returnUnitCredits() - (creditsEach * quantity);
+        Integer newTotal = this.ou.getUnitCredits() - (creditsEach * quantity);
         if (this.ou.modifyCredits(newTotal)) {
             Buy newBuy = new Buy(this, asset, quantity, creditsEach);
             return newBuy;

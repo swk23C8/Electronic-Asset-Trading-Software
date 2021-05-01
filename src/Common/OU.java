@@ -13,6 +13,12 @@ public class OU {
      */
     HashSet<User> unitMembers = new HashSet<User>();
     HashMap<Asset, Integer> assetHashMap = new HashMap<Asset, Integer>();
+
+    /**
+     * No args constructor.
+     */
+    public OU(){}
+
     /**
      * Creates name of the Common.OU and number of the credit Common.OU has.
      * @param ouName Name of the Common.OU.
@@ -35,7 +41,7 @@ public class OU {
      * Return OU name
      * @return
      */
-    public String returnOUName() {
+    public String getOuName() {
         return this.ouName;
     }
 
@@ -43,8 +49,22 @@ public class OU {
      * Return the number of credits held by the OU
      * @return
      */
-    public Integer returnUnitCredits() {
+    public Integer getUnitCredits() {
         return this.credits;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setOuName(String name) {
+        ouName = name;
+    }
+
+    /**
+     * @param credit the credit to set
+     */
+    public void setCredits(Integer credit) {
+        credits = credit;
     }
 
     /**

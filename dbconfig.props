@@ -1,0 +1,4 @@
+jdbc.url=jdbc:mysql://database-1.c4eceq88oul1.us-east-2.rds.amazonaws.com
+jdbc.schema=CAB302
+jdbc.username=admin
+jdbc.password=12345678

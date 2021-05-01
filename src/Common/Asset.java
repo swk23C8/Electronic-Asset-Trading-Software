@@ -6,6 +6,9 @@ package Common;
 public class Asset {
     private String asset;
 
+    public Asset() {
+    }
+
     /**
      * Creates an asset with specified name.
      * @param assetName The name of the asset.
@@ -18,8 +21,15 @@ public class Asset {
      * Returns the name of the asset
      * @return
      */
-    public String returnName() {
-        return this.asset;
+    public String getAsset() {
+        return asset;
+    }
+
+    /**
+     * @param assetName the name to set
+     */
+    public void setAsset(String assetName) {
+        asset = assetName;
     }
 
 }

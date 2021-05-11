@@ -1,30 +1,31 @@
 package Common;
 
-public abstract class Offer {
+import java.io.Serializable;
 
-    private User user;
-    private Asset asset;
+/** Offer class pertaining to offer information, serializable as to send across stream**/
+public class Offer implements Serializable {
+    private String OUName;
+    private String offerType;
+    private String assetName;
     private Integer quantity;
     private Integer creditsEach;
-    private Integer totalCost;
     /**
-     * Construction for a general offer
-     * @param user
-     * @param asset
+     * Construction for a Buy Offer
+     * @param OUName
+     * @param type
+     * @param assetName
      * @param quantity
      * @param creditsEach
      */
-    public Offer(User user, Asset asset, Integer quantity, Integer creditsEach) {
-        this.asset = asset;
-        this.quantity = quantity;
-        this.user = user;
-        this.creditsEach = creditsEach;
+    public Offer(String OUName, String type, String assetName, Integer quantity, Integer creditsEach) {
+
     }
 
-    /**
-     * Internal method for calculating overall cost
-     */
-    private void costCalculation(){
-        this.totalCost = quantity * creditsEach;
+    /** possibly send buy object through to server? otherwise server will likely do most of this**/
+
+    public String returnOU() {
+        return this.OUName;
     }
+
+
 }

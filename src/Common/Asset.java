@@ -1,7 +1,7 @@
 package Common;
 
 /**
- * This class represents assets.
+ * This class represents asset, possibly being sent across so kept if needed to be made serializable
  */
 public class Asset {
     private String asset;

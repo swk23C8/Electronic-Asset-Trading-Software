@@ -22,7 +22,7 @@ public class DBConnector {
     private DBConnector() {
         try {
             /** Format taken from W7 Prac, change to own config file just to store
-             * url, username and password info for database
+             * url, username and password info for database usage
              */
             instance = DriverManager.getConnection(url, username,
                     password);

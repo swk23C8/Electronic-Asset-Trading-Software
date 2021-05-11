@@ -32,7 +32,6 @@ public class ServerManagement {
     private AtomicBoolean running = new AtomicBoolean(true);
 
     /** Global variables (i.e. HashSets/ Maps) of relevant data are stored here **/
-    private HashMap<> addressBookData = new HashMap<>();
 
     /**
      * Returns the port the server will use via a configuration file
@@ -60,7 +59,7 @@ public class ServerManagement {
 
             // This needs to be
             try {
-                this.PORT = Integer.parseInt(props.getProperty("jdbc.PORT");
+                this.PORT = Integer.parseInt(props.getProperty("jdbc.PORT"));
             }
             catch (NumberFormatException e)
             {

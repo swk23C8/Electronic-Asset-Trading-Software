@@ -1,5 +1,4 @@
 package Common;
-
 /**
  * This class represents asset, possibly being sent across so kept if needed to be made serializable
  */

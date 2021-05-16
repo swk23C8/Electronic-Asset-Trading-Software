@@ -1,15 +1,12 @@
 package Server;
 
-import Common.ClientCommands;
+import Common.socketMessages;
 import Common.Offer;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -24,7 +21,6 @@ public class ServerManagement {
 
     /** Need to send all buy/ sell offers, and update when offers reconcile**/
 
-    /** Verify Common.User**/
 
     /** Value for port, etc. stored here though retrieved in a method**/
     private int PORT;
@@ -101,6 +97,9 @@ public class ServerManagement {
         System.exit(0);
     }
 
+    /**
+     * Method on initilising the server that calls appropriate sql related methods
+     */
     private void sql_startup() {
 
 
@@ -118,7 +117,7 @@ public class ServerManagement {
             String command = (String) objectInputStream.readObject();
             /** Implement command handling here, possibly add methods or new class due to number
              */
-            if (command.equals(ClientCommands.ADDOFFER)) {
+            if (command.equals(socketMessages.ADD_OFFER)) {
                 Offer newOffer = (Offer) objectInputStream.readObject();
                 /** Do relevant actions here with info, or call method/ class that uses this**/
             }
@@ -132,4 +131,7 @@ public class ServerManagement {
         // Shut the server down
         running.set(false);
     }
+
+
+
 }

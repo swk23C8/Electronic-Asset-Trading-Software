@@ -1,6 +1,5 @@
 package Client;
-import Common.ClientCommands;
-import Common.AdminCommands;
+import Common.socketMessages;
 import Common.Offer;
 
 import java.net.Socket;
@@ -41,7 +40,7 @@ public class ServerConnector {
                     ObjectOutputStream objectOutputStream =
                             new ObjectOutputStream(socket.getOutputStream());
             ) {
-                objectOutputStream.writeObject(ClientCommands.ADDOFFER);
+                objectOutputStream.writeObject(socketMessages.ADD_OFFER);
                 /** Change this to just send a list of strings, though possibly not so multiple offers
                  * can be sent across easily in GetOffers
                  */
@@ -66,7 +65,7 @@ public class ServerConnector {
                     ObjectOutputStream objectOutputStream =
                             new ObjectOutputStream(socket.getOutputStream());
             ) {
-                objectOutputStream.writeObject(ClientCommands.GETOFFERS);
+                objectOutputStream.writeObject(socketMessages.GET_OFFERS);
                 objectOutputStream.flush();
 
                 try (

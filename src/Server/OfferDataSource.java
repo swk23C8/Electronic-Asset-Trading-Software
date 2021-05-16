@@ -7,21 +7,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.TreeSet;
 
 public class OfferDataSource {
     private static final String INSERT_OFFER = "INSERT INTO currentTrade (offerID, offerType, ouName, assetName, assetQty, price, date) VALUES (?, ?, ?, ?, ?, ?, ?);";
 
     private static final String UPDATE_CREDIT = "UPDATE ou SET credit=? where ouName=?";
 
-    private static final String LIST_OU = "SELECT * FROM currentTrade";
+    private static final String LIST_OFFERS = "SELECT * FROM currentTrade";
 
-    private static final String GET_OU = "SELECT * FROM ou WHERE offerID=?";
+    private static final String GET_OFFER = "SELECT * FROM currentTrade WHERE offerID=?";
 
-    private static final String DELETE_OU = "DELETE FROM currentTrade WHERE offerID=?";
+    private static final String DELETE_OFFER = "DELETE FROM currentTrade WHERE offerID=?";
 
     private static final String COUNT_ROWS = "SELECT COUNT(*) FROM ou";
 
@@ -31,11 +29,11 @@ public class OfferDataSource {
 
     private PreparedStatement editCredit;
 
-    private PreparedStatement getOuList;
+    private PreparedStatement getOfferList;
 
-    private PreparedStatement getOU;
+    private PreparedStatement getOffer;
 
-    private PreparedStatement deleteOU;
+    private PreparedStatement deleteOffer;
 
     private PreparedStatement rowCount;
 
@@ -45,9 +43,9 @@ public class OfferDataSource {
             /* BEGIN MISSING CODE */
             addOU = connection.prepareStatement(INSERT_OFFER);
             editCredit = connection.prepareStatement(UPDATE_CREDIT);
-            getOuList = connection.prepareStatement(LIST_OU);
-            getOU = connection.prepareStatement(GET_OU);
-            deleteOU = connection.prepareStatement(DELETE_OU);
+            getOfferList = connection.prepareStatement(LIST_OFFERS);
+            getOffer = connection.prepareStatement(GET_OFFER);
+            deleteOffer = connection.prepareStatement(DELETE_OFFER);
             rowCount = connection.prepareStatement(COUNT_ROWS);
             /* END MISSING CODE */
         } catch (SQLException ex) {
@@ -60,7 +58,7 @@ public class OfferDataSource {
         try {
             /* BEGIN MISSING CODE */
             addOU.setString(1, o.getOuName());
-            addOU.setInt(2, o.getUnitCredits());
+            addOU.setInt(2, o.getCredits());
             addOU.execute();
             /* END MISSING CODE */
         } catch (SQLException ex) {
@@ -70,7 +68,7 @@ public class OfferDataSource {
 
     public void editCredit(OU o) {
         try {
-            editCredit.setInt(1, o.getUnitCredits());
+            editCredit.setInt(1, o.getCredits());
             editCredit.setString(2, o.getOuName());
             editCredit.executeUpdate();
         } catch (SQLException ex) {
@@ -86,7 +84,7 @@ public class OfferDataSource {
 
         /* BEGIN MISSING CODE */
         try {
-            rs = getOuList.executeQuery();
+            rs = getOfferList.executeQuery();
             while (rs.next()) {
                 offerList.add(new Offer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getInt(6)));
             }
@@ -104,8 +102,8 @@ public class OfferDataSource {
         ResultSet rs = null;
         /* BEGIN MISSING CODE */
         try {
-            getOU.setString(1, name);
-            rs = getOU.executeQuery();
+            getOffer.setString(1, name);
+            rs = getOffer.executeQuery();
             rs.next();
             o.setOuName(rs.getString("ouName"));
             o.setCredits(rs.getInt("credit"));
@@ -139,8 +137,8 @@ public class OfferDataSource {
     public void deleteOffer(Integer id) {
         /* BEGIN MISSING CODE */
         try {
-            deleteOU.setInt(1, id);
-            deleteOU.executeUpdate();
+            deleteOffer.setInt(1, id);
+            deleteOffer.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

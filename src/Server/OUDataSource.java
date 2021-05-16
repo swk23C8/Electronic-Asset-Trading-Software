@@ -60,7 +60,7 @@ public class OUDataSource {
         try {
             /* BEGIN MISSING CODE */
             addOU.setString(1, o.getOuName());
-            addOU.setInt(2, o.getUnitCredits());
+            addOU.setInt(2, o.getCredits());
             addOU.execute();
             /* END MISSING CODE */
         } catch (SQLException ex) {
@@ -70,7 +70,7 @@ public class OUDataSource {
 
     public void editCredit(OU o) {
         try {
-            editCredit.setInt(1, o.getUnitCredits());
+            editCredit.setInt(1, o.getCredits());
             editCredit.setString(2, o.getOuName());
             editCredit.executeUpdate();
         } catch (SQLException ex) {

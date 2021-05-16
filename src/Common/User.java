@@ -1,19 +1,25 @@
 package Common;
 
+import java.io.Serializable;
+
 /**
  * This class represents Common.User.
  */
-public class User {
+public class User implements Serializable {
+
+    /**
+     * Private properties pertaining to a user
+     */
     private String username;
     private String password;
     private String ou;
     private String type;
 
-    public User() {
-
-    }
-    /** Assume can only be in one OU, not sure if this should be kept*/
-
+    /**
+     * Empty constructor for different usage (manually setting username and password
+     * with getters and setters, etc.)
+     */
+    public User() {}
     /**
      * Creates username and password for users.
      *
@@ -25,6 +31,13 @@ public class User {
         this.password = password;
     }
 
+    /**
+     * Constructor for a user with full information
+     * @param username
+     * @param password
+     * @param ou
+     * @param type
+     */
     public User(String username, String password, String ou, String type) {
         this.username = username;
         this.password = password;
@@ -33,6 +46,9 @@ public class User {
 
     }
 
+    /**
+     * Get and Setters for User properties
+     */
     public String getUsername() {
         return username;
     }
@@ -66,25 +82,4 @@ public class User {
     }
 
 
-//    /**
-//     * Change the user's own password
-//     * @param newPassword
-//     */
-//    public void changeOwnPassword (String newPassword) {
-//        this.password = newPassword;
-//    }
-//
-//    /**
-//     * This method makes buy offer.
-//     */
-//    public void makeBuy() {
-//
-//    }
-//
-//    /**
-//     * This method makes sell offer.
-//     */
-//    public void makeSell() {
-//
-//    }
 }

@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="New Version with new concept">
+      <change afterPath="$PROJECT_DIR$/src/Common/CommandMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientconfig.props" beforeDir="false" afterPath="$PROJECT_DIR$/clientconfig.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverconfig.props" beforeDir="false" afterPath="$PROJECT_DIR$/serverconfig.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/AdminCommands.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Asset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Asset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/ClientCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/socketMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/DBConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/OU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/OU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBtestUI/OuUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBtestUI/OuUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OUDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OfferDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OfferDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -160,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621153921663</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adding props files for requirements (client and server)">
+      <created>1621154237988</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1621154237988</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

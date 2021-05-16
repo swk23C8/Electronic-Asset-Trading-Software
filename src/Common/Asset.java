@@ -1,12 +1,17 @@
 package Common;
+
+import java.io.Serializable;
+
 /**
  * This class represents asset, possibly being sent across so kept if needed to be made serializable
  */
-public class Asset {
+public class Asset implements Serializable {
     private String asset;
 
-    public Asset() {
-    }
+    /**
+     * Empty constructor to initialise the object and add later
+     */
+    public Asset() { }
 
     /**
      * Creates an asset with specified name.

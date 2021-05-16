@@ -10,8 +10,9 @@ public class Offer implements Serializable {
     private String assetName;
     private Integer quantity;
     private Integer creditsEach;
+
     /**
-     * Construction for a Buy Offer
+     * Constructor for an Offer with all properties
      * @param OUName
      * @param type
      * @param assetName
@@ -27,6 +28,9 @@ public class Offer implements Serializable {
         this.creditsEach = creditsEach;
     }
 
+    /**
+     * Getter and setter methods for the Offer class
+     */
     public Integer getId() {
         return id;
     }

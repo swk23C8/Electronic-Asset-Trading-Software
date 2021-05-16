@@ -1,20 +1,19 @@
 package Common;
 
+import java.io.Serializable;
 import java.util.*;
 /**
- * This class represents organizational units, possibly sent over network so may
- * need serializable
+ * This class represents organizational units, serialized for sending over the socket
  */
-public class OU{
+public class OU implements Serializable {
     private String ouName;
     private Integer credits;
-    /** Creating a list of users, unsure whether to use hashset, etc.
-     * Depends on the size of the company, need to query. Hashset
-     * as neither order or index of element is needed, maybe not needed?
-     */
+
+    /** Hashmap of Assets and quantity owned **/
     HashMap<Asset, Integer> assetHashMap = new HashMap<Asset, Integer>();
+
     /**
-     * Creates name of the Common.OU and number of the credit Common.OU has.
+     * Constructor name of the OU and number of the credit OU has.
      * @param ouName Name of the Common.OU.
      * @param credits Number of the credit.
      */
@@ -23,12 +22,13 @@ public class OU{
         this.credits = credits;
     }
 
-    public OU() {
-
-
-    }
     /**
-     * Multiple constructors dependent on known values by admin
+     * Empty constructor for OU, added to via getter and setters
+     */
+    public OU() { }
+
+    /**
+     * Another constructor dependent on currently known values
      * @param ouName
      */
     public OU(String ouName) {
@@ -48,18 +48,21 @@ public class OU{
      * Return the number of credits held by the OU
      * @return
      */
-    public Integer getUnitCredits() {
+    public Integer getCredits() {
         return this.credits;
     }
 
     /**
+     * Set the name of the OU
      * @param name the name to set
      */
     public void setOuName(String name) {
         ouName = name;
     }
 
+
     /**
+     * Set the OU's credits to a new amount
      * @param credit the credit to set
      */
     public void setCredits(Integer credit) {
@@ -70,84 +73,21 @@ public class OU{
      * Returns the number of assets depending on the quantity held
      * @param assetUsed
      * @return
-
-    public Integer returnAssetQuantity(Asset assetUsed) {
-        return this.assetHashMap.get(assetUsed);
+    **/
+    public Integer returnAssetQuantity(Asset assetUsed) { return this.assetHashMap.get(assetUsed);
     }
 
     /**
-     * Change this OU's credits, returns true if correct
-     * @param newCredits
-     * @return
-
-    public boolean modifyCredits(Integer newCredits) {
-        if (newCredits >= 0) {
-            this.credits = newCredits;
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    /**
-     * Replace/ Create asset and quantity this has for the asset
-     * @param asset
+     * Set the quantity of an asset the OU has
+     * @param assetUsed
      * @param quantity
-
-    public void assignAssetNumber(Asset asset, Integer quantity) {
-        assetHashMap.put(asset, quantity);
-    }
+     */
+    public void setAssetQuantity(Asset assetUsed, int quantity) { assetHashMap.put(assetUsed, quantity);   }
 
     /**
-     * Create asset with default number of 0 of that asset
-     * @param asset
-
-    public void assignAssetNumber(Asset asset) {
-        this.assignAssetNumber(asset, 0);
-    }
-
-    /**
-     * Adds a member to the organisational unit, returns true if successful
-     * @param newUser Common.Common.User object being added
-
-     public boolean addMember(Common.User newUser) {
-         newUser.ou = this;
-         return unitMembers.add(newUser);
-     }
-
-     REMOVE OLD CODE
-    **/
-    /**
-     * Alternative of addMember for easily adding multiple users
-     * @param newUsers
-
-    public void addMember(HashSet<Common.User> newUsers) {
-        unitMembers.addAll(newUsers);
-    }
-
-    /**
-     * Returns the private HashMap
-     * @return
-
-    public HashMap<Asset, Integer> returnAssetHashMap() {
-        return this.assetHashMap;
-    }
-
-     * Return the users in the organisational unit for external usage
-     * @return
-
-    public HashSet<Common.User> returnUsers() {
-        return this.unitMembers;
-    }
-
-    /**
-     * Modify Credits internally
-     * @param NewCredit
-
-    private void changeCredits(Integer NewCredit) {
-        this.credits = NewCredit;
-    }
-    **/
+     * Overload of setAssetQuantity for singularly setting an asset, with default value
+     * @param assetUsed
+     */
+    public void setAssetQuantity(Asset assetUsed) { assetHashMap.put(assetUsed, 0);   }
 
 }

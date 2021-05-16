@@ -258,7 +258,7 @@ public class OuUI extends JFrame {
     private void display(OU ou) {
         if (ou != null) {
             name.setText(ou.getOuName());
-            credit.setText(String.valueOf(ou.getUnitCredits()));
+            credit.setText(String.valueOf(ou.getCredits()));
         }
     }
 

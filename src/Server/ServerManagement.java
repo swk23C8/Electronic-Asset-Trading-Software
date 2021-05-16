@@ -1,6 +1,6 @@
 package Server;
 
-import Common.socketMessages;
+import Common.SocketMessages;
 import Common.Offer;
 
 import java.io.*;
@@ -49,7 +49,7 @@ public class ServerManagement {
             /** Format taken from W7 Prac, change to own config file just to store
              * url, username and password info for database
              */
-            in = new FileInputStream("./db.props");
+            in = new FileInputStream("./serverconfig.props");
             props.load(in);
             in.close();
 
@@ -117,9 +117,17 @@ public class ServerManagement {
             String command = (String) objectInputStream.readObject();
             /** Implement command handling here, possibly add methods or new class due to number
              */
-            if (command.equals(socketMessages.ADD_OFFER)) {
-                Offer newOffer = (Offer) objectInputStream.readObject();
-                /** Do relevant actions here with info, or call method/ class that uses this**/
+            try (
+                    ObjectOutputStream objectOutputStream =
+                            new ObjectOutputStream(socket.getOutputStream());
+            ) {
+                SocketCommandHandling socketHandler = new SocketCommandHandling(objectInputStream, objectOutputStream);
+
+                if (command.equals(SocketMessages.ADD_OFFER)) {
+                    socketHandler.addOffer();
+                    Offer newOffer = (Offer) objectInputStream.readObject();
+                    /** Do relevant actions here with info, or call method/ class that uses this**/
+                }
             }
         }
     }
@@ -131,7 +139,6 @@ public class ServerManagement {
         // Shut the server down
         running.set(false);
     }
-
 
 
 }

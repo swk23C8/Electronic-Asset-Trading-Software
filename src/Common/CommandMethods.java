@@ -1,5 +1,8 @@
 package Common;
 
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 /**
  * Interface for the commands' methods so the server and client
  * can implement a class from this with the same methods for the same commands
@@ -7,12 +10,14 @@ package Common;
  */
 public interface CommandMethods {
 
+
+
     /**
      * Method for logging a user in/ authenticating their details are correct
      */
-    void doLogin(User user);
+    void doLogin();
 
-    void addOffer(Offer offer);
+    void addOffer();
 
-    void removeOffer(Offer offer);
+    void removeOffer();
 }

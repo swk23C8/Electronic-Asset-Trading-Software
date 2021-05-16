@@ -1,12 +1,11 @@
 package Client;
-import Common.socketMessages;
+import Common.SocketMessages;
 import Common.Offer;
 
+import java.io.*;
 import java.net.Socket;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.HashSet;
+import java.util.Properties;
 
 /** Class handling Client to Server Tasks**/
 public class ServerConnector {
@@ -21,13 +20,30 @@ public class ServerConnector {
 
     /** Constructor for class**/
     public ServerConnector() {
-        /** Initialisation go here**/
+        Properties props = new Properties();
+        FileInputStream in = null;
         try {
-            /** Get HostIP and Port for server from config here**/
-        } catch (Exception e) {
+            in = new FileInputStream("./clientconfig.props");
+            props.load(in);
+            in.close();
 
+            // This needs to be
+            try {
+                this.HOSTIP = props.getProperty("jdbc.IP");
+                this.PORT = Integer.parseInt(props.getProperty("jdbc.PORT"));
+            }
+            catch (NumberFormatException e)
+            {
+                /** Insert Catch handler**/
+            }
+
+        }  catch (FileNotFoundException fnfe) {
+            System.err.println(fnfe);
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
+
     /**
      * Add offer client command setup
      */
@@ -40,7 +56,7 @@ public class ServerConnector {
                     ObjectOutputStream objectOutputStream =
                             new ObjectOutputStream(socket.getOutputStream());
             ) {
-                objectOutputStream.writeObject(socketMessages.ADD_OFFER);
+                objectOutputStream.writeObject(SocketMessages.ADD_OFFER);
                 /** Change this to just send a list of strings, though possibly not so multiple offers
                  * can be sent across easily in GetOffers
                  */
@@ -65,7 +81,7 @@ public class ServerConnector {
                     ObjectOutputStream objectOutputStream =
                             new ObjectOutputStream(socket.getOutputStream());
             ) {
-                objectOutputStream.writeObject(socketMessages.GET_OFFERS);
+                objectOutputStream.writeObject(SocketMessages.GET_OFFERS);
                 objectOutputStream.flush();
 
                 try (

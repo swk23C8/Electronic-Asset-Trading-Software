@@ -4,7 +4,7 @@ package Common;
  * Class set to define different commands, could be done as an enum
  * but a class construction works sufficiently well
  */
-public class socketMessages {
+public class SocketMessages {
     /** String commands sent over network stored here**/
     public static final String LOGIN = "Login";
     public static final String ADD_OFFER = "Add Offer";

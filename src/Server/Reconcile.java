@@ -6,6 +6,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Goes over the offers and 'reconciles' what offers are valid, still very much in progress
+ */
 public class Reconcile {
     public static void main(String[] args) {
         // write yo

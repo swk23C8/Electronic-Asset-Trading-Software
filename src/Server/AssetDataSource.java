@@ -141,7 +141,7 @@ public class AssetDataSource {
     }
 
     /**
-     * Closing the database.
+     * Closing the database..
      */
     public void close() {
         /* BEGIN MISSING CODE */

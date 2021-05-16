@@ -11,6 +11,8 @@ public class Offer implements Serializable {
     private Integer quantity;
     private Integer creditsEach;
 
+    public Offer(){}
+
     /**
      * Constructor for an Offer with all properties
      * @param OUName

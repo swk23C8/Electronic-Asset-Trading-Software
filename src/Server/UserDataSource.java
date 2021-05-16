@@ -34,6 +34,9 @@ public class UserDataSource {
 
     private PreparedStatement rowCount;
 
+    /**
+     * Constructor for the configuration of the database connection.
+     */
     public UserDataSource() {
         connection = DBConnection.getInstance();
         try {
@@ -50,7 +53,10 @@ public class UserDataSource {
         }
     }
 
-
+    /**
+     * Add User to the user table.
+     * @param u The User object
+     */
     public void addUser(User u) {
         try {
             /* BEGIN MISSING CODE */
@@ -65,7 +71,9 @@ public class UserDataSource {
         }
     }
 
-
+    /**
+     * Return the set of user by retrieving information from database.
+     */
     public Set<String> userSet() {
         Set<String> userList = new TreeSet<String>();
         ResultSet rs = null;
@@ -84,7 +92,10 @@ public class UserDataSource {
         return userList;
     }
 
-
+    /**
+     * Return the specific user by retrieving information from database.
+     * @param name The name of the user.
+     */
     public User getUser(String name) {
         User u = new User();
         ResultSet rs = null;
@@ -104,7 +115,9 @@ public class UserDataSource {
         return u;
     }
 
-
+    /**
+     * Return the size of the user table.
+     */
     public int getSize() {
         ResultSet rs = null;
         int rows = 0;
@@ -122,7 +135,9 @@ public class UserDataSource {
         return rows;
     }
 
-
+    /**
+     * Delete the User from the user table.
+     */
     public void deleteUser(String name) {
         /* BEGIN MISSING CODE */
         try {
@@ -134,7 +149,9 @@ public class UserDataSource {
         /* END MISSING CODE */
     }
 
-
+    /**
+     * Closing the database.
+     */
     public void close() {
         /* BEGIN MISSING CODE */
         try {

@@ -39,6 +39,9 @@ public class OUDataSource {
 
     private PreparedStatement rowCount;
 
+    /**
+     * Constructor for the configuration of the database connection.
+     */
     public OUDataSource() {
         connection = DBConnection.getInstance();
         try {
@@ -55,7 +58,10 @@ public class OUDataSource {
         }
     }
 
-
+    /**
+     * Add OU(oraganizational unit) to the ou table.
+     * @param o The OU object
+     */
     public void addOU(OU o) {
         try {
             /* BEGIN MISSING CODE */
@@ -68,6 +74,10 @@ public class OUDataSource {
         }
     }
 
+    /**
+     * Edit the number of the credit of the specific row in the asset table.
+     * @param o The OU object
+     */
     public void editCredit(OU o) {
         try {
             editCredit.setInt(1, o.getCredits());
@@ -79,7 +89,9 @@ public class OUDataSource {
 
     }
 
-
+    /**
+     * Return the hashmap of ou by retrieving information from database.
+     */
     public HashMap<String, Integer> ouList() {
         HashMap<String, Integer> list = new HashMap<>();
         ResultSet rs = null;
@@ -98,7 +110,10 @@ public class OUDataSource {
         return list;
     }
 
-
+    /**
+     * Return the specific ou by retrieving information from database.
+     * @param name The name of the ou.
+     */
     public OU getOU(String name) {
         OU o = new OU();
         ResultSet rs = null;
@@ -117,7 +132,9 @@ public class OUDataSource {
         return o;
     }
 
-
+    /**
+     * Return the size of the ou table.
+     */
     public int getSize() {
         ResultSet rs = null;
         int rows = 0;
@@ -135,7 +152,9 @@ public class OUDataSource {
         return rows;
     }
 
-
+    /**
+     * Delete the OU from the ou table.
+     */
     public void deleteOU(String name) {
         /* BEGIN MISSING CODE */
         try {
@@ -147,7 +166,9 @@ public class OUDataSource {
         /* END MISSING CODE */
     }
 
-
+    /**
+     * Closing the database.
+     */
     public void close() {
         /* BEGIN MISSING CODE */
         try {

@@ -1,73 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Common/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/Admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/Admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/User.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/User.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/class-use/Buy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/OU.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/class-use/OU.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Offer.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/class-use/Offer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Sell.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/class-use/Sell.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/User.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/class-use/User.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Admin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Assets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Admin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Asset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Asset.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetDBtest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetDBtest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetDataSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI$ButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI$ClosingListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI$NameListListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Buy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/DBConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OU.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OU.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OUData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OUDataSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Offer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Offer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuDBtest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuDBtest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI$ButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI$ClosingListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI$NameListListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Sell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Trades.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Employee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/OU.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Offers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Tests/AdminTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Tests/UserTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Users.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/AssetDBtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBtestUI/AssetDBtest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/AssetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/AssetData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/AssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/AssetDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/AssetUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBtestUI/AssetUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/OU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/OU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/OUData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/OUDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Offer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/OuDBtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBtestUI/OuDBtest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/OuUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBtestUI/OuUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/DBConnector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/DBMethods.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" />
-    </list>
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620806013762</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="New Version with new concept">
+      <created>1621152703807</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621152703807</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,6 +179,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Organising JavaDoc" />
     <MESSAGE value="dd" />
-    <option name="LAST_COMMIT_MESSAGE" value="dd" />
+    <MESSAGE value="New Version with new concept" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Version with new concept" />
   </component>
 </project>

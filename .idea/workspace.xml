@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clientconfig.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serverconfig.props" afterDir="false" />
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="New Version with new concept">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbconfig.props" beforeDir="false" afterPath="$PROJECT_DIR$/dbconfig.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientconfig.props" beforeDir="false" afterPath="$PROJECT_DIR$/clientconfig.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverconfig.props" beforeDir="false" afterPath="$PROJECT_DIR$/serverconfig.props" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cab302_1.3" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -154,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621152703807</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adding props files for requirements (client and server)">
+      <created>1621153921663</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1621153921663</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,6 +191,7 @@
     <MESSAGE value="Organising JavaDoc" />
     <MESSAGE value="dd" />
     <MESSAGE value="New Version with new concept" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Version with new concept" />
+    <MESSAGE value="Adding props files for requirements (client and server)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding props files for requirements (client and server)" />
   </component>
 </project>

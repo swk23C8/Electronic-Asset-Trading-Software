@@ -1,4 +1,6 @@
-package Common;
+package Server;
+
+import Common.Asset;
 
 import java.sql.*;
 import java.util.Set;
@@ -112,7 +114,7 @@ public class AssetDataSource {
     }
 
 
-    public void deletePerson(String name) {
+    public void deleteAsset(String name) {
         /* BEGIN MISSING CODE */
         try {
             deleteAsset.setString(1, name);

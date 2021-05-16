@@ -1,4 +1,6 @@
-package Common;
+package DBtestUI;
+
+import Server.AssetData;
 
 import javax.swing.SwingUtilities;
 

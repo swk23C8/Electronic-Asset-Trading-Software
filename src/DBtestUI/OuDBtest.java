@@ -1,4 +1,6 @@
-package Common;
+package DBtestUI;
+
+import Server.OUData;
 
 import javax.swing.SwingUtilities;
 

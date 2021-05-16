@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /** Offer class pertaining to offer information, serializable as to send across stream**/
 public class Offer implements Serializable {
+    private Integer id;
     private String OUName;
     private String offerType;
     private String assetName;
@@ -17,15 +18,66 @@ public class Offer implements Serializable {
      * @param quantity
      * @param creditsEach
      */
-    public Offer(String OUName, String type, String assetName, Integer quantity, Integer creditsEach) {
+    public Offer(Integer id, String type, String OUName, String assetName, Integer quantity, Integer creditsEach) {
+        this.id = id;
+        this.OUName = OUName;
+        this.offerType = type;
+        this.assetName = assetName;
+        this.quantity = quantity;
+        this.creditsEach = creditsEach;
+    }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getOUName() {
+        return OUName;
+    }
+
+    public void setOUName(String OUName) {
+        this.OUName = OUName;
+    }
+
+    public String getOfferType() {
+        return offerType;
+    }
+
+    public void setOfferType(String offerType) {
+        this.offerType = offerType;
+    }
+
+    public String getAssetName() {
+        return assetName;
+    }
+
+    public void setAssetName(String assetName) {
+        this.assetName = assetName;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Integer getCreditsEach() {
+        return creditsEach;
+    }
+
+    public void setCreditsEach(Integer creditsEach) {
+        this.creditsEach = creditsEach;
     }
 
     /** possibly send buy object through to server? otherwise server will likely do most of this**/
 
-    public String returnOU() {
-        return this.OUName;
-    }
+
 
 
 }

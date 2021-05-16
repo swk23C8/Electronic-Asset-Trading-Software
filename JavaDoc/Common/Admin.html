@@ -78,14 +78,14 @@ loadScripts(document, 'script');</script>
 <h1 title="Class Admin" class="title">Class Admin</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree">java.lang.Object
-<div class="inheritance"><a href="User.html" title="class in Common">Common.User</a>
+<div class="inheritance"><a href="Common.User.html" title="class in Common">Common.User</a>
 <div class="inheritance">Common.Admin</div>
 </div>
 </div>
 <section class="description">
 <hr>
 <pre>public class <span class="type-name-label">Admin</span>
-extends <a href="User.html" title="class in Common">User</a></pre>
+extends <a href="Common.User.html" title="class in Common">Common.User</a></pre>
 <div class="block">This class represents an admin and inherits from Users.</div>
 </section>
 <section class="summary">
@@ -95,8 +95,8 @@ extends <a href="User.html" title="class in Common">User</a></pre>
 <section class="field-summary" id="field.summary">
 <h2>Field Summary</h2>
 <div class="inherited-list">
-<h3 id="fields.inherited.from.class.Common.User">Fields inherited from class&nbsp;Common.<a href="User.html" title="class in Common">User</a></h3>
-<code><a href="User.html#organisationalUnit">organisationalUnit</a></code></div>
+<h3 id="fields.inherited.from.class.Common.User">Fields inherited from class&nbsp;Common.<a href="Common.User.html" title="class in Common">Common.User</a></h3>
+<code><a href="Common.User.html#organisationalUnit">organisationalUnit</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -172,7 +172,7 @@ java.lang.Integer&nbsp;credits)</code></th>
 </td>
 </tr>
 <tr class="alt-color" id="i4">
-<td class="col-first"><code><a href="User.html" title="class in Common">User</a></code></td>
+<td class="col-first"><code><a href="Common.User.html" title="class in Common">Common.User</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#addUser(java.lang.String,java.lang.String)">addUser</a></span>&#8203;(java.lang.String&nbsp;username,
 java.lang.String&nbsp;password)</code></th>
 <td class="col-last">
@@ -181,7 +181,7 @@ java.lang.String&nbsp;password)</code></th>
 </tr>
 <tr class="row-color" id="i5">
 <td class="col-first"><code>boolean</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#assignUserToOU(Common.User,Common.OU)">assignUserToOU</a></span>&#8203;(<a href="User.html" title="class in Common">User</a>&nbsp;user,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#assignUserToOU(Common.User,Common.OU)">assignUserToOU</a></span>&#8203;(<a href="Common.User.html" title="class in Common">Common.User</a>&nbsp;user,
 <a href="OU.html" title="class in Common">OU</a>&nbsp;theirUnit)</code></th>
 <td class="col-last">
 <div class="block">Method assigns a user to a unit, returns true if successful</div>
@@ -214,7 +214,7 @@ java.lang.Integer&nbsp;credits)</code></th>
 </tr>
 <tr class="row-color" id="i9">
 <td class="col-first"><code>void</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#changePassword(Common.User,java.lang.String)">changePassword</a></span>&#8203;(<a href="User.html" title="class in Common">User</a>&nbsp;user,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#changePassword(Common.User,java.lang.String)">changePassword</a></span>&#8203;(<a href="Common.User.html" title="class in Common">Common.User</a>&nbsp;user,
 java.lang.String&nbsp;newPassword)</code></th>
 <td class="col-last">
 <div class="block">Common.Admin changing Common.User's Password</div>
@@ -232,8 +232,8 @@ java.lang.String&nbsp;newPassword)</code></th>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods.inherited.from.class.Common.User">Methods inherited from class&nbsp;Common.<a href="User.html" title="class in Common">User</a></h3>
-<code><a href="User.html#cancelOffer(Common.Offer)">cancelOffer</a>, <a href="User.html#changeOwnPassword(java.lang.String)">changeOwnPassword</a>, <a href="User.html#makeBuy(Common.Asset,java.lang.Integer,java.lang.Integer)">makeBuy</a>, <a href="User.html#makeSell(Common.Asset,java.lang.Integer,java.lang.Integer)">makeSell</a>, <a href="User.html#returnOrganisationalUnit()">returnOrganisationalUnit</a>, <a href="User.html#returnPassword()">returnPassword</a>, <a href="User.html#returnUsername()">returnUsername</a></code></div>
+<h3 id="methods.inherited.from.class.Common.User">Methods inherited from class&nbsp;Common.<a href="Common.User.html" title="class in Common">Common.User</a></h3>
+<code><a href="Common.User.html#cancelOffer(Common.Offer)">cancelOffer</a>, <a href="Common.User.html#changeOwnPassword(java.lang.String)">changeOwnPassword</a>, <a href="Common.User.html#makeBuy(Common.Asset,java.lang.Integer,java.lang.Integer)">makeBuy</a>, <a href="Common.User.html#makeSell(Common.Asset,java.lang.Integer,java.lang.Integer)">makeSell</a>, <a href="Common.User.html#returnOrganisationalUnit()">returnOrganisationalUnit</a>, <a href="Common.User.html#returnPassword()">returnPassword</a>, <a href="Common.User.html#returnUsername()">returnUsername</a></code></div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.java.lang.Object">Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></div>
@@ -359,7 +359,7 @@ java.lang.Integer&nbsp;credits)</span></div>
 <li>
 <section class="detail" id="assignUserToOU(Common.User,Common.OU)">
 <h3>assignUserToOU</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="member-name">assignUserToOU</span>&#8203;(<span class="parameters"><a href="User.html" title="class in Common">User</a>&nbsp;user,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="member-name">assignUserToOU</span>&#8203;(<span class="parameters"><a href="Common.User.html" title="class in Common">Common.User</a>&nbsp;user,
 <a href="OU.html" title="class in Common">OU</a>&nbsp;theirUnit)</span></div>
 <div class="block">Method assigns a user to a unit, returns true if successful</div>
 <dl class="notes">
@@ -372,7 +372,7 @@ java.lang.Integer&nbsp;credits)</span></div>
 <li>
 <section class="detail" id="changePassword(Common.User,java.lang.String)">
 <h3>changePassword</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">changePassword</span>&#8203;(<span class="parameters"><a href="User.html" title="class in Common">User</a>&nbsp;user,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">changePassword</span>&#8203;(<span class="parameters"><a href="Common.User.html" title="class in Common">Common.User</a>&nbsp;user,
 java.lang.String&nbsp;newPassword)</span></div>
 <div class="block">Common.Admin changing Common.User's Password</div>
 <dl class="notes">
@@ -399,7 +399,7 @@ java.lang.String&nbsp;password)</span></div>
 <li>
 <section class="detail" id="addUser(java.lang.String,java.lang.String)">
 <h3>addUser</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="User.html" title="class in Common">User</a></span>&nbsp;<span class="member-name">addUser</span>&#8203;(<span class="parameters">java.lang.String&nbsp;username,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Common.User.html" title="class in Common">Common.User</a></span>&nbsp;<span class="member-name">addUser</span>&#8203;(<span class="parameters">java.lang.String&nbsp;username,
 java.lang.String&nbsp;password)</span></div>
 <div class="block">Create a new user</div>
 <dl class="notes">

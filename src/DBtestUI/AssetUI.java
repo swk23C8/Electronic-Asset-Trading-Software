@@ -1,4 +1,7 @@
-package Common;
+package DBtestUI;
+
+import Common.Asset;
+import Server.AssetData;
 
 import java.awt.Container;
 import java.awt.Dimension;
@@ -23,15 +26,13 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 
-public class OuUI extends JFrame {
+public class AssetUI extends JFrame {
 
-    private static final long serialVersionUID = -4165744919842016081L;
+    private static final long serialVersionUID = -5050538890770582361L;
 
     private JList nameList;
 
     private JTextField name;
-
-    private JTextField credit;
 
     private JButton newButton;
 
@@ -39,18 +40,14 @@ public class OuUI extends JFrame {
 
     private JButton deleteButton;
 
-    private JButton updateButton;
-
-    private JButton editButton;
-
-    OUData data;
+    AssetData data;
 
     /**
      * Constructor sets up user interface, adds listeners and displays.
      *
      * @param data The underlying data/model class the UI needs.
      */
-    public OuUI(OUData data) {
+    public AssetUI(AssetData data) {
         this.data = data;
         initUI();
         checkListSize();
@@ -61,7 +58,7 @@ public class OuUI extends JFrame {
         addClosingListener(new ClosingListener());
 
         // decorate the frame and make it visible
-        setTitle("OU");
+        setTitle("Asset");
         setMinimumSize(new Dimension(400, 300));
         pack();
         setVisible(true);
@@ -85,7 +82,7 @@ public class OuUI extends JFrame {
     }
 
     /**
-     * Makes a JPanel consisiting of (1) the list of names and (2) the OU
+     * Makes a JPanel consisiting of (1) the list of names and (2) the asset
      * fields in a box layout with horizontal alignment and puts a 20 pixel gap
      * between the components and the left and right edges of the panel.
      *
@@ -97,14 +94,14 @@ public class OuUI extends JFrame {
         detailsPanel.add(Box.createHorizontalStrut(20));
         detailsPanel.add(makeNameListPane());
         detailsPanel.add(Box.createHorizontalStrut(20));
-        detailsPanel.add(makeOuFieldsPanel());
+        detailsPanel.add(makeAssetFieldsPanel());
         detailsPanel.add(Box.createHorizontalStrut(20));
         return detailsPanel;
     }
 
     /**
      * Makes a JScrollPane that holds a JList for the list of names in the
-     * ou.
+     * asset.
      *
      * @return the scrolling name list panel
      */
@@ -127,16 +124,16 @@ public class OuUI extends JFrame {
 
     /**
      * Makes a JPanel containing labels and textfields for each of the pieces of
-     * data that are to be recorded for each ou. The labels and fields are
+     * data that are to be recorded for each asset. The labels and fields are
      * layed out using a GroupLayout, with the labels vertically grouped, the
      * fields vertically grouped and each label/group pair horizontally grouped.
      *
      * @return a panel containing the address fields
      */
-    private JPanel makeOuFieldsPanel() {
-        JPanel ouPanel = new JPanel();
-        GroupLayout layout = new GroupLayout(ouPanel);
-        ouPanel.setLayout(layout);
+    private JPanel makeAssetFieldsPanel() {
+        JPanel assetPanel = new JPanel();
+        GroupLayout layout = new GroupLayout(assetPanel);
+        assetPanel.setLayout(layout);
 
         // Turn on automatically adding gaps between components
         layout.setAutoCreateGaps(true);
@@ -146,10 +143,8 @@ public class OuUI extends JFrame {
         layout.setAutoCreateContainerGaps(true);
 
         JLabel nameLabel = new JLabel("Name");
-        JLabel creditLabel = new JLabel("Credit");
 
         name = new JTextField(20);
-        credit = new JTextField(20);
         setFieldsEditable(false);
 
         // Create a sequential group for the horizontal axis.
@@ -157,8 +152,8 @@ public class OuUI extends JFrame {
 
         // The sequential group in turn contains two parallel groups.
         // One parallel group contains the labels, the other the text fields.
-        hGroup.addGroup(layout.createParallelGroup().addComponent(nameLabel).addComponent(creditLabel));
-        hGroup.addGroup(layout.createParallelGroup().addComponent(name).addComponent(credit));
+        hGroup.addGroup(layout.createParallelGroup().addComponent(nameLabel));
+        hGroup.addGroup(layout.createParallelGroup().addComponent(name));
         layout.setHorizontalGroup(hGroup);
 
         // Create a sequential group for the vertical axis.
@@ -172,12 +167,9 @@ public class OuUI extends JFrame {
         vGroup.addGroup(layout.createParallelGroup(Alignment.BASELINE)
                 .addComponent(nameLabel).addComponent(name));
 
-        vGroup.addGroup(layout.createParallelGroup(Alignment.BASELINE)
-                .addComponent(creditLabel).addComponent(credit));
-
         layout.setVerticalGroup(vGroup);
 
-        return ouPanel;
+        return assetPanel;
     }
 
     /**
@@ -190,19 +182,12 @@ public class OuUI extends JFrame {
         saveButton = new JButton("Save");
         saveButton.setEnabled(false);
         deleteButton = new JButton("Delete");
-        updateButton = new JButton("Update");
-        updateButton.setEnabled(false);
-        editButton = new JButton("Edit");
         buttonPanel.add(Box.createHorizontalStrut(50));
         buttonPanel.add(newButton);
         buttonPanel.add(Box.createHorizontalStrut(50));
         buttonPanel.add(saveButton);
         buttonPanel.add(Box.createHorizontalStrut(50));
         buttonPanel.add(deleteButton);
-        buttonPanel.add(Box.createHorizontalStrut(50));
-        buttonPanel.add(editButton);
-        buttonPanel.add(Box.createHorizontalStrut(50));
-        buttonPanel.add(updateButton);
         buttonPanel.add(Box.createHorizontalStrut(50));
         return buttonPanel;
     }
@@ -214,8 +199,6 @@ public class OuUI extends JFrame {
         newButton.addActionListener(listener);
         saveButton.addActionListener(listener);
         deleteButton.addActionListener(listener);
-        updateButton.addActionListener(listener);
-        editButton.addActionListener(listener);
     }
 
     /**
@@ -233,29 +216,26 @@ public class OuUI extends JFrame {
     }
 
     /**
-     * Sets the text in the address text fields to the empty string.
+     * Sets the text in the asset text fields to the empty string.
      */
     private void clearFields() {
         name.setText("");
-        credit.setText("");
     }
 
     /**
-     * Sets whether or not the address fields are editable.
+     * Sets whether or not the asset fields are editable.
      */
     private void setFieldsEditable(boolean editable) {
         name.setEditable(editable);
-        credit.setEditable(editable);
     }
 
     /**
-     * Displays the details of a Person in the OU fields.
-     * @param ou teh ou to display.
+     * Displays the details of a asset in the asset fields.
+     * @param asset teh asset to display.
      */
-    private void display(OU ou) {
-        if (ou != null) {
-            name.setText(ou.getOuName());
-            credit.setText(String.valueOf(ou.getUnitCredits()));
+    private void display(Asset asset) {
+        if (asset != null) {
+            name.setText(asset.getAsset());
         }
     }
 
@@ -270,8 +250,6 @@ public class OuUI extends JFrame {
     /**
      * Handles events for the three buttons on the UI.
      *
-     * @author Malcolm Corney
-     * @version $Id: Exp $
      *
      */
     private class ButtonListener implements ActionListener {
@@ -289,10 +267,6 @@ public class OuUI extends JFrame {
                 savePressed();
             } else if (source == deleteButton) {
                 deletePressed();
-            } else if (source == updateButton) {
-                updatePressed();
-            } else if (source == editButton) {
-                editPressed();
             }
         }
 
@@ -308,7 +282,7 @@ public class OuUI extends JFrame {
 
         /**
          * When the save button is pressed, check that the name field contains
-         * something. If it does, create a new OU object and attempt to add it
+         * something. If it does, create a new Asset object and attempt to add it
          * to the data model. Change the fields back to not editable and make the
          * save button inactive.
          *
@@ -316,10 +290,9 @@ public class OuUI extends JFrame {
          */
         private void savePressed() {
             if (name.getText() != null && !name.getText().equals("")) {
-                OU o = new OU(name.getText(), Integer.parseInt(credit.getText()));
-                data.add(o);
+                Asset a = new Asset(name.getText());
+                data.add(a);
             }
-
             setFieldsEditable(false);
             saveButton.setEnabled(false);
             checkListSize();
@@ -346,22 +319,6 @@ public class OuUI extends JFrame {
                 }
             }
             nameList.setSelectedIndex(index);
-            checkListSize();
-        }
-
-        private void editPressed() {
-            credit.setEditable(true);
-            updateButton.setEnabled(true);
-        }
-
-        private void updatePressed() {
-            if (name.getText() != null && !name.getText().equals("")) {
-                OU o = new OU(name.getText(), Integer.parseInt(credit.getText()));
-                data.edit(o);
-            }
-
-            setFieldsEditable(false);
-            updateButton.setEnabled(false);
             checkListSize();
         }
     }

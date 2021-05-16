@@ -1,4 +1,6 @@
-package Common;
+package Server;
+
+import Common.Asset;
 
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
@@ -41,7 +43,7 @@ public class AssetData {
 
         // remove from both list and map
         listModel.removeElement(key);
-        assetData.deletePerson((String) key);
+        assetData.deleteAsset((String) key);
     }
 
 

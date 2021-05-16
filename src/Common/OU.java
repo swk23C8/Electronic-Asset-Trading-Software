@@ -35,20 +35,35 @@ public class OU{
         this(ouName, 0);
     }
 
+
     /**
      * Return OU name
      * @return
      */
-    public String returnOUName() {
+    public String getOuName() {
         return this.ouName;
     }
 
     /**
      * Return the number of credits held by the OU
      * @return
-
-    public Integer returnUnitCredits() {
+     */
+    public Integer getUnitCredits() {
         return this.credits;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setOuName(String name) {
+        ouName = name;
+    }
+
+    /**
+     * @param credit the credit to set
+     */
+    public void setCredits(Integer credit) {
+        credits = credit;
     }
 
     /**
@@ -94,9 +109,9 @@ public class OU{
 
     /**
      * Adds a member to the organisational unit, returns true if successful
-     * @param newUser Common.User object being added
+     * @param newUser Common.Common.User object being added
 
-     public boolean addMember(User newUser) {
+     public boolean addMember(Common.User newUser) {
          newUser.ou = this;
          return unitMembers.add(newUser);
      }
@@ -107,7 +122,7 @@ public class OU{
      * Alternative of addMember for easily adding multiple users
      * @param newUsers
 
-    public void addMember(HashSet<User> newUsers) {
+    public void addMember(HashSet<Common.User> newUsers) {
         unitMembers.addAll(newUsers);
     }
 
@@ -122,7 +137,7 @@ public class OU{
      * Return the users in the organisational unit for external usage
      * @return
 
-    public HashSet<User> returnUsers() {
+    public HashSet<Common.User> returnUsers() {
         return this.unitMembers;
     }
 

@@ -1,4 +1,6 @@
-package Common;
+package Server;
+
+import Common.OU;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -134,7 +136,7 @@ public class OUDataSource {
     }
 
 
-    public void deletePerson(String name) {
+    public void deleteOU(String name) {
         /* BEGIN MISSING CODE */
         try {
             deleteOU.setString(1, name);

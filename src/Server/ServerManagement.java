@@ -24,7 +24,7 @@ public class ServerManagement {
 
     /** Need to send all buy/ sell offers, and update when offers reconcile**/
 
-    /** Verify User**/
+    /** Verify Common.User**/
 
     /** Value for port, etc. stored here though retrieved in a method**/
     private int PORT;

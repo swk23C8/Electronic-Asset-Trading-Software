@@ -2,18 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_23.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Common/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/Admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/Admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/User.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/User.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Buy.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/class-use/Buy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/OU.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/class-use/OU.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Offer.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/class-use/Offer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Sell.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/class-use/Sell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/User.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/Common/class-use/User.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Assets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Asset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Asset.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetDBtest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetDBtest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI$ButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI$ClosingListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI$NameListListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Buy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/DBConnection.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OU.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OU.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OUData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OUDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Offer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Offer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuDBtest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuDBtest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI$ButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI$ClosingListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI$NameListListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Sell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Trades.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Tests/AdminTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Tests/AdminTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qut_cab302_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qut_cab302_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/OU.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Offers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Tests/AdminTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Tests/UserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Users.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/AssetDBtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBtestUI/AssetDBtest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/AssetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/AssetData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/AssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/AssetDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/AssetUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBtestUI/AssetUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/DBConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Common/OU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/OU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/AdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/AdminTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/OUData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/OUDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/OuDBtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBtestUI/OuDBtest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/OuUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBtestUI/OuUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/DBConnector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/DBMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +83,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,10 +102,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sqlite-jdbc-3.32.3.2.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
@@ -53,7 +115,46 @@
       <module name="qut_cab302_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Common.*" />
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OuDBtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DBtestUI.OuDBtest" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DBtestUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Reconcile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.Reconcile" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDBtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DBtestUI.UserDBtest" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DBtestUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -63,6 +164,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Reconcile" />
+        <item itemvalue="Application.OuDBtest" />
+        <item itemvalue="Application.UserDBtest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -97,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618103266292</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="dd">
+      <created>1620806013761</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620806013762</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,7 +216,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/RebrandedClasses" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -114,6 +237,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Organising JavaDoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Organising JavaDoc" />
+    <MESSAGE value="dd" />
+    <option name="LAST_COMMIT_MESSAGE" value="dd" />
   </component>
 </project>

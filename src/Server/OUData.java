@@ -1,4 +1,6 @@
-package Common;
+package Server;
+
+import Common.OU;
 
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
@@ -47,7 +49,7 @@ public class OUData {
 
         // remove from both list and map
         listModel.removeElement(key);
-        ouData.deletePerson((String) key);
+        ouData.deleteOU((String) key);
     }
 
 

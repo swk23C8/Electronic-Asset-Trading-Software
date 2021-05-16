@@ -45,7 +45,7 @@ public class ServerConnector {
                 /** Change this to just send a list of strings, though possibly not so multiple offers
                  * can be sent across easily in GetOffers
                  */
-                Offer createdOffer = new Offer("","","", 0,0);
+                Offer createdOffer = new Offer(0,"","","", 0,0);
                 objectOutputStream.writeObject(createdOffer);
             }
         } catch (IOException e) {

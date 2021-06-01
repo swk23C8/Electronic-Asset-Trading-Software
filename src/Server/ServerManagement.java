@@ -7,6 +7,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -28,6 +29,10 @@ public class ServerManagement {
     private static final int SOCKET_ACCEPT_TIMEOUT = 100;
     private AtomicBoolean running = new AtomicBoolean(true);
     private static final int SOCKET_READ_TIMEOUT = 5000;
+    private AssetDataSource assetDatabase;
+    private OfferDataSource offerDatabase;
+    private OUDataSource OUDatabase;
+    private UserDataSource userDatabase;
 
     /** Global variables (i.e. HashSets/ Maps) of relevant data are stored here **/
 
@@ -45,6 +50,10 @@ public class ServerManagement {
      */
     public void start() throws IOException {
         sql_startup();
+        assetDatabase = new AssetDataSource();
+        offerDatabase = new OfferDataSource();
+        OUDatabase = new OUDataSource();
+        userDatabase = new UserDataSource();
         Properties props = new Properties();
         FileInputStream in = null;
         try {
@@ -154,12 +163,18 @@ public class ServerManagement {
         {
             case ADD_OFFER:{
                 //Do stuff here
-                final Offer newOffer = new Offer();
-                outputStream.writeObject(newOffer);
+                final Offer newOffer = (Offer) inputStream.readObject();
+                synchronized (offerDatabase)
+                {
+                    offerDatabase.addOffer(newOffer);
+                }
+                //flush if write is done (after write), so no stalling occurs
+                //Print to gui for server String.format("Added person '%s' to database from client %s",
+                //p.getName(), socket.toString())
             }
             break;
             case GET_OFFERS:{
-                //Do stuff here
+
             }
             break;
         }

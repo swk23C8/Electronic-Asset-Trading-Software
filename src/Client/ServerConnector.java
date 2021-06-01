@@ -89,11 +89,13 @@ public class ServerConnector {
      * This needs to be entirely changed to use the socket command handling class, i.e.
      * will be removed
      */
-    private void GetOffers() {
+    public HashSet<Offer> GetOffers() {
+        //Remember we need to flush between read and write
         try {
             outputStream.writeObject(Command.GET_OFFERS);
             outputStream.flush();
             currentOffers = (HashSet<Offer>) inputStream.readObject();
+            return currentOffers;
         } catch (IOException | ClassNotFoundException e) {
             // Print the exception, but no need for a fatal error
             // if the connection with the server happens to be down

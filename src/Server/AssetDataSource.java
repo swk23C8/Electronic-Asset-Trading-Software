@@ -18,7 +18,6 @@ public class AssetDataSource {
     private static final String DELETE_ASSET = "DELETE FROM asset WHERE assetName=?";
 
 
-
     private Connection connection;
 
     private PreparedStatement addAsset;
@@ -31,6 +30,10 @@ public class AssetDataSource {
 
     private PreparedStatement rowCount;
 
+
+    /**
+     * Constructor for the configuration of the database connection.
+     */
     public AssetDataSource() {
         connection = DBConnection.getInstance();
         try {
@@ -47,7 +50,10 @@ public class AssetDataSource {
         }
     }
 
-
+    /**
+     * Add Asset to the asset table.
+     * @param a The Asset object
+     */
     public void addAsset(Asset a) {
         try {
             /* BEGIN MISSING CODE */
@@ -59,7 +65,9 @@ public class AssetDataSource {
         }
     }
 
-
+    /**
+     * Return the set of asset by retrieving information from database.
+     */
     public Set<String> nameSet() {
         Set<String> assetNames = new TreeSet<String>();
         ResultSet rs = null;
@@ -78,7 +86,10 @@ public class AssetDataSource {
         return assetNames;
     }
 
-
+    /**
+     * Return the specific asset by retrieving information from database.
+     * @param name The name of the offer.
+     */
     public Asset getAsset(String name) {
         Asset a = new Asset();
         ResultSet rs = null;
@@ -95,7 +106,9 @@ public class AssetDataSource {
         return a;
     }
 
-
+    /**
+     * Return the size of the asset table.
+     */
     public int getSize() {
         ResultSet rs = null;
         int rows = 0;
@@ -113,7 +126,9 @@ public class AssetDataSource {
         return rows;
     }
 
-
+    /**
+     * Delete the Asset from the asset table.
+     */
     public void deleteAsset(String name) {
         /* BEGIN MISSING CODE */
         try {
@@ -125,7 +140,9 @@ public class AssetDataSource {
         /* END MISSING CODE */
     }
 
-
+    /**
+     * Closing the database..
+     */
     public void close() {
         /* BEGIN MISSING CODE */
         try {

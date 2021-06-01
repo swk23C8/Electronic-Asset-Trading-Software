@@ -148,7 +148,7 @@ public class ServerManagement {
     private void handleCommand(Socket socket, ObjectInputStream inputStream, ObjectOutputStream outputStream,
                                Command command) throws IOException, ClassNotFoundException
     {
-        //if the datasource classes are used, remember to do synchronized (instance) {} when using
+        //if the datasource classes are used, remember to do synchronized (instance) {} when using this
         switch (command)
         {
             case ADD_OFFER:{

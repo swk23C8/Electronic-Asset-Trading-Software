@@ -12,7 +12,7 @@ public class ServerConnector {
 
     /** Method that pushes info to server **/
 
-    /** Possibly will merge ReadConfigClient here as a method or part of the connection **/
+    /** Possibly will merge ReadConfigClient here as a method/ part of the connection **/
     private String HOSTIP;
     private int PORT;
     private Socket socket;

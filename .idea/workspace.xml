@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Various comments, setup for socket commands and messages sent across (i.e. what process to be done), and db config property read in on the client side">
-      <change afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Changes to command functionality, specifically sockets and structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/SocketCommandHandling.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/CommandMethods.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Offer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/SocketMessages.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/SocketCommandHandling.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621168841568</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Changes to command functionality, specifically sockets and structure">
+      <created>1622517414943</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1622517414943</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +224,7 @@
     <MESSAGE value="Adding props files for requirements (client and server)" />
     <MESSAGE value="Commenting to classes and organisation of socket messaging classes" />
     <MESSAGE value="Various comments, setup for socket commands and messages sent across (i.e. what process to be done), and db config property read in on the client side" />
-    <option name="LAST_COMMIT_MESSAGE" value="Various comments, setup for socket commands and messages sent across (i.e. what process to be done), and db config property read in on the client side" />
+    <MESSAGE value="Changes to command functionality, specifically sockets and structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to command functionality, specifically sockets and structure" />
   </component>
 </project>

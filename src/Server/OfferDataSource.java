@@ -135,14 +135,17 @@ public class OfferDataSource {
     /**
      * Delete the offer from the curentTrade table.
      */
-    public void deleteOffer(Integer id) {
+    public boolean deleteOffer(Integer id) {
         /* BEGIN MISSING CODE */
         try {
             deleteOffer.setInt(1, id);
             deleteOffer.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return false;
         }
+        //Need proper return true or false if id exists in database
+        return true;
         /* END MISSING CODE */
     }
 

@@ -1,16 +1,17 @@
 package Server;
 
-import Common.Command;
-import Common.Offer;
+import Common.*;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
+
 
 /** Class with methods relating to server and client interaction
  * will likely need other classes to help implement this purpose
@@ -173,10 +174,64 @@ public class ServerManagement {
                 //p.getName(), socket.toString())
             }
             break;
-            case GET_OFFERS:{
+            case REMOVE_OFFER:{
+                final Offer removeOffer = (Offer) inputStream.readObject();
+                boolean isSuccessful;
+                synchronized (offerDatabase)
+                {
+                    isSuccessful = offerDatabase.deleteOffer(removeOffer.getId());
+                }
+                if (isSuccessful == true)
+                {
+                    outputStream.writeObject(Command.SUCCESS);
+                }
+                else
+                {
+                    outputStream.writeObject(Command.FAIL);
+                }
+            }
+            case GET_OFFERS: {
+                final List<Offer> currentOffers;
+                synchronized (offerDatabase) {
+                    currentOffers = offerDatabase.offerSet();
+                    // Need implementation in OfferDataSource
+                }
+                outputStream.writeObject(currentOffers);
+                outputStream.flush();
 
+                // Print to Server GUI "Information"
             }
             break;
+            case LOGIN:
+            {
+                final User loginInformation = (User) inputStream.readObject();
+                final User confirmationInformation;
+                synchronized (userDatabase)
+                {
+                    confirmationInformation = userDatabase.getUser(loginInformation.getUsername());
+                }
+
+                if (confirmationInformation != null && confirmationInformation.getPassword() ==
+                        loginInformation.getPassword())
+                {
+                    outputStream.writeObject(Command.SUCCESS);
+                }
+                else
+                {
+                    outputStream.writeObject(Command.FAIL);
+                }
+                //State if login successful on server gui, for user with name...
+            }
+            break;
+            case CHANGE_PASSWORD:
+            {
+                final User changeUser = (User) inputStream.readObject();
+                synchronized (userDatabase)
+                {
+                    userDatabase.changePassword(changeUser.getUsername());
+                }
+                //Output to server successful change in password for user "username"
+            }
         }
     }
 

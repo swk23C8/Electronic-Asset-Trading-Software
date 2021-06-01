@@ -149,6 +149,12 @@ public class UserDataSource {
         /* END MISSING CODE */
     }
 
+    public void changePassword(String name)
+    {
+
+    }
+
+
     /**
      * Closing the database.
      */

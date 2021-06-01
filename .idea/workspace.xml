@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Modifying reconcile.">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Modifications to server socket functionality, and general refactoring to merge versions.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OfferDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OfferDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/UserDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/UserDataSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +32,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -39,6 +43,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -212,14 +219,7 @@
       <option name="project" value="LOCAL" />
       <updated>1622532853085</updated>
     </task>
-    <task id="LOCAL-00013" summary="Modifying reconcile.">
-      <created>1622532965116</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1622532965116</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,7 +256,6 @@
     <MESSAGE value="Changes to command functionality, specifically sockets and structure" />
     <MESSAGE value="Modifications to server socket functionality" />
     <MESSAGE value="Modifications to server socket functionality, and general refactoring to merge versions." />
-    <MESSAGE value="Modifying reconcile." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifying reconcile." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifications to server socket functionality, and general refactoring to merge versions." />
   </component>
 </project>

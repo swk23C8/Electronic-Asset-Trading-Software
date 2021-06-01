@@ -1,10 +1,13 @@
 package Client;
 import Common.Command;
 import Common.Offer;
+import Common.User;
 
 import java.io.*;
 import java.net.Socket;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Properties;
 
 /** Class handling Client to Server Tasks**/
@@ -19,7 +22,7 @@ public class ServerConnector {
     private ObjectOutputStream outputStream;
     private ObjectInputStream inputStream;
 
-    private HashSet<Offer> currentOffers = new HashSet<>();
+    private List<Offer> currentOffers = new LinkedList<>();
 
     /** Constructor for class**/
     public ServerConnector() {
@@ -89,23 +92,83 @@ public class ServerConnector {
      * This needs to be entirely changed to use the socket command handling class, i.e.
      * will be removed
      */
-    public HashSet<Offer> GetOffers() {
+    public List<Offer> GetOffers() {
         //Remember we need to flush between read and write
         try {
             outputStream.writeObject(Command.GET_OFFERS);
             outputStream.flush();
-            currentOffers = (HashSet<Offer>) inputStream.readObject();
+            currentOffers = (LinkedList<Offer>) inputStream.readObject();
             return currentOffers;
         } catch (IOException | ClassNotFoundException e) {
             // Print the exception, but no need for a fatal error
             // if the connection with the server happens to be down
             e.printStackTrace();
+            return null;
         }
     }
 
-    public void removeOffer()
+    public boolean removeOffer(Offer removedOffer)
     {
+        //Return true if successful, otherwise false
+        try {
+            outputStream.writeObject(Command.REMOVE_OFFER);
+            outputStream.writeObject(removedOffer);
+            outputStream.flush();
+            final Command command = (Command) inputStream.readObject();
+            if (command == Command.SUCCESS)
+            {
+                //GUI Authentication
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return false;
+        }
+    }
 
+    public boolean login(User loginUser)
+    {
+        //Return true if successful, otherwise false
+        try {
+            outputStream.writeObject(Command.LOGIN);
+            outputStream.writeObject(loginUser);
+            outputStream.flush();
+            final Command command = (Command) inputStream.readObject();
+            if (command == Command.SUCCESS)
+            {
+                //GUI Authentication
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public void changePassword(User changedUser)
+    {
+        try {
+            outputStream.writeObject(Command.CHANGE_PASSWORD);
+            outputStream.writeObject(changedUser);
+            outputStream.flush();
+        } catch (IOException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+
+        }
     }
 
 }

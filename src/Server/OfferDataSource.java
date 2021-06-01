@@ -14,6 +14,7 @@ public class OfferDataSource {
 
     private static final String INSERT_OFFER = "INSERT INTO currentTrade (offerID, offerType, ouName, assetName, assetQty, price, date) VALUES (NULL, ?, ?, ?, ?, ?, date_format(now(), '%Y%m%d'));";
 
+    private static final String INSERT_HISTORY = "INSERT INTO tradeHistory (offerID, offerType, ouName, assetName, assetQty, price, date) VALUES (?, ?, ?, ?, ?, ?, date_format(now(), '%Y%m%d'));";
 
     private static final String LIST_OFFERS = "SELECT * FROM currentTrade";
 
@@ -28,6 +29,8 @@ public class OfferDataSource {
     private Connection connection;
 
     private PreparedStatement addOffer;
+
+    private PreparedStatement addHistory;
 
     private PreparedStatement getOfferList;
 
@@ -47,6 +50,7 @@ public class OfferDataSource {
         try {
 
             addOffer = connection.prepareStatement(INSERT_OFFER);
+            addHistory = connection.prepareStatement(INSERT_HISTORY);
             getOfferList = connection.prepareStatement(LIST_OFFERS);
             getOffer = connection.prepareStatement(GET_OFFER);
             deleteOffer = connection.prepareStatement(DELETE_OFFER);
@@ -65,7 +69,12 @@ public class OfferDataSource {
     public void addOffer(Offer o) {
         try {
 
-            addOffer.setInt(1, o.getId());
+            addOffer.setString(1, o.getOfferType());
+            addOffer.setString(2, o.getOUName());
+            addOffer.setString(3, o.getAssetName());
+            addOffer.setInt(4, o.getQuantity());
+            addOffer.setInt(5, o.getCreditsEach());
+
             // .... more setting for other columns.
             addOffer.execute();
 
@@ -74,15 +83,33 @@ public class OfferDataSource {
         }
     }
 
+    public void addHistory(Offer o) {
+        try {
+
+            addHistory.setInt(1, o.getId());
+            addHistory.setString(2, o.getOfferType());
+            addHistory.setString(3, o.getOUName());
+            addHistory.setString(4, o.getAssetName());
+            addHistory.setInt(5, o.getQuantity());
+            addHistory.setInt(6, o.getCreditsEach());
+
+            // .... more setting for other columns.
+            addHistory.execute();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     /**
      * Edit the quantity of the specific row in the currentTrade table.
-     * @param qty new quantity
-     * @param id id of the offer
+     * @param o edited Offer
+
      */
-    public void editQty(Integer qty, Integer id) {
+    public void editQty(Offer o) {
         try {
-            editQty.setInt(1, qty);
-            editQty.setInt(2, id);
+            editQty.setInt(1, o.getQuantity());
+            editQty.setInt(2, o.getId());
             editQty.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -125,6 +152,11 @@ public class OfferDataSource {
             rs = getOffer.executeQuery();
             rs.next();
             o.setId(rs.getInt(1));
+            o.setOfferType(rs.getString(2));
+            o.setOUName(rs.getString(3));
+            o.setAssetName(rs.getString(4));
+            o.setQuantity(rs.getInt(5));
+            o.setCreditsEach(rs.getInt(6));
 
         } catch (SQLException ex) {
             ex.printStackTrace();

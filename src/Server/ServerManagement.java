@@ -2,6 +2,7 @@ package Server;
 
 import Common.*;
 
+import javax.swing.*;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -244,12 +245,13 @@ public class ServerManagement {
     }
 
     //Function for reconciling
-    private void reconcile()
+    private static void reconcile()
     {
         OfferDataSource o = new OfferDataSource();
         List<Offer> list = o.offerSet();
 
         OUDataSource ou = new OUDataSource();
+        OUAssetDataSource ouAsset = new OUAssetDataSource();
 
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size(); j++){
@@ -272,13 +274,32 @@ public class ServerManagement {
 
                 if ((i < j) && (!type1.equals(type2)) && (!ou1.equals(ou2)) && (asset1.equals(asset2))) {
                     if (type1.equals("buy") && qty1 <= qty2 && price1 >= price2) {
+
+                        // The effect on OU's credit
                         OU buyer = ou.getOU(ou1);
                         OU seller = ou.getOU(ou2);
                         ou.editCredit(new OU(ou1, buyer.getCredits() - (price2 * qty1)));
                         ou.editCredit(new OU(ou2, seller.getCredits() + (price2 * qty1)));
+
+                        // The effect on asset qty OU possessing
+                        if (ouAsset.getOuAsset(ou1, asset1) == null) {
+                            ouAsset.addOuAsset(new AssetPossession(ou1, asset1, qty1));
+                            AssetPossession s = ouAsset.getOuAsset(ou2, asset2);
+                            ouAsset.editQty(new AssetPossession(ou2, asset2, s.getQuantity() - qty1));
+                        }
+                        else {
+                            AssetPossession b = ouAsset.getOuAsset(ou1, asset1);
+                            AssetPossession s = ouAsset.getOuAsset(ou2, asset2);
+                            ouAsset.editQty(new AssetPossession(ou1, asset1, b.getQuantity() + qty1));
+                            ouAsset.editQty(new AssetPossession(ou2, asset2, s.getQuantity() - qty1));
+                        }
+
+                        // The update on currentTrade
                         if (qty1.equals(qty2)) {
                             o.deleteOffer(id1);
+                            o.addHistory(list.get(i));
                             o.deleteOffer(id2);
+                            o.addHistory(list.get(j));
                             Offer tmp1 = list.get(i);
                             list.remove(i);
                             list.add(0, tmp1);
@@ -287,9 +308,10 @@ public class ServerManagement {
                             list.add(1, tmp2);
                         }
                         else {
-                            o.editQty(qty2 - qty1, id2);
                             list.get(j).setQuantity(qty2 - qty1);
+                            o.editQty(list.get(j));
                             o.deleteOffer(id1);
+                            o.addHistory(list.get(i));
                             Offer tmp1 = list.get(i);
                             list.remove(i);
                             list.add(0, tmp1);
@@ -300,14 +322,32 @@ public class ServerManagement {
                     }
 
                     else if (type2.equals("buy") && qty2 <= qty1 && price2 >= price1) {
+
+                        // The effect on OU's credit
                         OU buyer = ou.getOU(ou2);
                         OU seller = ou.getOU(ou1);
                         ou.editCredit(new OU(ou2, buyer.getCredits() - (price1 * qty2)));
                         ou.editCredit(new OU(ou1, seller.getCredits() + (price1 * qty2)));
 
+                        // The effect on asset qty OU possessing
+                        if (ouAsset.getOuAsset(ou2, asset2) == null) {
+                            ouAsset.addOuAsset(new AssetPossession(ou2, asset2, qty2));
+                            AssetPossession s = ouAsset.getOuAsset(ou1, asset1);
+                            ouAsset.editQty(new AssetPossession(ou1, asset1, s.getQuantity() - qty2));
+                        }
+                        else {
+                            AssetPossession b = ouAsset.getOuAsset(ou2, asset2);
+                            AssetPossession s = ouAsset.getOuAsset(ou1, asset1);
+                            ouAsset.editQty(new AssetPossession(ou2, asset2, b.getQuantity() + qty2));
+                            ouAsset.editQty(new AssetPossession(ou1, asset1, s.getQuantity() - qty2));
+                        }
+
+                        // The update on the currentTrade
                         if (qty1.equals(qty2)) {
                             o.deleteOffer(id1);
+                            o.addHistory(list.get(i));
                             o.deleteOffer(id2);
+                            o.addHistory(list.get(j));
                             Offer tmp1 = list.get(i);
                             list.remove(i);
                             list.add(0, tmp1);
@@ -316,9 +356,10 @@ public class ServerManagement {
                             list.add(1, tmp2);
                         }
                         else {
-                            o.editQty(qty1 - qty2, id1);
                             list.get(i).setQuantity(qty1 - qty2);
+                            o.editQty(list.get(i));
                             o.deleteOffer(id2);
+                            o.addHistory(list.get(j));
                             Offer tmp1 = list.get(j);
                             list.remove(j);
                             list.add(0, tmp1);
@@ -333,6 +374,11 @@ public class ServerManagement {
 
 
         }
-        System.out.println(list.get(7).getOfferType());
+        o.close();
+        //System.out.println(list.get(7).getOfferType());
+    }
+
+    public static void main(String[] args) {
+        reconcile();
     }
 }

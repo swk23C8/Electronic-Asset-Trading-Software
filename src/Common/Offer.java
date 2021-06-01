@@ -30,6 +30,14 @@ public class Offer implements Serializable {
         this.creditsEach = creditsEach;
     }
 
+    public Offer(String type, String OUName, String assetName, Integer quantity, Integer creditsEach) {
+        this.OUName = OUName;
+        this.offerType = type;
+        this.assetName = assetName;
+        this.quantity = quantity;
+        this.creditsEach = creditsEach;
+    }
+
     public Offer()
     {
 

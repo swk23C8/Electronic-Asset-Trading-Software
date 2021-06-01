@@ -3,24 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="New Version with new concept">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Asset.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AdminCommands.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Asset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Asset.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/ClientCommands.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OU.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OU.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Offer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Offer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/OuUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/OuUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Offer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Trades.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/OUDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Offer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/OfferDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OfferDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
     </list>
@@ -32,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +55,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ServerManagement">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Common.Main" />
       <module name="qut_cab302_project" />
@@ -107,6 +95,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServerManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.ServerManagement" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserDBtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DBtestUI.UserDBtest" />
       <module name="qut_cab302_project" />
@@ -122,6 +123,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ServerManagement" />
         <item itemvalue="Application.Reconcile" />
         <item itemvalue="Application.OuDBtest" />
         <item itemvalue="Application.UserDBtest" />
@@ -187,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621154237988</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Applying complete condition on Reconcile method">
+      <created>1622540348546</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1622540348546</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +228,7 @@
     <MESSAGE value="dd" />
     <MESSAGE value="New Version with new concept" />
     <MESSAGE value="Adding props files for requirements (client and server)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding props files for requirements (client and server)" />
+    <MESSAGE value="Applying complete condition on Reconcile method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Applying complete condition on Reconcile method" />
   </component>
 </project>

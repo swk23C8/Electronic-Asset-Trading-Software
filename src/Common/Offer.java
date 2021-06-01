@@ -28,6 +28,11 @@ public class Offer implements Serializable {
         this.creditsEach = creditsEach;
     }
 
+    public Offer()
+    {
+
+    }
+
     /**
      * Getter and setter methods for the Offer class
      */

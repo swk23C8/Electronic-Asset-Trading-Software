@@ -173,6 +173,7 @@ public class ServerManagement {
         running.set(false);
     }
 
+    //Function for reconciling
     private void reconcile()
     {
         OfferDataSource o = new OfferDataSource();

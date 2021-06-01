@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Modifications to server socket functionality">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Offer.java" afterDir="false" />
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Modifications to server socket functionality, and general refactoring to merge versions.">
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622532615094</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Modifications to server socket functionality, and general refactoring to merge versions.">
+      <created>1622532853085</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1622532853085</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,6 +246,7 @@
     <MESSAGE value="Various comments, setup for socket commands and messages sent across (i.e. what process to be done), and db config property read in on the client side" />
     <MESSAGE value="Changes to command functionality, specifically sockets and structure" />
     <MESSAGE value="Modifications to server socket functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifications to server socket functionality" />
+    <MESSAGE value="Modifications to server socket functionality, and general refactoring to merge versions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifications to server socket functionality, and general refactoring to merge versions." />
   </component>
 </project>

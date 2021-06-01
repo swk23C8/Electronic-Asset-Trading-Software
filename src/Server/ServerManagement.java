@@ -248,10 +248,14 @@ public class ServerManagement {
     {
         OfferDataSource o = new OfferDataSource();
         List<Offer> list = o.offerSet();
+
+        OUDataSource ou = new OUDataSource();
+
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size(); j++){
                 if (i == j) {
                     continue;
+
                 }
                 Integer id1 = list.get(i).getId();
                 Integer id2 = list.get(j).getId();
@@ -266,21 +270,68 @@ public class ServerManagement {
                 Integer price1 = list.get(i).getCreditsEach();
                 Integer price2 = list.get(j).getCreditsEach();
 
-                if ((i < j) && (!type1.equals(type2))
-                        && (!ou1.equals(ou2))
-                        && (asset1.equals(asset2))
-                        && (qty1.equals(qty2)) && (price1.equals(price2))) {
-                    o.deleteOffer(id1);
-                    o.deleteOffer(id2);
-                    Offer tmp1 = list.get(i);
-                    Offer tmp2 = list.get(j);
-                    list.remove(i);
-                    list.add(0, tmp1);
-                    list.remove(j);
-                    list.add(1, tmp2);
-                    break;
+                if ((i < j) && (!type1.equals(type2)) && (!ou1.equals(ou2)) && (asset1.equals(asset2))) {
+                    if (type1.equals("buy") && qty1 <= qty2 && price1 >= price2) {
+                        OU buyer = ou.getOU(ou1);
+                        OU seller = ou.getOU(ou2);
+                        ou.editCredit(new OU(ou1, buyer.getCredits() - (price2 * qty1)));
+                        ou.editCredit(new OU(ou2, seller.getCredits() + (price2 * qty1)));
+                        if (qty1.equals(qty2)) {
+                            o.deleteOffer(id1);
+                            o.deleteOffer(id2);
+                            Offer tmp1 = list.get(i);
+                            list.remove(i);
+                            list.add(0, tmp1);
+                            Offer tmp2 = list.get(j);
+                            list.remove(j);
+                            list.add(1, tmp2);
+                        }
+                        else {
+                            o.editQty(qty2 - qty1, id2);
+                            list.get(j).setQuantity(qty2 - qty1);
+                            o.deleteOffer(id1);
+                            Offer tmp1 = list.get(i);
+                            list.remove(i);
+                            list.add(0, tmp1);
+                        }
+
+                        break;
+
+                    }
+
+                    else if (type2.equals("buy") && qty2 <= qty1 && price2 >= price1) {
+                        OU buyer = ou.getOU(ou2);
+                        OU seller = ou.getOU(ou1);
+                        ou.editCredit(new OU(ou2, buyer.getCredits() - (price1 * qty2)));
+                        ou.editCredit(new OU(ou1, seller.getCredits() + (price1 * qty2)));
+
+                        if (qty1.equals(qty2)) {
+                            o.deleteOffer(id1);
+                            o.deleteOffer(id2);
+                            Offer tmp1 = list.get(i);
+                            list.remove(i);
+                            list.add(0, tmp1);
+                            Offer tmp2 = list.get(j);
+                            list.remove(j);
+                            list.add(1, tmp2);
+                        }
+                        else {
+                            o.editQty(qty1 - qty2, id1);
+                            list.get(i).setQuantity(qty1 - qty2);
+                            o.deleteOffer(id2);
+                            Offer tmp1 = list.get(j);
+                            list.remove(j);
+                            list.add(0, tmp1);
+                        }
+//
+                        break;
+                    }
+
                 }
+
             }
+
+
         }
         System.out.println(list.get(7).getOfferType());
     }

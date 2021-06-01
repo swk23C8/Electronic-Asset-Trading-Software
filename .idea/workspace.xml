@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Modifications to server socket functionality, and general refactoring to merge versions.">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="New Version with new concept">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Asset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AdminCommands.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Asset.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Asset.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/ClientCommands.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OU.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OU.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Offer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Offer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/OuUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/OuUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Offer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Trades.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OUDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/OfferDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OfferDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/UserDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/UserDataSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,22 +32,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="main" />
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="35cfbbfca133d8fac67205b34dfd5adb1fa37940" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -43,9 +50,6 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
-  <component name="ProjectLevelVcsManager">
-    <OptionsSetting value="false" id="Update" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -118,11 +122,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserDBtest" />
         <item itemvalue="Application.Reconcile" />
         <item itemvalue="Application.OuDBtest" />
+        <item itemvalue="Application.UserDBtest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Reconcile" />
       </list>
     </recent_temporary>
   </component>
@@ -184,42 +187,7 @@
       <option name="project" value="LOCAL" />
       <updated>1621154237988</updated>
     </task>
-    <task id="LOCAL-00008" summary="Commenting to classes and organisation of socket messaging classes">
-      <created>1621165805256</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1621165805256</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Various comments, setup for socket commands and messages sent across (i.e. what process to be done), and db config property read in on the client side">
-      <created>1621168841568</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1621168841568</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Changes to command functionality, specifically sockets and structure">
-      <created>1622517414943</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1622517414943</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Modifications to server socket functionality">
-      <created>1622532615094</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1622532615094</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Modifications to server socket functionality, and general refactoring to merge versions.">
-      <created>1622532853085</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1622532853085</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,7 +201,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="origin/RebrandedClasses" />
                       </list>
                     </value>
                   </entry>
@@ -251,11 +219,6 @@
     <MESSAGE value="dd" />
     <MESSAGE value="New Version with new concept" />
     <MESSAGE value="Adding props files for requirements (client and server)" />
-    <MESSAGE value="Commenting to classes and organisation of socket messaging classes" />
-    <MESSAGE value="Various comments, setup for socket commands and messages sent across (i.e. what process to be done), and db config property read in on the client side" />
-    <MESSAGE value="Changes to command functionality, specifically sockets and structure" />
-    <MESSAGE value="Modifications to server socket functionality" />
-    <MESSAGE value="Modifications to server socket functionality, and general refactoring to merge versions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifications to server socket functionality, and general refactoring to merge versions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding props files for requirements (client and server)" />
   </component>
 </project>

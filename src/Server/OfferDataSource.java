@@ -12,7 +12,7 @@ import java.util.List;
 
 public class OfferDataSource {
 
-    private static final String INSERT_OFFER = "INSERT INTO currentTrade (offerID, offerType, ouName, assetName, assetQty, price, date) VALUES (?, ?, ?, ?, ?, ?, ?);";
+    private static final String INSERT_OFFER = "INSERT INTO currentTrade (offerID, offerType, ouName, assetName, assetQty, price, date) VALUES (NULL, ?, ?, ?, ?, ?, date_format(now(), '%Y%m%d'));";
 
 
     private static final String LIST_OFFERS = "SELECT * FROM currentTrade";
@@ -20,6 +20,8 @@ public class OfferDataSource {
     private static final String GET_OFFER = "SELECT * FROM currentTrade WHERE offerID=?";
 
     private static final String DELETE_OFFER = "DELETE FROM currentTrade WHERE offerID=?";
+
+    private static final String Update_Qty = "UPDATE currentTrade SET assetQty=? WHERE offerID=?";
 
     private static final String COUNT_ROWS = "SELECT COUNT(*) FROM currentTrade";
 
@@ -32,6 +34,8 @@ public class OfferDataSource {
     private PreparedStatement getOffer;
 
     private PreparedStatement deleteOffer;
+
+    private PreparedStatement editQty;
 
     private PreparedStatement rowCount;
 
@@ -46,6 +50,7 @@ public class OfferDataSource {
             getOfferList = connection.prepareStatement(LIST_OFFERS);
             getOffer = connection.prepareStatement(GET_OFFER);
             deleteOffer = connection.prepareStatement(DELETE_OFFER);
+            editQty = connection.prepareStatement(Update_Qty);
             rowCount = connection.prepareStatement(COUNT_ROWS);
 
         } catch (SQLException ex) {
@@ -67,6 +72,22 @@ public class OfferDataSource {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+    }
+
+    /**
+     * Edit the quantity of the specific row in the currentTrade table.
+     * @param qty new quantity
+     * @param id id of the offer
+     */
+    public void editQty(Integer qty, Integer id) {
+        try {
+            editQty.setInt(1, qty);
+            editQty.setInt(2, id);
+            editQty.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
     }
 
 

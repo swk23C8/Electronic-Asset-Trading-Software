@@ -15,7 +15,7 @@ public class OUDataSource {
 
     private static final String INSERT_OU = "INSERT INTO ou (ouName, credit) VALUES (?, ?);";
 
-    private static final String UPDATE_CREDIT = "UPDATE ou SET credit=? where ouName=?";
+    private static final String UPDATE_CREDIT = "UPDATE ou SET credit=? WHERE ouName=?";
 
     private static final String LIST_OU = "SELECT * FROM ou";
 
@@ -23,8 +23,8 @@ public class OUDataSource {
 
     private static final String DELETE_OU = "DELETE FROM ou WHERE ouName=?";
 
-    private static final String COUNT_ROWS = "SELECT COUNT(*) FROM ou"
-            ;
+    private static final String COUNT_ROWS = "SELECT COUNT(*) FROM ou";
+
     private Connection connection;
 
     private PreparedStatement addOU;

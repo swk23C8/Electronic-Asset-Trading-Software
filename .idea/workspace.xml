@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="New Version with new concept">
-      <change afterPath="$PROJECT_DIR$/src/Common/CommandMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/AdminCommands.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Asset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Asset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/ClientCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/socketMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/DBConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/OU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/OU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Offer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBtestUI/OuUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBtestUI/OuUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/OUDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/OfferDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OfferDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Reconcile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Reconcile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +21,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -42,6 +32,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

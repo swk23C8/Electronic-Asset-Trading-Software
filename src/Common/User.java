@@ -12,6 +12,7 @@ public class User implements Serializable {
      */
     private String username;
     private String password;
+    private String saltValue;
     private String ou;
     private String type;
 
@@ -82,4 +83,11 @@ public class User implements Serializable {
     }
 
 
+    public String getSaltValue() {
+        return saltValue;
+    }
+
+    public void setSaltValue(String saltValue) {
+        this.saltValue = saltValue;
+    }
 }

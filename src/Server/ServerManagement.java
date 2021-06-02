@@ -4,9 +4,12 @@ import Common.*;
 
 import javax.swing.*;
 import java.io.*;
+import java.math.BigInteger;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -379,7 +382,7 @@ public class ServerManagement {
                 final User changeUser = (User) inputStream.readObject();
                 synchronized (userDatabase)
                 {
-                    userDatabase.changePassword(changeUser.getUsername());
+                    userDatabase.changePassword(changeUser);
                 }
                 //Output to server successful change in password for user "username"
             }
@@ -530,7 +533,16 @@ public class ServerManagement {
         //System.out.println(list.get(7).getOfferType());
     }
 
+
     public static void main(String[] args) {
+
+        //testing the password verifying function
+        UserDataSource u = new UserDataSource();
+        String password = "abc123";
+        System.out.println(u.getUser("n10559540").getPassword().equals(u.passwordCheck(password, u.getUser("n10559540"))));
+
+
+        //testing reconcile method
         reconcile();
     }
 }

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Added some more socket functionalities. Most of s.functionalities are done? Maybe need refactoring?&#10;Added functions to ServerConnector to reflect ServerManagement.">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="New Version with new concept">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OUAssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUAssetDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/UserDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/UserDataSource.java" afterDir="false" />
     </list>
@@ -21,17 +24,9 @@
       </list>
     </option>
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="main" />
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="35cfbbfca133d8fac67205b34dfd5adb1fa37940" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -42,9 +37,6 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
-  <component name="ProjectLevelVcsManager">
-    <OptionsSetting value="false" id="Update" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,7 +54,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ServerManagement">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Common.Main" />
       <module name="qut_cab302_project" />
@@ -102,6 +94,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServerManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.ServerManagement" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserDBtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DBtestUI.UserDBtest" />
       <module name="qut_cab302_project" />
@@ -117,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ServerManagement" />
         <item itemvalue="Application.UserDBtest" />
         <item itemvalue="Application.Reconcile" />
         <item itemvalue="Application.OuDBtest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Reconcile" />
       </list>
     </recent_temporary>
   </component>
@@ -183,63 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621154237988</updated>
     </task>
-    <task id="LOCAL-00008" summary="Commenting to classes and organisation of socket messaging classes">
-      <created>1621165805256</created>
+    <task id="LOCAL-00008" summary="Applying complete condition on Reconcile method">
+      <created>1622540348546</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1621165805256</updated>
+      <updated>1622540348546</updated>
     </task>
-    <task id="LOCAL-00009" summary="Various comments, setup for socket commands and messages sent across (i.e. what process to be done), and db config property read in on the client side">
-      <created>1621168841568</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1621168841568</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Changes to command functionality, specifically sockets and structure">
-      <created>1622517414943</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1622517414943</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Modifications to server socket functionality">
-      <created>1622532615094</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1622532615094</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Modifications to server socket functionality, and general refactoring to merge versions.">
-      <created>1622532853085</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1622532853085</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Added some more socket functionalities. Added AssetSet() and some commands for asset">
-      <created>1622603682496</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1622603682496</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Added some more socket functionalities. Added more commands and OU Asset socket functions">
-      <created>1622606747676</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1622606747676</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Added some more socket functionalities. Most of s.functionalities are done? Maybe need refactoring?&#10;Added functions to ServerConnector to reflect ServerManagement.">
-      <created>1622622098745</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1622622098746</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +209,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="origin/RebrandedClasses" />
                       </list>
                     </value>
                   </entry>
@@ -271,14 +227,7 @@
     <MESSAGE value="dd" />
     <MESSAGE value="New Version with new concept" />
     <MESSAGE value="Adding props files for requirements (client and server)" />
-    <MESSAGE value="Commenting to classes and organisation of socket messaging classes" />
-    <MESSAGE value="Various comments, setup for socket commands and messages sent across (i.e. what process to be done), and db config property read in on the client side" />
-    <MESSAGE value="Changes to command functionality, specifically sockets and structure" />
-    <MESSAGE value="Modifications to server socket functionality" />
-    <MESSAGE value="Modifications to server socket functionality, and general refactoring to merge versions." />
-    <MESSAGE value="Added some more socket functionalities. Added AssetSet() and some commands for asset" />
-    <MESSAGE value="Added some more socket functionalities. Added more commands and OU Asset socket functions" />
-    <MESSAGE value="Added some more socket functionalities. Most of s.functionalities are done? Maybe need refactoring?&#10;Added functions to ServerConnector to reflect ServerManagement." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some more socket functionalities. Most of s.functionalities are done? Maybe need refactoring?&#10;Added functions to ServerConnector to reflect ServerManagement." />
+    <MESSAGE value="Applying complete condition on Reconcile method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Applying complete condition on Reconcile method" />
   </component>
 </project>

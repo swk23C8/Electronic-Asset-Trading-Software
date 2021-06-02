@@ -3,14 +3,19 @@ package Server;
 
 import Common.User;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class UserDataSource {
-    private static final String INSERT_USER = "INSERT INTO user (username, password, ouName, accountType) VALUES (?, ?, ?, ?);";
+    private static final String INSERT_USER = "INSERT INTO user (username, password, saltValue, ouName, accountType) VALUES (?, ?, ?, ?, ?);";
+
+    private static final String UPDATE_PASSWORD = "UPDATE user SET password=? WHERE username=?";
+
+    private static final String  UPDATE_SALT_VALUE = "UPADATE user SET saltValue=? WHERE username=?";
 
     private static final String COUNT_ROWS = "SELECT COUNT(*) FROM user";
 
@@ -25,6 +30,10 @@ public class UserDataSource {
     private Connection connection;
 
     private PreparedStatement addUser;
+
+    private PreparedStatement changePassword;
+
+    private PreparedStatement changeSaltValue;
 
     private PreparedStatement getUserList;
 
@@ -43,6 +52,8 @@ public class UserDataSource {
 
             /* BEGIN MISSING CODE */
             addUser = connection.prepareStatement(INSERT_USER);
+            changePassword = connection.prepareStatement(UPDATE_PASSWORD);
+            changeSaltValue = connection.prepareStatement(UPDATE_SALT_VALUE);
             getUserList = connection.prepareStatement(LIST_USERS);
             getUser = connection.prepareStatement(GET_USER);
             deleteUser = connection.prepareStatement(DELETE_USER);
@@ -54,6 +65,53 @@ public class UserDataSource {
     }
 
     /**
+     * Hashing the User password with the salt string.
+     * @param u The User object
+     */
+    public String saltPassword(User u) {
+        String raw = u.getPassword();
+        SecureRandom random = null;
+        try {
+            random = SecureRandom.getInstance("SHA1PRNG");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        byte[] bytes = new byte[16];
+        random.nextBytes(bytes);
+        String salt = new String(Base64.getEncoder().encode(bytes));
+        u.setSaltValue(salt);
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("SHA-256");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md.update(salt.getBytes());
+        md.update(raw.getBytes());
+        String hex = String.format("%064x", new BigInteger(1, md.digest()));
+        return hex;
+    }
+
+    /**
+     * Verifying the user input password
+     * @param  raw The user input password
+     * @param u The User object
+     */
+    public String passwordCheck(String raw, User u) {
+        String salt = u.getSaltValue();
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("SHA-256");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md.update(salt.getBytes());
+        md.update(raw.getBytes());
+        String hex = String.format("%064x", new BigInteger(1, md.digest()));
+        return hex;
+    }
+
+    /**
      * Add User to the user table.
      * @param u The User object
      */
@@ -61,9 +119,10 @@ public class UserDataSource {
         try {
             /* BEGIN MISSING CODE */
             addUser.setString(1, u.getUsername());
-            addUser.setString(2, u.getPassword());
-            addUser.setString(3, u.getOu());
-            addUser.setString(4, u.getType());
+            addUser.setString(2, saltPassword(u));
+            addUser.setString(3,u.getSaltValue());
+            addUser.setString(4, u.getOu());
+            addUser.setString(5, u.getType());
             addUser.execute();
             /* END MISSING CODE */
         } catch (SQLException ex) {
@@ -71,6 +130,19 @@ public class UserDataSource {
         }
     }
 
+    public void changePassword(User u) {
+
+        try {
+            changePassword.setString(1, saltPassword(u));
+            changePassword.setString(2, u.getUsername());
+            changeSaltValue.setString(1, u.getSaltValue());
+            changeSaltValue.setString(2, u.getUsername());
+            changePassword.executeUpdate();
+            changeSaltValue.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
     /**
      * Return the set of user by retrieving information from database.
      */
@@ -106,6 +178,7 @@ public class UserDataSource {
             rs.next();
             u.setUsername(rs.getString("username"));
             u.setPassword(rs.getString("password"));
+            u.setSaltValue(rs.getString("saltValue"));
             u.setOu(rs.getString("ouName"));
             u.setType(rs.getString("accountType"));
         } catch (SQLException ex) {
@@ -149,11 +222,6 @@ public class UserDataSource {
         }
         return true;
         /* END MISSING CODE */
-    }
-
-    public void changePassword(String name)
-    {
-
     }
 
 

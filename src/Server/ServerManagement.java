@@ -32,6 +32,7 @@ public class ServerManagement {
     private AtomicBoolean running = new AtomicBoolean(true);
     private static final int SOCKET_READ_TIMEOUT = 5000;
     private AssetDataSource assetDatabase;
+    private OUAssetDataSource OUAssetDatabase;
     private OfferDataSource offerDatabase;
     private OUDataSource OUDatabase;
     private UserDataSource userDatabase;
@@ -239,6 +240,40 @@ public class ServerManagement {
                 outputStream.flush();
             }
             break;
+            case ADD_OU_ASSET:{
+                final AssetPossession newOUAsset = (AssetPossession) inputStream.readObject();
+                synchronized (OUAssetDatabase)
+                {
+                    OUAssetDatabase.addOuAsset(newOUAsset);
+                }
+            }
+            break;
+            case GET_OU_ASSET:{
+                final List<AssetPossession> currentOUAsset;
+                synchronized (OUAssetDatabase)
+                {
+                    currentOUAsset = OUAssetDatabase.offerSet();
+                }
+                outputStream.writeObject(currentOUAsset);
+                outputStream.flush();
+            }
+            break;
+            case DELETE_OU_ASSET:{
+                final AssetPossession removedOUAsset = (AssetPossession) inputStream.readObject();
+                boolean IsSuccessful;
+                synchronized (OUAssetDatabase)
+                {
+                    IsSuccessful = OUAssetDatabase.deleteOffer((removedOUAsset.getOu()), removedOUAsset.getAsset());
+                }
+                if (IsSuccessful == true)
+                {
+                    outputStream.writeObject(Command.SUCCESS);
+                }
+                else
+                {
+                    outputStream.writeObject(Command.FAIL);
+                }
+            }
             case LOGIN:
             {
                 final User loginInformation = (User) inputStream.readObject();

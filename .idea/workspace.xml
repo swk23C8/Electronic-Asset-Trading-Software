@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Modifications to server socket functionality, and general refactoring to merge versions.">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Added some more socket functionalities. Added AssetSet() and some commands for asset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Common/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/AssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/AssetDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/OfferDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OfferDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/UserDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/UserDataSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622532853085</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added some more socket functionalities. Added AssetSet() and some commands for asset">
+      <created>1622603682496</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622603682496</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,6 +260,7 @@
     <MESSAGE value="Changes to command functionality, specifically sockets and structure" />
     <MESSAGE value="Modifications to server socket functionality" />
     <MESSAGE value="Modifications to server socket functionality, and general refactoring to merge versions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifications to server socket functionality, and general refactoring to merge versions." />
+    <MESSAGE value="Added some more socket functionalities. Added AssetSet() and some commands for asset" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some more socket functionalities. Added AssetSet() and some commands for asset" />
   </component>
 </project>

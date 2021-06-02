@@ -8,8 +8,10 @@ public enum Command{
     ADD_OFFER,
     REMOVE_OFFER,
     GET_OFFERS,
+    ADD_ASSET,
+    REMOVE_ASSET,
+    GET_ASSET,
     CHANGE_PASSWORD,
-    EXAMPLE_COMMAND,
     FAIL,
     SUCCESS
 }

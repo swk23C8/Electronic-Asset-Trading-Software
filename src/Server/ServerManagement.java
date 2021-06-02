@@ -203,6 +203,42 @@ public class ServerManagement {
                 // Print to Server GUI "Information"
             }
             break;
+            case ADD_ASSET: {
+                final Asset newAsset = (Asset) inputStream.readObject();
+                synchronized (assetDatabase)
+                {
+                    assetDatabase.addAsset(newAsset);
+                }
+                // Would we have the same done with the offer case?
+            }
+            break;
+            case REMOVE_ASSET:{
+                final Asset removedAsset = (Asset) inputStream.readObject();
+                boolean isSuccessful;
+                synchronized (assetDatabase)
+                {
+                    isSuccessful = assetDatabase.deleteAsset(removedAsset.getAsset());
+                }
+                if (isSuccessful == true)
+                {
+                    outputStream.writeObject(Command.SUCCESS);
+                }
+                else
+                {
+                    outputStream.writeObject(Command.FAIL);
+                }
+            }
+            break;
+            case GET_ASSET:{
+                final List<Asset> currentAssets;
+                synchronized (assetDatabase)
+                {
+                    currentAssets = assetDatabase.AssetSet();
+                }
+                outputStream.writeObject(currentAssets);
+                outputStream.flush();
+            }
+            break;
             case LOGIN:
             {
                 final User loginInformation = (User) inputStream.readObject();
@@ -233,6 +269,8 @@ public class ServerManagement {
                 }
                 //Output to server successful change in password for user "username"
             }
+            break;
+
         }
     }
 

@@ -1,8 +1,11 @@
 package Server;
 
 import Common.Asset;
+import Common.Offer;
 
 import java.sql.*;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -87,6 +90,27 @@ public class AssetDataSource {
     }
 
     /**
+     * Return a list of Asset from the information from the database
+     */
+    public List<Asset> AssetSet() {
+        List<Asset> assetList = new LinkedList<>();
+        ResultSet rs = null;
+
+        /* BEGIN MISSING CODE */
+        try {
+            rs = getAssetList.executeQuery();
+            while (rs.next()) {
+                assetList.add(new Asset(rs.getString(1)));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        /* END MISSING CODE */
+
+        return assetList;
+    }
+
+    /**
      * Return the specific asset by retrieving information from database.
      * @param name The name of the offer.
      */
@@ -129,14 +153,16 @@ public class AssetDataSource {
     /**
      * Delete the Asset from the asset table.
      */
-    public void deleteAsset(String name) {
+    public boolean deleteAsset(String name) {
         /* BEGIN MISSING CODE */
         try {
             deleteAsset.setString(1, name);
             deleteAsset.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return false;
         }
+        return true;
         /* END MISSING CODE */
     }
 

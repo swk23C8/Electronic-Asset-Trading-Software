@@ -155,14 +155,16 @@ public class OUDataSource {
     /**
      * Delete the OU from the ou table.
      */
-    public void deleteOU(String name) {
+    public boolean deleteOU(String name) {
         /* BEGIN MISSING CODE */
         try {
             deleteOU.setString(1, name);
             deleteOU.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return false;
         }
+        return true;
         /* END MISSING CODE */
     }
 

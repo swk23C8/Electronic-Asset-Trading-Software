@@ -7,10 +7,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 
@@ -196,7 +193,6 @@ public class ServerManagement {
                 final List<Offer> currentOffers;
                 synchronized (offerDatabase) {
                     currentOffers = offerDatabase.offerSet();
-                    // Need implementation in OfferDataSource
                 }
                 outputStream.writeObject(currentOffers);
                 outputStream.flush();
@@ -274,6 +270,51 @@ public class ServerManagement {
                     outputStream.writeObject(Command.FAIL);
                 }
             }
+            break;
+            case ADD_OU:{
+                final OU newOU = (OU) inputStream.readObject();
+                synchronized (OUDatabase)
+                {
+                    OUDatabase.addOU(newOU);
+                }
+            }
+            break;
+
+            case GET_OU:{
+                final HashMap<String,Integer> OUList;
+                synchronized (OUDatabase)
+                {
+                    OUList = OUDatabase.ouList();
+                }
+                outputStream.writeObject(OUList);
+                outputStream.flush();
+            }
+            break;
+            case EDIT_OU:{
+                final OU chosenOU = (OU) inputStream.readObject();
+                synchronized (OUDatabase)
+                {
+                    OUDatabase.editCredit(chosenOU);
+                }
+            }
+            break;
+            case REMOVE_OU:{
+                final OU removeOU = (OU) inputStream.readObject();
+                boolean isSuccessful;
+                synchronized (OUDatabase)
+                {
+                    isSuccessful = OUDatabase.deleteOU(removeOU.getOuName());
+                }
+                if (isSuccessful == true)
+                {
+                    outputStream.writeObject(Command.SUCCESS);
+                }
+                else
+                {
+                    outputStream.writeObject(Command.FAIL);
+                }
+            }
+            break;
             case LOGIN:
             {
                 final User loginInformation = (User) inputStream.readObject();

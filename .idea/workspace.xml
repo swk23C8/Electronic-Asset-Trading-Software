@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Added some more socket functionalities. Added AssetSet() and some commands for asset">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Added some more socket functionalities. Added more commands and OU Asset socket functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Common/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OUDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -223,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622603682496</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added some more socket functionalities. Added more commands and OU Asset socket functions">
+      <created>1622606747676</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622606747676</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,6 +270,7 @@
     <MESSAGE value="Modifications to server socket functionality" />
     <MESSAGE value="Modifications to server socket functionality, and general refactoring to merge versions." />
     <MESSAGE value="Added some more socket functionalities. Added AssetSet() and some commands for asset" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some more socket functionalities. Added AssetSet() and some commands for asset" />
+    <MESSAGE value="Added some more socket functionalities. Added more commands and OU Asset socket functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some more socket functionalities. Added more commands and OU Asset socket functions" />
   </component>
 </project>

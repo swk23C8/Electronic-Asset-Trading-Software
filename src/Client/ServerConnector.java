@@ -1,14 +1,9 @@
 package Client;
-import Common.Command;
-import Common.Offer;
-import Common.User;
+import Common.*;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 /** Class handling Client to Server Tasks**/
 public class ServerConnector {
@@ -23,6 +18,10 @@ public class ServerConnector {
     private ObjectInputStream inputStream;
 
     private List<Offer> currentOffers = new LinkedList<>();
+    private List<Asset> currentAssets = new LinkedList<>();
+    private List<AssetPossession> currentOUAsset = new LinkedList<>();
+    private HashMap<String,Integer> currentOUs = new HashMap<>();
+
 
     /** Constructor for class**/
     public ServerConnector() {
@@ -131,6 +130,194 @@ public class ServerConnector {
             return false;
         }
     }
+
+    public void addAsset(Asset newAsset)
+    {
+        if (newAsset == null)
+        {
+            throw new IllegalArgumentException("Offer cannot be null");
+        }
+        try{
+            outputStream.writeObject(Command.ADD_OFFER);
+            /** Change this to just send a list of strings, though possibly not so multiple offers
+             * can be sent across easily in GetOffers
+             */
+            Asset createdAsset = new Asset("");
+            outputStream.writeObject(createdAsset);
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean removeAsset(Asset removedAsset)
+    {
+        //Return true if successful, otherwise false
+        try {
+            outputStream.writeObject(Command.REMOVE_ASSET);
+            outputStream.writeObject(removedAsset);
+            outputStream.flush();
+            final Command command = (Command) inputStream.readObject();
+            if (command == Command.SUCCESS)
+            {
+                //GUI Authentication
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public List<Asset> getAsset()
+    {
+        //Remember we need to flush between read and write
+        try {
+            outputStream.writeObject(Command.GET_ASSET);
+            outputStream.flush();
+            currentAssets = (List<Asset>) inputStream.readObject();
+            return currentAssets;
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void add_OU_Asset(AssetPossession newOUAsset)
+    {
+        if (newOUAsset == null)
+        {
+            throw new IllegalArgumentException("OU Asset cannot be null");
+        }
+        try{
+            outputStream.writeObject(Command.ADD_OU_ASSET);
+            /** Change this to just send a list of strings, though possibly not so multiple offers
+             * can be sent across easily in GetOffers
+             */
+            AssetPossession createdOUAsset = new AssetPossession("","",0);
+            outputStream.writeObject(createdOUAsset);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean removeOUAsset(AssetPossession removedOUAsset)
+    {
+        try {
+            outputStream.writeObject(Command.DELETE_OU_ASSET);
+            outputStream.writeObject(removedOUAsset);
+            outputStream.flush();
+            final Command command = (Command) inputStream.readObject();
+            if (command == Command.SUCCESS)
+            {
+                //GUI Authentication
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public List<AssetPossession> getOUAsset()
+    {
+        //Remember we need to flush between read and write
+        try {
+            outputStream.writeObject(Command.GET_OU_ASSET);
+            outputStream.flush();
+            currentOUAsset = (List<AssetPossession>) inputStream.readObject();
+            return currentOUAsset;
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void addOU(OU newOU)
+    {
+        if (newOU == null)
+        {
+            throw new IllegalArgumentException("OU Asset cannot be null");
+        }
+        try{
+            outputStream.writeObject(Command.ADD_OU);
+            /** Change this to just send a list of strings, though possibly not so multiple offers
+             * can be sent across easily in GetOffers
+             */
+            OU createdOU = new OU("",0);
+            outputStream.writeObject(createdOU);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public HashMap<String,Integer> getOU()
+    {
+        try {
+            outputStream.writeObject(Command.GET_OU);
+            outputStream.flush();
+            currentOUs = (HashMap<String,Integer>) inputStream.readObject();
+            return currentOUs;
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void editOU(OU editedOU)
+    {
+        try {
+            outputStream.writeObject(Command.EDIT_OU);
+            outputStream.writeObject(editedOU);
+            outputStream.flush();
+        } catch (IOException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+        }
+    }
+
+    public boolean removeOU(OU removedOU)
+    {
+        try {
+            outputStream.writeObject(Command.REMOVE_OU);
+            outputStream.writeObject(removedOU);
+            outputStream.flush();
+            final Command command = (Command) inputStream.readObject();
+            if (command == Command.SUCCESS)
+            {
+                //GUI Authentication
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
     public boolean login(User loginUser)
     {

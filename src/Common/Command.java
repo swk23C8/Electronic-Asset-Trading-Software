@@ -21,6 +21,7 @@ public enum Command{
 
     // OU commands
     ADD_OU,
+    GET_OU,
     EDIT_OU,
     REMOVE_OU,
 

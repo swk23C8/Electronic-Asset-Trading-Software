@@ -138,14 +138,16 @@ public class UserDataSource {
     /**
      * Delete the User from the user table.
      */
-    public void deleteUser(String name) {
+    public boolean deleteUser(String name) {
         /* BEGIN MISSING CODE */
         try {
             deleteUser.setString(1, name);
             deleteUser.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return false;
         }
+        return true;
         /* END MISSING CODE */
     }
 

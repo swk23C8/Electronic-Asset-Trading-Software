@@ -315,6 +315,44 @@ public class ServerManagement {
                 }
             }
             break;
+
+            case ADD_USER:{
+                final User newUser = (User) inputStream.readObject();
+                synchronized (userDatabase)
+                {
+                    userDatabase.addUser(newUser);
+                }
+
+            }
+            break;
+
+            case GET_USER:{
+                final Set<String> currentUsers;
+                synchronized (userDatabase)
+                {
+                    currentUsers = userDatabase.userSet();
+                }
+                outputStream.writeObject(currentUsers);
+                outputStream.flush();
+            }
+            break;
+            case REMOVE_USER:{
+                final User removedUser = (User) inputStream.readObject();
+                boolean isSuccessful;
+                synchronized (userDatabase)
+                {
+                    isSuccessful = userDatabase.deleteUser(removedUser.getUsername());
+                }
+                if (isSuccessful == true)
+                {
+                    outputStream.writeObject(Command.SUCCESS);
+                }
+                else
+                {
+                    outputStream.writeObject(Command.FAIL);
+                }
+            }
+            break;
             case LOGIN:
             {
                 final User loginInformation = (User) inputStream.readObject();

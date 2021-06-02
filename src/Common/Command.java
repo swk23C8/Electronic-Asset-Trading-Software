@@ -9,6 +9,7 @@ public enum Command{
     REMOVE_OFFER,
     GET_OFFERS,
 
+
     // Asset commands
     ADD_ASSET,
     REMOVE_ASSET,
@@ -24,6 +25,11 @@ public enum Command{
     GET_OU,
     EDIT_OU,
     REMOVE_OU,
+
+    // User commands
+    ADD_USER,
+    GET_USER,
+    REMOVE_USER,
 
     // Login commands
     LOGIN,

@@ -21,6 +21,8 @@ public class ServerConnector {
     private List<Asset> currentAssets = new LinkedList<>();
     private List<AssetPossession> currentOUAsset = new LinkedList<>();
     private HashMap<String,Integer> currentOUs = new HashMap<>();
+    private Set<String> currentUsers = new TreeSet<>();
+
 
 
     /** Constructor for class**/
@@ -266,6 +268,7 @@ public class ServerConnector {
             e.printStackTrace();
         }
     }
+
     public HashMap<String,Integer> getOU()
     {
         try {
@@ -319,6 +322,63 @@ public class ServerConnector {
     }
 
 
+    public void addUser(User newUser)
+    {
+        if (newUser == null)
+        {
+            throw new IllegalArgumentException("User cannot be null");
+        }
+        try{
+            outputStream.writeObject(Command.ADD_USER);
+            /** Change this to just send a list of strings, though possibly not so multiple offers
+             * can be sent across easily in GetOffers
+             */
+            User createdUser = new User("","");
+            outputStream.writeObject(createdUser);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Set<String> getUser()
+    {
+        try {
+            outputStream.writeObject(Command.GET_USER);
+            outputStream.flush();
+            currentUsers = (Set<String>) inputStream.readObject();
+            return currentUsers;
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public boolean removeUser(User removedUser)
+    {
+        try {
+            outputStream.writeObject(Command.REMOVE_USER);
+            outputStream.writeObject(removedUser);
+            outputStream.flush();
+            final Command command = (Command) inputStream.readObject();
+            if (command == Command.SUCCESS)
+            {
+                //GUI Authentication
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean login(User loginUser)
     {
         //Return true if successful, otherwise false
@@ -343,6 +403,8 @@ public class ServerConnector {
             return false;
         }
     }
+
+
 
     public void changePassword(User changedUser)
     {

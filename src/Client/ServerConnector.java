@@ -193,7 +193,7 @@ public class ServerConnector {
         }
     }
 
-    public void add_OU_Asset(AssetPossession newOUAsset)
+    public void addOUAsset(AssetPossession newOUAsset)
     {
         if (newOUAsset == null)
         {

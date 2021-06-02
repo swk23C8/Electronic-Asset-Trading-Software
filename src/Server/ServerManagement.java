@@ -11,6 +11,9 @@ import java.net.SocketTimeoutException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 
@@ -53,10 +56,6 @@ public class ServerManagement {
      */
     public void start() throws IOException {
         sql_startup();
-        assetDatabase = new AssetDataSource();
-        offerDatabase = new OfferDataSource();
-        OUDatabase = new OUDataSource();
-        userDatabase = new UserDataSource();
         Properties props = new Properties();
         FileInputStream in = null;
         try {
@@ -81,6 +80,9 @@ public class ServerManagement {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        //Every 2 hours call reconcile to reconcile database
+        ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+        scheduler.scheduleAtFixedRate(() -> reconcile(), 0, 2, TimeUnit.HOURS);
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             serverSocket.setSoTimeout(SOCKET_ACCEPT_TIMEOUT);
             for (;;) {
@@ -118,11 +120,13 @@ public class ServerManagement {
     }
 
     /**
-     * Method on initilising the server that calls appropriate sql related methods
+     * Method on initialising the server that calls appropriate sql related methods
      */
     private void sql_startup() {
-
-
+        assetDatabase = new AssetDataSource();
+        offerDatabase = new OfferDataSource();
+        OUDatabase = new OUDataSource();
+        userDatabase = new UserDataSource();
     }
 
     /**

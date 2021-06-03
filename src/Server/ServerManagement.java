@@ -207,6 +207,14 @@ public class ServerManagement {
                 // Print to Server GUI "Information"
             }
             break;
+            case EDIT_OFFER:{
+                final Offer editOffer = (Offer) inputStream.readObject();
+                synchronized (offerDatabase)
+                {
+                    offerDatabase.editQty(editOffer);
+                }
+            }
+            break;
             case ADD_ASSET: {
                 final Asset newAsset = (Asset) inputStream.readObject();
                 synchronized (assetDatabase)
@@ -278,6 +286,13 @@ public class ServerManagement {
                 }
             }
             break;
+            case EDIT_OU_ASSET:{
+                final AssetPossession editedOUAsset = (AssetPossession) inputStream.readObject();
+                synchronized (OUAssetDatabase)
+                {
+                    OUAssetDatabase.editQty(editedOUAsset);
+                }
+            }
             case ADD_OU:{
                 final OU newOU = (OU) inputStream.readObject();
                 synchronized (OUDatabase)

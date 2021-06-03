@@ -8,6 +8,7 @@ public enum Command{
     ADD_OFFER,
     REMOVE_OFFER,
     GET_OFFERS,
+    EDIT_OFFER,
 
 
     // Asset commands
@@ -19,6 +20,7 @@ public enum Command{
     ADD_OU_ASSET,
     DELETE_OU_ASSET,
     GET_OU_ASSET,
+    EDIT_OU_ASSET,
 
     // OU commands
     ADD_OU,

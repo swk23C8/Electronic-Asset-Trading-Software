@@ -133,6 +133,19 @@ public class ServerConnector {
         }
     }
 
+    public void editOffer(Offer editedOffer)
+    {
+        try {
+            outputStream.writeObject(Command.EDIT_OFFER);
+            outputStream.writeObject(editedOffer);
+            outputStream.flush();
+        } catch (IOException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+        }
+    }
+
     public void addAsset(Asset newAsset)
     {
         if (newAsset == null)
@@ -250,6 +263,19 @@ public class ServerConnector {
             return null;
         }
     }
+    public void editOUAsset(AssetPossession editedOUAsset)
+    {
+        try {
+                outputStream.writeObject(Command.EDIT_OU_ASSET);
+                outputStream.writeObject(editedOUAsset);
+                outputStream.flush();
+            } catch (IOException e) {
+                // Print the exception, but no need for a fatal error
+                // if the connection with the server happens to be down
+                e.printStackTrace();
+            }
+    }
+
 
     public void addOU(OU newOU)
     {

@@ -4,8 +4,7 @@ Test Sunwook!
 
 Test Jay
 
-Test Christofer!! Note we need to look at modifiers,
-i.e. should they be protected, private, etc.
+Test Christofer!!
 
 Test Danie!!!
 

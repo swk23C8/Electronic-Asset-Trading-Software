@@ -51,6 +51,15 @@ public class ServerManagement {
         return PORT;
     }
 
+    public ServerManagement()
+    {
+        try{
+            start();
+        }
+        catch (IOException e){
+
+        }
+    }
     /**
      *  Method from W8 to start server
      */

@@ -2,8 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Example add offer implementation for team">
+      <change afterPath="$PROJECT_DIR$/src/UnitTests/ServerManagementTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ClientActions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetDBtest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetDBtest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI$ButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI$ClosingListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI$NameListListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OUData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OUDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuDBtest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuDBtest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI$ButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI$ClosingListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI$NameListListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OuUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +88,7 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Common.Main" />
+      <option name="MAIN_CLASS_NAME" value="Server.Main" />
       <module name="qut_cab302_project" />
       <extension name="coverage">
         <pattern>
@@ -114,10 +141,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.UserDBtest" />
         <item itemvalue="Application.Reconcile" />
         <item itemvalue="Application.OuDBtest" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Reconcile" />
       </list>
     </recent_temporary>
@@ -236,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622700783518</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Updated test Chris">
+      <created>1622702307370</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1622702307370</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,6 +310,7 @@
     <MESSAGE value="Removal of redundant ClientActions.java, implementation of scheduling reconcile to occur every 2 hours" />
     <MESSAGE value="Refactoring/ renaming of various variables, making the design more legible to other programmers" />
     <MESSAGE value="Refactoring/ renaming of various variables, making the design more legible to other programmers. Serialized AssetPossession class, as to send over socket" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring/ renaming of various variables, making the design more legible to other programmers. Serialized AssetPossession class, as to send over socket" />
+    <MESSAGE value="Updated test Chris" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated test Chris" />
   </component>
 </project>

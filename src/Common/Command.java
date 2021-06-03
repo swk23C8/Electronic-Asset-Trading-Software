@@ -37,7 +37,9 @@ public enum Command{
     LOGIN,
     CHANGE_PASSWORD,
 
+
     // Boolean commands
     FAIL,
-    SUCCESS
+    SUCCESS,
+    RECHECK,
 }

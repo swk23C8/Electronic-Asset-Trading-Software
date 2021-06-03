@@ -2,6 +2,11 @@ package Common;
 
 import java.io.Serializable;
 
+/**
+ * Serialized class pertaining to an asset's possession for an OU,
+ * specifically object will represent a row information in the corresponding database
+ * table
+ */
 public class AssetPossession implements Serializable {
 
     private String ou;

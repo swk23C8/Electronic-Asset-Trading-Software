@@ -539,7 +539,7 @@ public class ServerManagement {
     }
 
 
-    //Delete this test method later
+    //Delete this test method at a later point of time
     public static void main(String[] args) {
 
         //testing the password verifying function

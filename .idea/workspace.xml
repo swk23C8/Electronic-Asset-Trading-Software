@@ -223,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622650622919</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Refactoring/ renaming of various variables, making the design more legible to other programmers">
+      <created>1622700634363</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622700634363</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,6 +268,7 @@
     <MESSAGE value="Modifications to server socket functionality" />
     <MESSAGE value="Modifications to server socket functionality, and general refactoring to merge versions." />
     <MESSAGE value="Removal of redundant ClientActions.java, implementation of scheduling reconcile to occur every 2 hours" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removal of redundant ClientActions.java, implementation of scheduling reconcile to occur every 2 hours" />
+    <MESSAGE value="Refactoring/ renaming of various variables, making the design more legible to other programmers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring/ renaming of various variables, making the design more legible to other programmers" />
   </component>
 </project>

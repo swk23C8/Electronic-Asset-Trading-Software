@@ -1,6 +1,8 @@
 package Common;
 
-public class AssetPossession {
+import java.io.Serializable;
+
+public class AssetPossession implements Serializable {
 
     private String ou;
     private String asset;

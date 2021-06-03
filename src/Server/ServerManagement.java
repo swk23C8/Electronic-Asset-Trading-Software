@@ -406,74 +406,75 @@ public class ServerManagement {
     //Function for reconciling
     private static void reconcile()
     {
-        OfferDataSource o = new OfferDataSource();
-        List<Offer> list = o.offerSet();
+        OfferDataSource offerDatabase = new OfferDataSource();
+        List<Offer> listOfOffers = offerDatabase.offerSet();
 
-        OUDataSource ou = new OUDataSource();
-        OUAssetDataSource ouAsset = new OUAssetDataSource();
+        OUDataSource OUDatabase = new OUDataSource();
+        OUAssetDataSource OUAssetDatabase = new OUAssetDataSource();
 
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = 0; j < list.size(); j++){
-                if (i == j) {
+        for (int firstElemIndex = 0; firstElemIndex < listOfOffers.size(); firstElemIndex++) {
+            for (int secondElemIndex = 0; secondElemIndex < listOfOffers.size(); secondElemIndex++){
+                if (firstElemIndex == secondElemIndex) {
                     continue;
 
                 }
-                Integer id1 = list.get(i).getId();
-                Integer id2 = list.get(j).getId();
-                String type1 = list.get(i).getOfferType();
-                String type2 = list.get(j).getOfferType();
-                String ou1 = list.get(i).getOUName();
-                String ou2 = list.get(j).getOUName();
-                String asset1 = list.get(i).getAssetName();
-                String asset2 = list.get(j).getAssetName();
-                Integer qty1 = list.get(i).getQuantity();
-                Integer qty2 = list.get(j).getQuantity();
-                Integer price1 = list.get(i).getCreditsEach();
-                Integer price2 = list.get(j).getCreditsEach();
+                Integer id1 = listOfOffers.get(firstElemIndex).getId();
+                Integer id2 = listOfOffers.get(secondElemIndex).getId();
+                String type1 = listOfOffers.get(firstElemIndex).getOfferType();
+                String type2 = listOfOffers.get(secondElemIndex).getOfferType();
+                String ou1 = listOfOffers.get(firstElemIndex).getOUName();
+                String ou2 = listOfOffers.get(secondElemIndex).getOUName();
+                String asset1 = listOfOffers.get(firstElemIndex).getAssetName();
+                String asset2 = listOfOffers.get(secondElemIndex).getAssetName();
+                Integer qty1 = listOfOffers.get(firstElemIndex).getQuantity();
+                Integer qty2 = listOfOffers.get(secondElemIndex).getQuantity();
+                Integer price1 = listOfOffers.get(firstElemIndex).getCreditsEach();
+                Integer price2 = listOfOffers.get(secondElemIndex).getCreditsEach();
 
-                if ((i < j) && (!type1.equals(type2)) && (!ou1.equals(ou2)) && (asset1.equals(asset2))) {
+                if ((firstElemIndex < secondElemIndex) && (!type1.equals(type2)) && (!ou1.equals(ou2))
+                        && (asset1.equals(asset2))) {
                     if (type1.equals("buy") && qty1 <= qty2 && price1 >= price2) {
 
                         // The effect on OU's credit
-                        OU buyer = ou.getOU(ou1);
-                        OU seller = ou.getOU(ou2);
-                        ou.editCredit(new OU(ou1, buyer.getCredits() - (price2 * qty1)));
-                        ou.editCredit(new OU(ou2, seller.getCredits() + (price2 * qty1)));
+                        OU buyer = OUDatabase.getOU(ou1);
+                        OU seller = OUDatabase.getOU(ou2);
+                        OUDatabase.editCredit(new OU(ou1, buyer.getCredits() - (price2 * qty1)));
+                        OUDatabase.editCredit(new OU(ou2, seller.getCredits() + (price2 * qty1)));
 
                         // The effect on asset qty OU possessing
-                        if (ouAsset.getOuAsset(ou1, asset1) == null) {
-                            ouAsset.addOuAsset(new AssetPossession(ou1, asset1, qty1));
-                            AssetPossession s = ouAsset.getOuAsset(ou2, asset2);
-                            ouAsset.editQty(new AssetPossession(ou2, asset2, s.getQuantity() - qty1));
+                        if (OUAssetDatabase.getOuAsset(ou1, asset1) == null) {
+                            OUAssetDatabase.addOuAsset(new AssetPossession(ou1, asset1, qty1));
+                            AssetPossession s = OUAssetDatabase.getOuAsset(ou2, asset2);
+                            OUAssetDatabase.editQty(new AssetPossession(ou2, asset2, s.getQuantity() - qty1));
                         }
                         else {
-                            AssetPossession b = ouAsset.getOuAsset(ou1, asset1);
-                            AssetPossession s = ouAsset.getOuAsset(ou2, asset2);
-                            ouAsset.editQty(new AssetPossession(ou1, asset1, b.getQuantity() + qty1));
-                            ouAsset.editQty(new AssetPossession(ou2, asset2, s.getQuantity() - qty1));
+                            AssetPossession b = OUAssetDatabase.getOuAsset(ou1, asset1);
+                            AssetPossession s = OUAssetDatabase.getOuAsset(ou2, asset2);
+                            OUAssetDatabase.editQty(new AssetPossession(ou1, asset1, b.getQuantity() + qty1));
+                            OUAssetDatabase.editQty(new AssetPossession(ou2, asset2, s.getQuantity() - qty1));
                         }
 
                         // The update on currentTrade
                         if (qty1.equals(qty2)) {
-                            o.deleteOffer(id1);
-                            o.addHistory(list.get(i));
-                            o.deleteOffer(id2);
-                            o.addHistory(list.get(j));
-                            Offer tmp1 = list.get(i);
-                            list.remove(i);
-                            list.add(0, tmp1);
-                            Offer tmp2 = list.get(j);
-                            list.remove(j);
-                            list.add(1, tmp2);
+                            offerDatabase.deleteOffer(id1);
+                            offerDatabase.addHistory(listOfOffers.get(firstElemIndex));
+                            offerDatabase.deleteOffer(id2);
+                            offerDatabase.addHistory(listOfOffers.get(secondElemIndex));
+                            Offer tmp1 = listOfOffers.get(firstElemIndex);
+                            listOfOffers.remove(firstElemIndex);
+                            listOfOffers.add(0, tmp1);
+                            Offer tmp2 = listOfOffers.get(secondElemIndex);
+                            listOfOffers.remove(secondElemIndex);
+                            listOfOffers.add(1, tmp2);
                         }
                         else {
-                            list.get(j).setQuantity(qty2 - qty1);
-                            o.editQty(list.get(j));
-                            o.deleteOffer(id1);
-                            o.addHistory(list.get(i));
-                            Offer tmp1 = list.get(i);
-                            list.remove(i);
-                            list.add(0, tmp1);
+                            listOfOffers.get(secondElemIndex).setQuantity(qty2 - qty1);
+                            offerDatabase.editQty(listOfOffers.get(secondElemIndex));
+                            offerDatabase.deleteOffer(id1);
+                            offerDatabase.addHistory(listOfOffers.get(firstElemIndex));
+                            Offer tmp1 = listOfOffers.get(firstElemIndex);
+                            listOfOffers.remove(firstElemIndex);
+                            listOfOffers.add(0, tmp1);
                         }
 
                         break;
@@ -483,45 +484,45 @@ public class ServerManagement {
                     else if (type2.equals("buy") && qty2 <= qty1 && price2 >= price1) {
 
                         // The effect on OU's credit
-                        OU buyer = ou.getOU(ou2);
-                        OU seller = ou.getOU(ou1);
-                        ou.editCredit(new OU(ou2, buyer.getCredits() - (price1 * qty2)));
-                        ou.editCredit(new OU(ou1, seller.getCredits() + (price1 * qty2)));
+                        OU buyer = OUDatabase.getOU(ou2);
+                        OU seller = OUDatabase.getOU(ou1);
+                        OUDatabase.editCredit(new OU(ou2, buyer.getCredits() - (price1 * qty2)));
+                        OUDatabase.editCredit(new OU(ou1, seller.getCredits() + (price1 * qty2)));
 
                         // The effect on asset qty OU possessing
-                        if (ouAsset.getOuAsset(ou2, asset2) == null) {
-                            ouAsset.addOuAsset(new AssetPossession(ou2, asset2, qty2));
-                            AssetPossession s = ouAsset.getOuAsset(ou1, asset1);
-                            ouAsset.editQty(new AssetPossession(ou1, asset1, s.getQuantity() - qty2));
+                        if (OUAssetDatabase.getOuAsset(ou2, asset2) == null) {
+                            OUAssetDatabase.addOuAsset(new AssetPossession(ou2, asset2, qty2));
+                            AssetPossession s = OUAssetDatabase.getOuAsset(ou1, asset1);
+                            OUAssetDatabase.editQty(new AssetPossession(ou1, asset1, s.getQuantity() - qty2));
                         }
                         else {
-                            AssetPossession b = ouAsset.getOuAsset(ou2, asset2);
-                            AssetPossession s = ouAsset.getOuAsset(ou1, asset1);
-                            ouAsset.editQty(new AssetPossession(ou2, asset2, b.getQuantity() + qty2));
-                            ouAsset.editQty(new AssetPossession(ou1, asset1, s.getQuantity() - qty2));
+                            AssetPossession b = OUAssetDatabase.getOuAsset(ou2, asset2);
+                            AssetPossession s = OUAssetDatabase.getOuAsset(ou1, asset1);
+                            OUAssetDatabase.editQty(new AssetPossession(ou2, asset2, b.getQuantity() + qty2));
+                            OUAssetDatabase.editQty(new AssetPossession(ou1, asset1, s.getQuantity() - qty2));
                         }
 
                         // The update on the currentTrade
                         if (qty1.equals(qty2)) {
-                            o.deleteOffer(id1);
-                            o.addHistory(list.get(i));
-                            o.deleteOffer(id2);
-                            o.addHistory(list.get(j));
-                            Offer tmp1 = list.get(i);
-                            list.remove(i);
-                            list.add(0, tmp1);
-                            Offer tmp2 = list.get(j);
-                            list.remove(j);
-                            list.add(1, tmp2);
+                            offerDatabase.deleteOffer(id1);
+                            offerDatabase.addHistory(listOfOffers.get(firstElemIndex));
+                            offerDatabase.deleteOffer(id2);
+                            offerDatabase.addHistory(listOfOffers.get(secondElemIndex));
+                            Offer tmp1 = listOfOffers.get(firstElemIndex);
+                            listOfOffers.remove(firstElemIndex);
+                            listOfOffers.add(0, tmp1);
+                            Offer tmp2 = listOfOffers.get(secondElemIndex);
+                            listOfOffers.remove(secondElemIndex);
+                            listOfOffers.add(1, tmp2);
                         }
                         else {
-                            list.get(i).setQuantity(qty1 - qty2);
-                            o.editQty(list.get(i));
-                            o.deleteOffer(id2);
-                            o.addHistory(list.get(j));
-                            Offer tmp1 = list.get(j);
-                            list.remove(j);
-                            list.add(0, tmp1);
+                            listOfOffers.get(firstElemIndex).setQuantity(qty1 - qty2);
+                            offerDatabase.editQty(listOfOffers.get(firstElemIndex));
+                            offerDatabase.deleteOffer(id2);
+                            offerDatabase.addHistory(listOfOffers.get(secondElemIndex));
+                            Offer tmp1 = listOfOffers.get(secondElemIndex);
+                            listOfOffers.remove(secondElemIndex);
+                            listOfOffers.add(0, tmp1);
                         }
 //
                         break;
@@ -533,17 +534,19 @@ public class ServerManagement {
 
 
         }
-        o.close();
+        offerDatabase.close();
         //System.out.println(list.get(7).getOfferType());
     }
 
 
+    //Delete this test method later
     public static void main(String[] args) {
 
         //testing the password verifying function
-        UserDataSource u = new UserDataSource();
+        UserDataSource userDatabase = new UserDataSource();
         String password = "abc123";
-        System.out.println(u.getUser("n10559540").getPassword().equals(u.passwordCheck(password, u.getUser("n10559540"))));
+        System.out.println(userDatabase.getUser("n10559540").getPassword().
+                equals(userDatabase.passwordCheck(password, userDatabase.getUser("n10559540"))));
 
 
         //testing reconcile method

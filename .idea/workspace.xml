@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Example add offer implementation for team">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ClientActions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/AssetPossession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/AssetPossession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622532853085</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Removal of redundant ClientActions.java, implementation of scheduling reconcile to occur every 2 hours">
+      <created>1622650622919</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622650622919</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,6 +260,7 @@
     <MESSAGE value="Changes to command functionality, specifically sockets and structure" />
     <MESSAGE value="Modifications to server socket functionality" />
     <MESSAGE value="Modifications to server socket functionality, and general refactoring to merge versions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifications to server socket functionality, and general refactoring to merge versions." />
+    <MESSAGE value="Removal of redundant ClientActions.java, implementation of scheduling reconcile to occur every 2 hours" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removal of redundant ClientActions.java, implementation of scheduling reconcile to occur every 2 hours" />
   </component>
 </project>

@@ -405,28 +405,20 @@ public class ServerConnector {
         }
     }
 
-    public boolean login(User loginUser)
+    public User login(User loginUser)
     {
-        //Return true if successful, otherwise false
+        //Return user if they exist, otherwise null
         try {
             outputStream.writeObject(Command.LOGIN);
             outputStream.writeObject(loginUser);
             outputStream.flush();
-            final Command command = (Command) inputStream.readObject();
-            if (command == Command.SUCCESS)
-            {
-                //GUI Authentication
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            final User existingUser = (User) inputStream.readObject();
+            return existingUser;
         } catch (IOException | ClassNotFoundException e) {
             // Print the exception, but no need for a fatal error
             // if the connection with the server happens to be down
             e.printStackTrace();
-            return false;
+            return null;
         }
     }
 

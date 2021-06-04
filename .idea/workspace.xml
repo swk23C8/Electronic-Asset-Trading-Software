@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Example add offer implementation for team">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Added some more socket functionalities. Editing Offer and OUAsset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AllOrdersForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AllOrdersForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/LoginForm_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/UserDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/UserDataSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="35cfbbfca133d8fac67205b34dfd5adb1fa37940" />
+        <entry key="$PROJECT_DIR$" value="8014841ed2f3628a5294e7435cbfe0b229092aa4" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,7 +68,25 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Client" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.LoginForm_1">
+    <configuration name="LoginForm_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.LoginForm_1" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Common.Main" />
       <module name="qut_cab302_project" />
@@ -114,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LoginForm_1" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.UserDBtest" />
         <item itemvalue="Application.Reconcile" />
         <item itemvalue="Application.OuDBtest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Reconcile" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622700783518</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added some more socket functionalities. Editing Offer and OUAsset">
+      <created>1622704426978</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1622704426978</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,6 +310,7 @@
     <MESSAGE value="Removal of redundant ClientActions.java, implementation of scheduling reconcile to occur every 2 hours" />
     <MESSAGE value="Refactoring/ renaming of various variables, making the design more legible to other programmers" />
     <MESSAGE value="Refactoring/ renaming of various variables, making the design more legible to other programmers. Serialized AssetPossession class, as to send over socket" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring/ renaming of various variables, making the design more legible to other programmers. Serialized AssetPossession class, as to send over socket" />
+    <MESSAGE value="Added some more socket functionalities. Editing Offer and OUAsset" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some more socket functionalities. Editing Offer and OUAsset" />
   </component>
 </project>

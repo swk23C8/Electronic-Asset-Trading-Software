@@ -38,6 +38,31 @@ public class LoginForm_1 extends JFrame{
                     String userQuery = "SELECT * FROM users WHERE `username` = ? and `password` = ? ";
                     String adminQuery = "SELECT * FROM admin WHERE `username` = ? and `password` = ? ";
                     try {
+                        /**
+                         * ServerConnector connector = new ServerConnector();
+                         *                         User providedUser = new User(username, password);
+                         *                         User existingUser = connector.login(providedUser);
+                         *                         if (existingUser == null)
+                         *                         {
+                         *                             JOptionPane.showMessageDialog(rootPane, "wrong username or password");
+                         *                         }
+                         *                         else if(existingUser.getType() == "admin"){
+                         *                             MenuForm mainMenu = new MenuForm();
+                         *                             mainMenu.setVisible(true);
+                         *                             mainMenu.pack();
+                         *                             mainMenu.setLocationRelativeTo(null);
+                         *                             mainMenu.enableuser(false);
+                         *                             dispose();
+                         *                         }
+                         *                         else if(existingUser.getType() == "user") {
+                         *                             MenuForm mainMenu = new MenuForm();
+                         *                             mainMenu.setVisible(true);
+                         *                             mainMenu.pack();
+                         *                             mainMenu.setLocationRelativeTo(null);
+                         *                             mainMenu.enableuser(true);
+                         *                             dispose();
+                         *                         }
+                         */
                         PreparedStatement ps = DbConnection.getConnection().prepareStatement(userQuery);
                         PreparedStatement ps1 = DbConnection.getConnection().prepareStatement(adminQuery);
                         ps.setString(1, username);

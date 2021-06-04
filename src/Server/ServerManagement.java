@@ -396,13 +396,15 @@ public class ServerManagement {
                 if (confirmationInformation != null && confirmationInformation.getPassword() ==
                         loginInformation.getPassword())
                 {
-                    outputStream.writeObject(Command.SUCCESS);
+
+                    outputStream.writeObject(confirmationInformation);
                 }
                 else
                 {
-                    outputStream.writeObject(Command.FAIL);
+                    outputStream.writeObject(null);
                 }
                 //State if login successful on server gui, for user with name...
+
             }
             break;
             case CHANGE_PASSWORD:

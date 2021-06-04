@@ -10,6 +10,12 @@ public class AllOrdersForm extends JFrame{
     private JTable table1;
     private JTable AllOrdersTable;
     private DefaultTableModel defaultTableModel;
+    private JButton allOrdersButton;
+    private JButton assetsButton;
+    private JButton currentOrdersButton;
+    private JButton tradeHistoryButton;
+    private JButton adminMenuButton;
+
 
     public AllOrdersForm(){
         defaultTableModel = new DefaultTableModel();

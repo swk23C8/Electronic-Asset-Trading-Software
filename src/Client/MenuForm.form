@@ -33,6 +33,12 @@
               <text value="Admin Menu"/>
             </properties>
           </component>
+          <component id="f37c3" class="javax.swing.JButton" binding="changePasswordButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Change Password"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <vspacer id="bc6c7">

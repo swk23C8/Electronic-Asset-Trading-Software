@@ -11,6 +11,7 @@ public class MenuForm extends JFrame{
     private JButton allOrdersButton;
     private JLabel welcomeLabel;
     private JButton adminMenuButton;
+    private JButton changePasswordButton;
 
     public void enableuser(boolean yesno){
 //        WHATEVERONLYADMINSEES.setVisible(yesno);
@@ -31,6 +32,12 @@ public class MenuForm extends JFrame{
         });
 
         adminMenuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        changePasswordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 

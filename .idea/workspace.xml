@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Done admin form">
-      <change afterPath="$PROJECT_DIR$/src/Client/OrderForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Client/OrderForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Client/OrganisationForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Client/OrganisationForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="finished client gui form skeleton">
+      <change afterPath="$PROJECT_DIR$/src/Client/PasswordForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/PasswordForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/LoginForm_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/OrderForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrderForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/OrderForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrderForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/OrganisationForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrganisationForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/OrganisationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrganisationForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622881903672</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finished client gui form skeleton">
+      <created>1622906053431</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1622906053431</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +258,7 @@
     <MESSAGE value="Adding props files for requirements (client and server)" />
     <MESSAGE value="Applying complete condition on Reconcile method" />
     <MESSAGE value="Done admin form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done admin form" />
+    <MESSAGE value="finished client gui form skeleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished client gui form skeleton" />
   </component>
 </project>

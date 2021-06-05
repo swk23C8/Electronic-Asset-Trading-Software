@@ -55,12 +55,12 @@ public class AssetDataSource {
 
     /**
      * Add Asset to the asset table.
-     * @param a The Asset object
+     * @param Asset The Asset object
      */
-    public void addAsset(Asset a) {
+    public void addAsset(Asset Asset) {
         try {
             /* BEGIN MISSING CODE */
-            addAsset.setString(1, a.getAsset());
+            addAsset.setString(1, Asset.getAsset());
             addAsset.execute();
             /* END MISSING CODE */
         } catch (SQLException ex) {
@@ -115,19 +115,19 @@ public class AssetDataSource {
      * @param name The name of the offer.
      */
     public Asset getAsset(String name) {
-        Asset a = new Asset();
+        Asset Asset = new Asset();
         ResultSet rs = null;
         /* BEGIN MISSING CODE */
         try {
             getAsset.setString(1, name);
             rs = getAsset.executeQuery();
             rs.next();
-            a.setAsset(rs.getString("assetName"));
+            Asset.setAsset(rs.getString("assetName"));
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         /* END MISSING CODE */
-        return a;
+        return Asset;
     }
 
     /**
@@ -135,19 +135,19 @@ public class AssetDataSource {
      */
     public int getSize() {
         ResultSet rs = null;
-        int rows = 0;
+        int rowNumber = 0;
 
         /* BEGIN MISSING CODE */
         try {
             rs = rowCount.executeQuery();
             rs.next();
-            rows = rs.getInt(1);
+            rowNumber = rs.getInt(1);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         /* END MISSING CODE */
 
-        return rows;
+        return rowNumber;
     }
 
     /**

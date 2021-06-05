@@ -10,7 +10,6 @@ public enum Command{
     GET_OFFERS,
     EDIT_OFFER,
 
-
     // Asset commands
     ADD_ASSET,
     REMOVE_ASSET,
@@ -36,7 +35,6 @@ public enum Command{
     // Login commands
     LOGIN,
     CHANGE_PASSWORD,
-
 
     // Boolean commands
     FAIL,

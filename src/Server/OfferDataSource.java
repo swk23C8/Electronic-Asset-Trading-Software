@@ -64,16 +64,16 @@ public class OfferDataSource {
 
     /**
      * Add Offer to the CurrentTrade table.
-     * @param o The offer object
+     * @param Offer The offer object
      */
-    public void addOffer(Offer o) {
+    public void addOffer(Offer Offer) {
         try {
 
-            addOffer.setString(1, o.getOfferType());
-            addOffer.setString(2, o.getOUName());
-            addOffer.setString(3, o.getAssetName());
-            addOffer.setInt(4, o.getQuantity());
-            addOffer.setInt(5, o.getCreditsEach());
+            addOffer.setString(1, Offer.getOfferType());
+            addOffer.setString(2, Offer.getOUName());
+            addOffer.setString(3, Offer.getAssetName());
+            addOffer.setInt(4, Offer.getQuantity());
+            addOffer.setInt(5, Offer.getCreditsEach());
 
             // .... more setting for other columns.
             addOffer.execute();
@@ -83,15 +83,15 @@ public class OfferDataSource {
         }
     }
 
-    public void addHistory(Offer o) {
+    public void addHistory(Offer Offer) {
         try {
 
-            addHistory.setInt(1, o.getId());
-            addHistory.setString(2, o.getOfferType());
-            addHistory.setString(3, o.getOUName());
-            addHistory.setString(4, o.getAssetName());
-            addHistory.setInt(5, o.getQuantity());
-            addHistory.setInt(6, o.getCreditsEach());
+            addHistory.setInt(1, Offer.getId());
+            addHistory.setString(2, Offer.getOfferType());
+            addHistory.setString(3, Offer.getOUName());
+            addHistory.setString(4, Offer.getAssetName());
+            addHistory.setInt(5, Offer.getQuantity());
+            addHistory.setInt(6, Offer.getCreditsEach());
 
             // .... more setting for other columns.
             addHistory.execute();
@@ -103,13 +103,13 @@ public class OfferDataSource {
 
     /**
      * Edit the quantity of the specific row in the currentTrade table.
-     * @param o edited Offer
+     * @param Offer edited Offer
 
      */
-    public void editQty(Offer o) {
+    public void editQty(Offer Offer) {
         try {
-            editQty.setInt(1, o.getQuantity());
-            editQty.setInt(2, o.getId());
+            editQty.setInt(1, Offer.getQuantity());
+            editQty.setInt(2, Offer.getId());
             editQty.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -144,25 +144,25 @@ public class OfferDataSource {
      * @param id The id of the offer.
      */
     public Offer getOffer(Integer id) {
-        Offer o = new Offer();
+        Offer Offer = new Offer();
         ResultSet rs = null;
         /* BEGIN MISSING CODE */
         try {
             getOffer.setInt(1, id);
             rs = getOffer.executeQuery();
             rs.next();
-            o.setId(rs.getInt(1));
-            o.setOfferType(rs.getString(2));
-            o.setOUName(rs.getString(3));
-            o.setAssetName(rs.getString(4));
-            o.setQuantity(rs.getInt(5));
-            o.setCreditsEach(rs.getInt(6));
+            Offer.setId(rs.getInt(1));
+            Offer.setOfferType(rs.getString(2));
+            Offer.setOUName(rs.getString(3));
+            Offer.setAssetName(rs.getString(4));
+            Offer.setQuantity(rs.getInt(5));
+            Offer.setCreditsEach(rs.getInt(6));
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         /* END MISSING CODE */
-        return o;
+        return Offer;
     }
 
     /**
@@ -170,19 +170,19 @@ public class OfferDataSource {
      */
     public int getSize() {
         ResultSet rs = null;
-        int rows = 0;
+        int rowNumber = 0;
 
         /* BEGIN MISSING CODE */
         try {
             rs = rowCount.executeQuery();
             rs.next();
-            rows = rs.getInt(1);
+            rowNumber = rs.getInt(1);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         /* END MISSING CODE */
 
-        return rows;
+        return rowNumber;
     }
 
     /**

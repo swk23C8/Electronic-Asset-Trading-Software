@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="adding Admin setting panel, minor update">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Added some more socket functionalities. Editing Offer and OUAsset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AllOrdersForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AllOrdersForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/DbConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/LoginForm_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/AssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/AssetDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OUAssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUAssetDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OUDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OfferDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OfferDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/UserDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/UserDataSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +31,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="main" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="8014841ed2f3628a5294e7435cbfe0b229092aa4" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -36,7 +54,6 @@
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
-    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -55,33 +72,12 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.LoginForm">
-    <configuration name="AllOrdersForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client.AllOrdersForm" />
-      <module name="qut_cab302_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client.LoginForm" />
-      <module name="qut_cab302_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Client" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.LoginForm_1">
     <configuration name="LoginForm_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.LoginForm_1" />
       <module name="qut_cab302_project" />
@@ -95,21 +91,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client.MenuForm" />
-      <module name="qut_cab302_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server.ServerManagement" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Common.Main" />
       <module name="qut_cab302_project" />
       <extension name="coverage">
         <pattern>
@@ -121,20 +104,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.AllOrdersForm" />
-      <item itemvalue="Application.ServerManagement" />
-      <item itemvalue="Application.MenuForm" />
-      <item itemvalue="Application.LoginForm_1" />
-      <item itemvalue="Application.LoginForm" />
-    </list>
+    <configuration name="OuDBtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DBtestUI.OuDBtest" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DBtestUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Reconcile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.Reconcile" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDBtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DBtestUI.UserDBtest" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DBtestUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LoginForm" />
         <item itemvalue="Application.LoginForm_1" />
-        <item itemvalue="Application.AllOrdersForm" />
-        <item itemvalue="Application.ServerManagement" />
-        <item itemvalue="Application.MenuForm" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.UserDBtest" />
+        <item itemvalue="Application.Reconcile" />
+        <item itemvalue="Application.OuDBtest" />
       </list>
     </recent_temporary>
   </component>
@@ -196,14 +211,70 @@
       <option name="project" value="LOCAL" />
       <updated>1621154237988</updated>
     </task>
-    <task id="LOCAL-00008" summary="Applying complete condition on Reconcile method">
-      <created>1622540348546</created>
+    <task id="LOCAL-00008" summary="Commenting to classes and organisation of socket messaging classes">
+      <created>1621165805256</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1622540348546</updated>
+      <updated>1621165805256</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Various comments, setup for socket commands and messages sent across (i.e. what process to be done), and db config property read in on the client side">
+      <created>1621168841568</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1621168841568</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changes to command functionality, specifically sockets and structure">
+      <created>1622517414943</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1622517414943</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Modifications to server socket functionality">
+      <created>1622532615094</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1622532615094</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Modifications to server socket functionality, and general refactoring to merge versions.">
+      <created>1622532853085</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1622532853085</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Removal of redundant ClientActions.java, implementation of scheduling reconcile to occur every 2 hours">
+      <created>1622650622919</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622650622919</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Refactoring/ renaming of various variables, making the design more legible to other programmers">
+      <created>1622700634363</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622700634363</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Refactoring/ renaming of various variables, making the design more legible to other programmers. Serialized AssetPossession class, as to send over socket">
+      <created>1622700783518</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1622700783518</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added some more socket functionalities. Editing Offer and OUAsset">
+      <created>1622704426978</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1622704426978</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,7 +288,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/RebrandedClasses" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -235,7 +306,15 @@
     <MESSAGE value="dd" />
     <MESSAGE value="New Version with new concept" />
     <MESSAGE value="Adding props files for requirements (client and server)" />
-    <MESSAGE value="Applying complete condition on Reconcile method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Applying complete condition on Reconcile method" />
+    <MESSAGE value="Commenting to classes and organisation of socket messaging classes" />
+    <MESSAGE value="Various comments, setup for socket commands and messages sent across (i.e. what process to be done), and db config property read in on the client side" />
+    <MESSAGE value="Changes to command functionality, specifically sockets and structure" />
+    <MESSAGE value="Modifications to server socket functionality" />
+    <MESSAGE value="Modifications to server socket functionality, and general refactoring to merge versions." />
+    <MESSAGE value="Removal of redundant ClientActions.java, implementation of scheduling reconcile to occur every 2 hours" />
+    <MESSAGE value="Refactoring/ renaming of various variables, making the design more legible to other programmers" />
+    <MESSAGE value="Refactoring/ renaming of various variables, making the design more legible to other programmers. Serialized AssetPossession class, as to send over socket" />
+    <MESSAGE value="Added some more socket functionalities. Editing Offer and OUAsset" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some more socket functionalities. Editing Offer and OUAsset" />
   </component>
 </project>

@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="finished client gui form skeleton">
-      <change afterPath="$PROJECT_DIR$/src/Client/PasswordForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Client/PasswordForm.java" afterDir="false" />
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Adding additional labels I forgot to add in the skeleton gui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/OrderForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrderForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/OrderForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrderForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/OrganisationForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrganisationForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/OrganisationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrganisationForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/PasswordForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/PasswordForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/PasswordForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/PasswordForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622906053431</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Adding additional labels I forgot to add in the skeleton gui">
+      <created>1622908127527</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1622908127527</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,6 +258,7 @@
     <MESSAGE value="Applying complete condition on Reconcile method" />
     <MESSAGE value="Done admin form" />
     <MESSAGE value="finished client gui form skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished client gui form skeleton" />
+    <MESSAGE value="Adding additional labels I forgot to add in the skeleton gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding additional labels I forgot to add in the skeleton gui" />
   </component>
 </project>

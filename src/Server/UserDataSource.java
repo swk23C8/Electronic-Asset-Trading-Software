@@ -66,10 +66,10 @@ public class UserDataSource {
 
     /**
      * Hashing the User password with the salt string.
-     * @param u The User object
+     * @param User The User object
      */
-    public String saltPassword(User u) {
-        String raw = u.getPassword();
+    public String saltPassword(User User) {
+        String raw = User.getPassword();
         SecureRandom random = null;
         try {
             random = SecureRandom.getInstance("SHA1PRNG");
@@ -79,7 +79,7 @@ public class UserDataSource {
         byte[] bytes = new byte[16];
         random.nextBytes(bytes);
         String salt = new String(Base64.getEncoder().encode(bytes));
-        u.setSaltValue(salt);
+        User.setSaltValue(salt);
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("SHA-256");
@@ -94,11 +94,11 @@ public class UserDataSource {
 
     /**
      * Verifying the user input password
-     * @param  raw The user input password
-     * @param u The User object
+     * @param  uncheckedPassword The user input password
+     * @param User The User object
      */
-    public String passwordCheck(String raw, User u) {
-        String salt = u.getSaltValue();
+    public String passwordCheck(String uncheckedPassword, User User) {
+        String salt = User.getSaltValue();
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("SHA-256");
@@ -106,23 +106,23 @@ public class UserDataSource {
             e.printStackTrace();
         }
         md.update(salt.getBytes());
-        md.update(raw.getBytes());
+        md.update(uncheckedPassword.getBytes());
         String hex = String.format("%064x", new BigInteger(1, md.digest()));
         return hex;
     }
 
     /**
      * Add User to the user table.
-     * @param u The User object
+     * @param User The User object
      */
-    public void addUser(User u) {
+    public void addUser(User User) {
         try {
             /* BEGIN MISSING CODE */
-            addUser.setString(1, u.getUsername());
-            addUser.setString(2, saltPassword(u));
-            addUser.setString(3,u.getSaltValue());
-            addUser.setString(4, u.getOu());
-            addUser.setString(5, u.getType());
+            addUser.setString(1, User.getUsername());
+            addUser.setString(2, saltPassword(User));
+            addUser.setString(3,User.getSaltValue());
+            addUser.setString(4, User.getOu());
+            addUser.setString(5, User.getType());
             addUser.execute();
             /* END MISSING CODE */
         } catch (SQLException ex) {
@@ -130,13 +130,13 @@ public class UserDataSource {
         }
     }
 
-    public void changePassword(User u) {
+    public void changePassword(User User) {
 
         try {
-            changePassword.setString(1, saltPassword(u));
-            changePassword.setString(2, u.getUsername());
-            changeSaltValue.setString(1, u.getSaltValue());
-            changeSaltValue.setString(2, u.getUsername());
+            changePassword.setString(1, saltPassword(User));
+            changePassword.setString(2, User.getUsername());
+            changeSaltValue.setString(1, User.getSaltValue());
+            changeSaltValue.setString(2, User.getUsername());
             changePassword.executeUpdate();
             changeSaltValue.executeUpdate();
         } catch (SQLException ex) {
@@ -169,7 +169,7 @@ public class UserDataSource {
      * @param name The name of the user.
      */
     public User getUser(String name) {
-        User u = new User();
+        User User = new User();
         ResultSet rs = null;
         /* BEGIN MISSING CODE */
         try {
@@ -177,16 +177,16 @@ public class UserDataSource {
             rs = getUser.executeQuery();
             rs.next();
             //What if rs is null?
-            u.setUsername(rs.getString("username"));
-            u.setPassword(rs.getString("password"));
-            u.setSaltValue(rs.getString("saltValue"));
-            u.setOu(rs.getString("ouName"));
-            u.setType(rs.getString("accountType"));
+            User.setUsername(rs.getString("username"));
+            User.setPassword(rs.getString("password"));
+            User.setSaltValue(rs.getString("saltValue"));
+            User.setOu(rs.getString("ouName"));
+            User.setType(rs.getString("accountType"));
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         /* END MISSING CODE */
-        return u;
+        return User;
     }
 
     /**
@@ -194,19 +194,19 @@ public class UserDataSource {
      */
     public int getSize() {
         ResultSet rs = null;
-        int rows = 0;
+        int rowNumber = 0;
 
         /* BEGIN MISSING CODE */
         try {
             rs = rowCount.executeQuery();
             rs.next();
-            rows = rs.getInt(1);
+            rowNumber = rs.getInt(1);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         /* END MISSING CODE */
 
-        return rows;
+        return rowNumber;
     }
 
     /**

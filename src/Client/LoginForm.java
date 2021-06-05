@@ -35,13 +35,13 @@ public class LoginForm extends JFrame{
                 String password = String.valueOf(passwordField.getPassword());
 
                 if(username.trim().equals("") && password.trim().equals("")){
-                    JOptionPane.showMessageDialog(rootPane, "please enter both username and password");
+                    JOptionPane.showMessageDialog(rootPane, "Please enter both username and password");
                 }
                 else if(username.trim().equals("")){
-                    JOptionPane.showMessageDialog(rootPane, "please enter username");
+                    JOptionPane.showMessageDialog(rootPane, "Please enter username");
                 }
                 else if (password.trim().equals("")){
-                    JOptionPane.showMessageDialog(rootPane, "please enter password");
+                    JOptionPane.showMessageDialog(rootPane, "Please enter password");
                 }
                 else{
                     String loginQuery = "SELECT * FROM user WHERE `username` = ? and `password` = ? ";
@@ -79,7 +79,7 @@ public class LoginForm extends JFrame{
                             menuForm.enableuser(true);
                         }
                         else
-                            JOptionPane.showMessageDialog(loginButton, "wrong username or password");
+                            JOptionPane.showMessageDialog(loginButton, "Wrong Username or Password");
                     }
                     catch (Exception ex) {
                         Logger.getLogger(LoginForm_1.class.getName()).log(Level.SEVERE,null,ex);

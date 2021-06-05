@@ -59,14 +59,14 @@ public class OUAssetDataSource {
 
     /**
      * Add Offer to the CurrentTrade table.
-     * @param a The asset OU possess
+     * @param OUAsset The asset OU possess
      */
-    public void addOuAsset(AssetPossession a) {
+    public void addOuAsset(AssetPossession OUAsset) {
         try {
 
-            addOuAsset.setString(1, a.getOu());
-            addOuAsset.setString(2, a.getAsset());
-            addOuAsset.setInt(3, a.getQuantity());
+            addOuAsset.setString(1, OUAsset.getOu());
+            addOuAsset.setString(2, OUAsset.getAsset());
+            addOuAsset.setInt(3, OUAsset.getQuantity());
 
             // .... more setting for other columns.
             addOuAsset.execute();
@@ -81,11 +81,11 @@ public class OUAssetDataSource {
      * Edit the quantity of the specific row in the ouAsset table.
 
      */
-    public void editQty(AssetPossession a) {
+    public void editQty(AssetPossession OUAsset) {
         try {
-            editQty.setInt(1, a.getQuantity());
-            editQty.setString(2, a.getOu());
-            editQty.setString(3, a.getAsset());
+            editQty.setInt(1, OUAsset.getQuantity());
+            editQty.setString(2, OUAsset.getOu());
+            editQty.setString(3, OUAsset.getAsset());
             editQty.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -119,7 +119,7 @@ public class OUAssetDataSource {
      * Return the specific Asset OU possess by retrieving information from database.
      */
     public AssetPossession getOuAsset(String ou, String asset) {
-        AssetPossession a = new AssetPossession();
+        AssetPossession OUAsset = new AssetPossession();
         ResultSet rs = null;
 
         try {
@@ -127,15 +127,15 @@ public class OUAssetDataSource {
             getOuAsset.setString(2, asset);
             rs = getOuAsset.executeQuery();
             rs.next();
-            a.setOu(rs.getString(1));
-            a.setAsset(rs.getString(2));
-            a.setQuantity((rs.getInt(3)));
+            OUAsset.setOu(rs.getString(1));
+            OUAsset.setAsset(rs.getString(2));
+            OUAsset.setQuantity((rs.getInt(3)));
 
         } catch (SQLException ex) {
             return null;
         }
         /* END MISSING CODE */
-        return a;
+        return OUAsset;
     }
 
     /**
@@ -143,19 +143,19 @@ public class OUAssetDataSource {
      */
     public int getSize() {
         ResultSet rs = null;
-        int rows = 0;
+        int rowNumber = 0;
 
         /* BEGIN MISSING CODE */
         try {
             rs = rowCount.executeQuery();
             rs.next();
-            rows = rs.getInt(1);
+            rowNumber = rs.getInt(1);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         /* END MISSING CODE */
 
-        return rows;
+        return rowNumber;
     }
 
     /**

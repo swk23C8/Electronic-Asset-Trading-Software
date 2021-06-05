@@ -60,13 +60,13 @@ public class OUDataSource {
 
     /**
      * Add OU(oraganizational unit) to the ou table.
-     * @param o The OU object
+     * @param OU The OU object
      */
-    public void addOU(OU o) {
+    public void addOU(OU OU) {
         try {
             /* BEGIN MISSING CODE */
-            addOU.setString(1, o.getOuName());
-            addOU.setInt(2, o.getCredits());
+            addOU.setString(1, OU.getOuName());
+            addOU.setInt(2, OU.getCredits());
             addOU.execute();
             /* END MISSING CODE */
         } catch (SQLException ex) {
@@ -76,12 +76,12 @@ public class OUDataSource {
 
     /**
      * Edit the number of the credit of the specific row in the asset table.
-     * @param o The OU object
+     * @param OU The OU object
      */
-    public void editCredit(OU o) {
+    public void editCredit(OU OU) {
         try {
-            editCredit.setInt(1, o.getCredits());
-            editCredit.setString(2, o.getOuName());
+            editCredit.setInt(1, OU.getCredits());
+            editCredit.setString(2, OU.getOuName());
             editCredit.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -93,21 +93,21 @@ public class OUDataSource {
      * Return the hashmap of ou by retrieving information from database.
      */
     public HashMap<String, Integer> ouList() {
-        HashMap<String, Integer> list = new HashMap<>();
+        HashMap<String, Integer> OUlist = new HashMap<>();
         ResultSet rs = null;
 
         /* BEGIN MISSING CODE */
         try {
             rs = getOuList.executeQuery();
             while (rs.next()) {
-                list.put(rs.getString("ouName"), rs.getInt("credit"));
+                OUlist.put(rs.getString("ouName"), rs.getInt("credit"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         /* END MISSING CODE */
 
-        return list;
+        return OUlist;
     }
 
     /**
@@ -115,21 +115,21 @@ public class OUDataSource {
      * @param name The name of the ou.
      */
     public OU getOU(String name) {
-        OU o = new OU();
+        OU OU = new OU();
         ResultSet rs = null;
         /* BEGIN MISSING CODE */
         try {
             getOU.setString(1, name);
             rs = getOU.executeQuery();
             rs.next();
-            o.setOuName(rs.getString("ouName"));
-            o.setCredits(rs.getInt("credit"));
+            OU.setOuName(rs.getString("ouName"));
+            OU.setCredits(rs.getInt("credit"));
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         /* END MISSING CODE */
-        return o;
+        return OU;
     }
 
     /**
@@ -137,19 +137,19 @@ public class OUDataSource {
      */
     public int getSize() {
         ResultSet rs = null;
-        int rows = 0;
+        int rowNumber = 0;
 
         /* BEGIN MISSING CODE */
         try {
             rs = rowCount.executeQuery();
             rs.next();
-            rows = rs.getInt(1);
+            rowNumber = rs.getInt(1);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         /* END MISSING CODE */
 
-        return rows;
+        return rowNumber;
     }
 
     /**

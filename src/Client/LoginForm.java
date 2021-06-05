@@ -1,30 +1,38 @@
 package Client;
 
+import Server.DBConnection;
+
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import Server.*;
 
-public class LoginForm_1 extends JFrame{
+public class LoginForm extends JFrame{
+    public JFrame frame = new JFrame();
     private JTextField usernameField;
-    private JButton loginButton;
     private JPasswordField passwordField;
-    private JLabel accountLoginLabel;
-    private JLabel usernameLabel;
-    private JLabel passwordLabel;
+    private JButton loginButton;
     private JPanel loginPanel;
 
-
-    public LoginForm_1() {
+    public static void main(String[] args) {
+//        LoginForm frame = new LoginForm();
+//        frame.setVisible(true);
+        LoginForm loginForm = new LoginForm();
+        loginForm.setContentPane(new LoginForm().loginPanel);
+        loginForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        loginForm.setVisible(true);
+        loginForm.pack();
+        loginForm.setTitle("CAB302");
+    }
+    public LoginForm() {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String username = usernameField.getText();
                 String password = String.valueOf(passwordField.getPassword());
-
 
                 if(username.trim().equals("") && password.trim().equals("")){
                     JOptionPane.showMessageDialog(rootPane, "please enter both username and password");
@@ -48,6 +56,9 @@ public class LoginForm_1 extends JFrame{
                         ResultSet rs = ps.executeQuery();
                         ResultSet rs1 = ps1.executeQuery();
                         if(rs.next()){
+                            //I cant seem to hide/close the window...
+                            frame.setVisible(false);
+                            frame.dispose();
                             MenuForm menuForm = new MenuForm();
                             menuForm.setContentPane(new MenuForm().menuPanel);
                             menuForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,15 +67,19 @@ public class LoginForm_1 extends JFrame{
                             menuForm.setTitle("CAB302");
                         }
                         else if(rs1.next()){
+                            //I cant seem to hide/close the window...
+                            setVisible(false);
+                            dispose();
                             MenuForm menuForm = new MenuForm();
+                            menuForm.setContentPane(new MenuForm().menuPanel);
+                            menuForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                             menuForm.setVisible(true);
                             menuForm.pack();
-                            menuForm.setLocationRelativeTo(null);
+                            menuForm.setTitle("CAB302");
                             menuForm.enableuser(true);
-                            dispose();
                         }
                         else
-                            JOptionPane.showMessageDialog(rootPane, "wrong username or password");
+                            JOptionPane.showMessageDialog(loginButton, "wrong username or password");
                     }
                     catch (Exception ex) {
                         Logger.getLogger(LoginForm_1.class.getName()).log(Level.SEVERE,null,ex);
@@ -72,16 +87,6 @@ public class LoginForm_1 extends JFrame{
                 }
             }
         });
-    }
 
-    public static void main(String[] args) {
-        LoginForm_1 loginPanel = new LoginForm_1();
-        loginPanel.setContentPane(new LoginForm_1().loginPanel);
-        loginPanel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        loginPanel.setVisible(true);
-        loginPanel.pack();
-        loginPanel.setTitle("CAB302");
     }
-
 }
-

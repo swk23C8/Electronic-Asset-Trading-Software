@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuForm extends JFrame{
-    private JPanel Main;
+    public JPanel menuPanel;
     private JMenuBar MenuBar;
     private JButton assetsButton;
     private JButton tradeHistoryButton;
@@ -45,7 +45,7 @@ public class MenuForm extends JFrame{
     }
     public static void main(String[] args) {
         MenuForm menuForm = new MenuForm();
-        menuForm.setContentPane(new MenuForm().Main);
+        menuForm.setContentPane(new MenuForm().menuPanel);
         menuForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         menuForm.setVisible(true);
         menuForm.pack();

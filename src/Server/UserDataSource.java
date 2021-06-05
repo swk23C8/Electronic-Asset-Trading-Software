@@ -176,6 +176,7 @@ public class UserDataSource {
             getUser.setString(1, name);
             rs = getUser.executeQuery();
             rs.next();
+            //What if rs is null?
             u.setUsername(rs.getString("username"));
             u.setPassword(rs.getString("password"));
             u.setSaltValue(rs.getString("saltValue"));

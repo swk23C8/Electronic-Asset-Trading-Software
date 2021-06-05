@@ -41,5 +41,4 @@ public enum Command{
     // Boolean commands
     FAIL,
     SUCCESS,
-    RECHECK,
 }

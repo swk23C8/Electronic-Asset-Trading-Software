@@ -1,12 +1,12 @@
 package Client;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import Server.*;
 
 public class LoginForm_1 extends JFrame{
     private JTextField usernameField;
@@ -15,8 +15,7 @@ public class LoginForm_1 extends JFrame{
     private JLabel accountLoginLabel;
     private JLabel usernameLabel;
     private JLabel passwordLabel;
-    private JPanel loginPanel;
-
+    private JPanel Main;
 
     public LoginForm_1() {
         loginButton.addActionListener(new ActionListener() {
@@ -36,11 +35,36 @@ public class LoginForm_1 extends JFrame{
                     JOptionPane.showMessageDialog(rootPane, "please enter password");
                 }
                 else{
-                    String loginQuery = "SELECT * FROM user WHERE `username` = ? and `password` = ? ";
+                    String userQuery = "SELECT * FROM users WHERE `username` = ? and `password` = ? ";
+                    String adminQuery = "SELECT * FROM admin WHERE `username` = ? and `password` = ? ";
                     try {
-
-                        PreparedStatement ps = DBConnection.getInstance().prepareStatement(loginQuery);
-                        PreparedStatement ps1 = DBConnection.getInstance().prepareStatement(loginQuery);
+                        /**
+                         * ServerConnector connector = new ServerConnector();
+                         *                         User providedUser = new User(username, password);
+                         *                         User existingUser = connector.login(providedUser);
+                         *                         if (existingUser == null)
+                         *                         {
+                         *                             JOptionPane.showMessageDialog(rootPane, "wrong username or password");
+                         *                         }
+                         *                         else if(existingUser.getType() == "admin"){
+                         *                             MenuForm mainMenu = new MenuForm();
+                         *                             mainMenu.setVisible(true);
+                         *                             mainMenu.pack();
+                         *                             mainMenu.setLocationRelativeTo(null);
+                         *                             mainMenu.enableuser(false);
+                         *                             dispose();
+                         *                         }
+                         *                         else if(existingUser.getType() == "user") {
+                         *                             MenuForm mainMenu = new MenuForm();
+                         *                             mainMenu.setVisible(true);
+                         *                             mainMenu.pack();
+                         *                             mainMenu.setLocationRelativeTo(null);
+                         *                             mainMenu.enableuser(true);
+                         *                             dispose();
+                         *                         }
+                         */
+                        PreparedStatement ps = DbConnection.getConnection().prepareStatement(userQuery);
+                        PreparedStatement ps1 = DbConnection.getConnection().prepareStatement(adminQuery);
                         ps.setString(1, username);
                         ps.setString(2, password);
                         ps1.setString(1, username);
@@ -48,25 +72,24 @@ public class LoginForm_1 extends JFrame{
                         ResultSet rs = ps.executeQuery();
                         ResultSet rs1 = ps1.executeQuery();
                         if(rs.next()){
-                            MenuForm menuForm = new MenuForm();
-                            menuForm.setContentPane(new MenuForm().menuPanel);
-                            menuForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            menuForm.setVisible(true);
-                            menuForm.pack();
-                            menuForm.setTitle("CAB302");
+                            MenuForm mainMenu = new MenuForm();
+                            mainMenu.setVisible(true);
+                            mainMenu.pack();
+                            mainMenu.setLocationRelativeTo(null);
+                            mainMenu.enableuser(false);
+                            dispose();
                         }
                         else if(rs1.next()){
-                            MenuForm menuForm = new MenuForm();
-                            menuForm.setVisible(true);
-                            menuForm.pack();
-                            menuForm.setLocationRelativeTo(null);
-                            menuForm.enableuser(true);
+                            MenuForm mainMenu = new MenuForm();
+                            mainMenu.setVisible(true);
+                            mainMenu.pack();
+                            mainMenu.setLocationRelativeTo(null);
+                            mainMenu.enableuser(true);
                             dispose();
                         }
                         else
                             JOptionPane.showMessageDialog(rootPane, "wrong username or password");
-                    }
-                    catch (Exception ex) {
+                    } catch (Exception ex) {
                         Logger.getLogger(LoginForm_1.class.getName()).log(Level.SEVERE,null,ex);
                     }
                 }
@@ -75,13 +98,12 @@ public class LoginForm_1 extends JFrame{
     }
 
     public static void main(String[] args) {
-        LoginForm_1 loginPanel = new LoginForm_1();
-        loginPanel.setContentPane(new LoginForm_1().loginPanel);
-        loginPanel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        loginPanel.setVisible(true);
-        loginPanel.pack();
-        loginPanel.setTitle("CAB302");
+        LoginForm_1 loginForm = new LoginForm_1();
+        loginForm.setContentPane(new LoginForm_1().Main);
+        loginForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        loginForm.setVisible(true);
+        loginForm.pack();
+        loginForm.setTitle("CAB302");
     }
-
 }
 

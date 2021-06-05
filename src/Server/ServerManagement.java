@@ -396,13 +396,15 @@ public class ServerManagement {
                 if (confirmationInformation != null && confirmationInformation.getPassword() ==
                         loginInformation.getPassword())
                 {
-                    outputStream.writeObject(Command.SUCCESS);
+
+                    outputStream.writeObject(confirmationInformation);
                 }
                 else
                 {
-                    outputStream.writeObject(Command.FAIL);
+                    outputStream.writeObject(null);
                 }
                 //State if login successful on server gui, for user with name...
+
             }
             break;
             case CHANGE_PASSWORD:
@@ -436,27 +438,36 @@ public class ServerManagement {
         OUDataSource OUDatabase = new OUDataSource();
         OUAssetDataSource OUAssetDatabase = new OUAssetDataSource();
 
-        for (int firstElemIndex = 0; firstElemIndex < listOfOffers.size(); firstElemIndex++) {
-            for (int secondElemIndex = 0; secondElemIndex < listOfOffers.size(); secondElemIndex++){
-                if (firstElemIndex == secondElemIndex) {
+        // Comparing a specific offer in the list with other offers in the list.
+        for (int originOffer = 0; originOffer < listOfOffers.size(); originOffer++) {
+            for (int comparedOffer = 0; comparedOffer < listOfOffers.size(); comparedOffer++){
+                // if the offer is comparing with itself, skip the rest and continue
+                if (originOffer == comparedOffer) {
                     continue;
 
                 }
-                Integer id1 = listOfOffers.get(firstElemIndex).getId();
-                Integer id2 = listOfOffers.get(secondElemIndex).getId();
-                String type1 = listOfOffers.get(firstElemIndex).getOfferType();
-                String type2 = listOfOffers.get(secondElemIndex).getOfferType();
-                String ou1 = listOfOffers.get(firstElemIndex).getOUName();
-                String ou2 = listOfOffers.get(secondElemIndex).getOUName();
-                String asset1 = listOfOffers.get(firstElemIndex).getAssetName();
-                String asset2 = listOfOffers.get(secondElemIndex).getAssetName();
-                Integer qty1 = listOfOffers.get(firstElemIndex).getQuantity();
-                Integer qty2 = listOfOffers.get(secondElemIndex).getQuantity();
-                Integer price1 = listOfOffers.get(firstElemIndex).getCreditsEach();
-                Integer price2 = listOfOffers.get(secondElemIndex).getCreditsEach();
 
-                if ((firstElemIndex < secondElemIndex) && (!type1.equals(type2)) && (!ou1.equals(ou2))
+                // Store the instances of the offers into variables
+                Integer id1 = listOfOffers.get(originOffer).getId();
+                Integer id2 = listOfOffers.get(comparedOffer).getId();
+                String type1 = listOfOffers.get(originOffer).getOfferType();
+                String type2 = listOfOffers.get(comparedOffer).getOfferType();
+                String ou1 = listOfOffers.get(originOffer).getOUName();
+                String ou2 = listOfOffers.get(comparedOffer).getOUName();
+                String asset1 = listOfOffers.get(originOffer).getAssetName();
+                String asset2 = listOfOffers.get(comparedOffer).getAssetName();
+                Integer qty1 = listOfOffers.get(originOffer).getQuantity();
+                Integer qty2 = listOfOffers.get(comparedOffer).getQuantity();
+                Integer price1 = listOfOffers.get(originOffer).getCreditsEach();
+                Integer price2 = listOfOffers.get(comparedOffer).getCreditsEach();
+
+                // if the origin offer is comparing with the offer comes after in the list && type and ou of the both offer are not same &&
+                // asset of both offer is same
+                if ((originOffer < comparedOffer) && (!type1.equals(type2)) && (!ou1.equals(ou2))
                         && (asset1.equals(asset2))) {
+
+                    // if the origin offer is the buying offer && quantity of the buying offer is less or equal to selling offer but the price is
+                    // more or equal to the selling offer
                     if (type1.equals("buy") && qty1 <= qty2 && price1 >= price2) {
 
                         // The effect on OU's credit
@@ -481,23 +492,23 @@ public class ServerManagement {
                         // The update on currentTrade
                         if (qty1.equals(qty2)) {
                             offerDatabase.deleteOffer(id1);
-                            offerDatabase.addHistory(listOfOffers.get(firstElemIndex));
+                            offerDatabase.addHistory(listOfOffers.get(originOffer));
                             offerDatabase.deleteOffer(id2);
-                            offerDatabase.addHistory(listOfOffers.get(secondElemIndex));
-                            Offer tmp1 = listOfOffers.get(firstElemIndex);
-                            listOfOffers.remove(firstElemIndex);
+                            offerDatabase.addHistory(listOfOffers.get(comparedOffer));
+                            Offer tmp1 = listOfOffers.get(originOffer);
+                            listOfOffers.remove(originOffer);
                             listOfOffers.add(0, tmp1);
-                            Offer tmp2 = listOfOffers.get(secondElemIndex);
-                            listOfOffers.remove(secondElemIndex);
+                            Offer tmp2 = listOfOffers.get(comparedOffer);
+                            listOfOffers.remove(comparedOffer);
                             listOfOffers.add(1, tmp2);
                         }
                         else {
-                            listOfOffers.get(secondElemIndex).setQuantity(qty2 - qty1);
-                            offerDatabase.editQty(listOfOffers.get(secondElemIndex));
+                            listOfOffers.get(comparedOffer).setQuantity(qty2 - qty1);
+                            offerDatabase.editQty(listOfOffers.get(comparedOffer));
                             offerDatabase.deleteOffer(id1);
-                            offerDatabase.addHistory(listOfOffers.get(firstElemIndex));
-                            Offer tmp1 = listOfOffers.get(firstElemIndex);
-                            listOfOffers.remove(firstElemIndex);
+                            offerDatabase.addHistory(listOfOffers.get(originOffer));
+                            Offer tmp1 = listOfOffers.get(originOffer);
+                            listOfOffers.remove(originOffer);
                             listOfOffers.add(0, tmp1);
                         }
 
@@ -505,6 +516,8 @@ public class ServerManagement {
 
                     }
 
+                    // if the origin offer is the selling offer && quantity of the buying offer is less or equal to selling offer but the price is
+                    // more or equal to the selling offer
                     else if (type2.equals("buy") && qty2 <= qty1 && price2 >= price1) {
 
                         // The effect on OU's credit
@@ -529,23 +542,23 @@ public class ServerManagement {
                         // The update on the currentTrade
                         if (qty1.equals(qty2)) {
                             offerDatabase.deleteOffer(id1);
-                            offerDatabase.addHistory(listOfOffers.get(firstElemIndex));
+                            offerDatabase.addHistory(listOfOffers.get(originOffer));
                             offerDatabase.deleteOffer(id2);
-                            offerDatabase.addHistory(listOfOffers.get(secondElemIndex));
-                            Offer tmp1 = listOfOffers.get(firstElemIndex);
-                            listOfOffers.remove(firstElemIndex);
+                            offerDatabase.addHistory(listOfOffers.get(comparedOffer));
+                            Offer tmp1 = listOfOffers.get(originOffer);
+                            listOfOffers.remove(originOffer);
                             listOfOffers.add(0, tmp1);
-                            Offer tmp2 = listOfOffers.get(secondElemIndex);
-                            listOfOffers.remove(secondElemIndex);
+                            Offer tmp2 = listOfOffers.get(comparedOffer);
+                            listOfOffers.remove(comparedOffer);
                             listOfOffers.add(1, tmp2);
                         }
                         else {
-                            listOfOffers.get(firstElemIndex).setQuantity(qty1 - qty2);
-                            offerDatabase.editQty(listOfOffers.get(firstElemIndex));
+                            listOfOffers.get(originOffer).setQuantity(qty1 - qty2);
+                            offerDatabase.editQty(listOfOffers.get(originOffer));
                             offerDatabase.deleteOffer(id2);
-                            offerDatabase.addHistory(listOfOffers.get(secondElemIndex));
-                            Offer tmp1 = listOfOffers.get(secondElemIndex);
-                            listOfOffers.remove(secondElemIndex);
+                            offerDatabase.addHistory(listOfOffers.get(comparedOffer));
+                            Offer tmp1 = listOfOffers.get(comparedOffer);
+                            listOfOffers.remove(comparedOffer);
                             listOfOffers.add(0, tmp1);
                         }
 //

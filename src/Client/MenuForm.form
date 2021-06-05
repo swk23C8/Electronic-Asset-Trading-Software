@@ -21,23 +21,10 @@
               <text value="All Orders"/>
             </properties>
           </component>
-          <component id="bed28" class="javax.swing.JButton" binding="assetsButton">
+          <component id="bed28" class="javax.swing.JButton" binding="organisationButton">
             <constraints/>
             <properties>
-              <text value="Organisation Assets"/>
-            </properties>
-          </component>
-          <component id="e0516" class="javax.swing.JButton" binding="currentOrdersButton">
-            <constraints/>
-            <properties>
-              <enabled value="true"/>
-              <text value="Organisation Orders"/>
-            </properties>
-          </component>
-          <component id="29330" class="javax.swing.JButton" binding="tradeHistoryButton" default-binding="true">
-            <constraints/>
-            <properties>
-              <text value="Trade History"/>
+              <text value="Organisation"/>
             </properties>
           </component>
           <component id="77a38" class="javax.swing.JButton" binding="adminMenuButton" default-binding="true">

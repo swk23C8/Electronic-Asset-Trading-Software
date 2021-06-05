@@ -7,10 +7,8 @@ import java.awt.event.ActionListener;
 public class MenuForm extends JFrame{
     public JPanel menuPanel;
     private JMenuBar MenuBar;
-    private JButton assetsButton;
-    private JButton tradeHistoryButton;
+    private JButton organisationButton;
     private JButton allOrdersButton;
-    private JButton currentOrdersButton;
     private JLabel welcomeLabel;
     private JButton adminMenuButton;
 
@@ -18,25 +16,21 @@ public class MenuForm extends JFrame{
 //        WHATEVERONLYADMINSEES.setVisible(yesno);
     }
     public MenuForm() {
-        assetsButton.addActionListener(new ActionListener() {
+        organisationButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
             }
         });
-        currentOrdersButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-            }
-        });
-        tradeHistoryButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
         allOrdersButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        adminMenuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 

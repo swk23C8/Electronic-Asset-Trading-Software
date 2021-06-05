@@ -15,6 +15,7 @@ public class LoginForm_1 extends JFrame{
     private JLabel accountLoginLabel;
     private JLabel usernameLabel;
     private JLabel passwordLabel;
+    private JPanel loginPanel;
     private JPanel Main;
 
     public LoginForm_1() {

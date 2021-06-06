@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Adding settings (change password gui)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +237,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622960552987</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="LoginForm working with hashed password">
+      <created>1622962076303</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622962076303</updated>
+    </task>
+    <task id="LOCAL-00015" summary="LoginForm working with hashed password (Second Commit)">
+      <created>1622962113828</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1622962113828</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,6 +289,7 @@
     <MESSAGE value="Adding additional labels I forgot to add in the skeleton gui" />
     <MESSAGE value="Adding settings (change password gui)" />
     <MESSAGE value="LoginForm working with hashed password" />
-    <option name="LAST_COMMIT_MESSAGE" value="LoginForm working with hashed password" />
+    <MESSAGE value="LoginForm working with hashed password (Second Commit)" />
+    <option name="LAST_COMMIT_MESSAGE" value="LoginForm working with hashed password (Second Commit)" />
   </component>
 </project>

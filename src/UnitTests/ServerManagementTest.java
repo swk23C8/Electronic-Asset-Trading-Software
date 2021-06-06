@@ -2,6 +2,7 @@ package UnitTests;
 
 import Server.ServerManagement;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.Serializable;
 
@@ -18,4 +19,10 @@ public class ServerManagementTest {
     }
 
     //Test different methods, different cases
+
+    @Test
+    public void addUserTest()
+    {
+
+    }
 }

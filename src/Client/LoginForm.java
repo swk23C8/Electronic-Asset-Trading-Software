@@ -16,6 +16,13 @@ public class LoginForm extends JFrame{
     private JPasswordField passwordField;
     private JButton loginButton;
     private JPanel loginPanel;
+    private LoginForm loginForm;
+
+    public JPanel getLoginPanel()
+    {
+        return loginPanel;
+    }
+
 
     // maybe this?
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,15 +65,6 @@ public class LoginForm extends JFrame{
     }
 
 
-    public static void main(String[] args) {
-        LoginForm loginForm = new LoginForm();
-        loginForm.setContentPane(new LoginForm().loginPanel);
-        loginForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        loginForm.setVisible(true);
-        loginForm.pack();
-        loginForm.setTitle("CAB302");
-    }
-
     public LoginForm() {
         loginButton.addActionListener(new ActionListener() {
             @Override
@@ -74,5 +72,9 @@ public class LoginForm extends JFrame{
                 loginButtonActionPerformed(e);
             }
         });
+        this.setContentPane(this.getLoginPanel());
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+        this.setTitle("CAB302");
     }
 }

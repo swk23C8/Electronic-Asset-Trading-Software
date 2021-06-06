@@ -161,7 +161,7 @@ public class OUAssetDataSource {
     /**
      * Delete the offer from the currentTrade table.
      */
-    public boolean deleteOffer(String ou, String asset) {
+    public boolean deleteOUAsset(String ou, String asset) {
 
         try {
             deleteOuAsset.setString(1, ou);

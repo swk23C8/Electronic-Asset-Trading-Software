@@ -15,7 +15,7 @@ public class UserDataSource {
 
     private static final String UPDATE_PASSWORD = "UPDATE user SET password=? WHERE username=?";
 
-    private static final String  UPDATE_SALT_VALUE = "UPADATE user SET saltValue=? WHERE username=?";
+    private static final String  UPDATE_SALT_VALUE = "UPDATE user SET saltValue=? WHERE username=?";
 
     private static final String COUNT_ROWS = "SELECT COUNT(*) FROM user";
 
@@ -25,7 +25,13 @@ public class UserDataSource {
 
     private static final String DELETE_USER = "DELETE FROM user WHERE username=?";
 
-
+    public static final String CREATE_TABLE =
+            "CREATE TABLE IF NOT EXISTS user ("
+                    + "username VARCHAR(45) PRIMARY KEY NOT NULL UNIQUE,"
+                    + "password VARCHAR(100),"
+                    + "saltValue VARCHAR(100),"
+                    + "ouName VARCHAR(45),"
+                    + "accountType VARCHAR(45));";
 
     private Connection connection;
 
@@ -49,7 +55,6 @@ public class UserDataSource {
     public UserDataSource() {
         connection = DBConnection.getInstance();
         try {
-
             /* BEGIN MISSING CODE */
             addUser = connection.prepareStatement(INSERT_USER);
             changePassword = connection.prepareStatement(UPDATE_PASSWORD);

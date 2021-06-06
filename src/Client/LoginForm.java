@@ -42,10 +42,13 @@ public class LoginForm extends JFrame{
         else{
 
             try {
+                ServerConnector serverConnection = new ServerConnector();
                 User providedUser = new User(username, password);
                 User existingUser = serverConnection.login(providedUser);
+                System.out.println("Begin");
                 if (existingUser == null)
                 {
+                    System.out.println("fail");
                     JOptionPane.showMessageDialog(rootPane, "wrong username or password");
                 }
                 else if(existingUser.getType() == "admin"){
@@ -55,6 +58,7 @@ public class LoginForm extends JFrame{
                     mainMenu.pack();
                     mainMenu.setLocationRelativeTo(null);
                     mainMenu.enableuser(false);
+                    System.out.println("admin");
                 }
                 else if(existingUser.getType() == "user") {
                     this.dispose();
@@ -63,6 +67,7 @@ public class LoginForm extends JFrame{
                     mainMenu.pack();
                     mainMenu.setLocationRelativeTo(null);
                     mainMenu.enableuser(true);
+                    System.out.println("user");
                 }
                 /**
                  * UserDataSource userDatabase = new UserDataSource();

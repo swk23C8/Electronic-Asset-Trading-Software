@@ -90,7 +90,6 @@ public class ServerManagement {
             ex.printStackTrace();
         }
         //Every 2 hours call reconcile to reconcile database
-        System.out.println("1");
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
         scheduler.scheduleAtFixedRate(() -> reconcile(), 0, 2, TimeUnit.HOURS);
         try (ServerSocket serverSocket = new ServerSocket(6666)) {
@@ -103,7 +102,6 @@ public class ServerManagement {
 
                 try {
                     final Socket socket = serverSocket.accept();
-                    System.out.println("yay");
 
                     socket.setSoTimeout(SOCKET_READ_TIMEOUT);
 
@@ -139,6 +137,7 @@ public class ServerManagement {
         offerDatabase = new OfferDataSource();
         OUDatabase = new OUDataSource();
         userDatabase = new UserDataSource();
+        OUAssetDatabase = new OUAssetDataSource();
     }
 
     /**
@@ -390,23 +389,24 @@ public class ServerManagement {
             case LOGIN:
             {
                 final User loginInformation = (User) inputStream.readObject();
-                final User confirmationInformation;
                 synchronized (userDatabase)
                 {
-                    confirmationInformation = userDatabase.getUser(loginInformation.getUsername());
-                }
+                    final User confirmationInformation = userDatabase.getUser(loginInformation.getUsername());
+                    System.out.println("prior check");
 
-                if (confirmationInformation != null && confirmationInformation.getPassword() ==
-                        loginInformation.getPassword())
-                {
-
-                    outputStream.writeObject(confirmationInformation);
+                    if (confirmationInformation != null && confirmationInformation.getPassword() ==
+                            loginInformation.getPassword())
+                    {
+                        System.out.println("isright");
+                        outputStream.writeObject(confirmationInformation);
+                    }
+                    else
+                    {
+                        System.out.println("null");
+                        outputStream.writeObject(null);
+                    }
+                    //State if login successful on server gui, for user with name...
                 }
-                else
-                {
-                    outputStream.writeObject(null);
-                }
-                //State if login successful on server gui, for user with name...
 
             }
             break;

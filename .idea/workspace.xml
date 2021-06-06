@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Adding settings (change password gui)">
-      <change afterPath="$PROJECT_DIR$/src/Client/Program.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Server/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientconfig.props" beforeDir="false" afterPath="$PROJECT_DIR$/clientconfig.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ClientGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverconfig.props" beforeDir="false" afterPath="$PROJECT_DIR$/serverconfig.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm_1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm_1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm_1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/PasswordForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/PasswordForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/PasswordForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/PasswordForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/LoginForm_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/UserDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/UserDataSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622962113828</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added Program Functionality">
+      <created>1622975586831</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1622975586831</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,7 +324,18 @@
     <MESSAGE value="Adding settings (change password gui)" />
     <MESSAGE value="LoginForm working with hashed password" />
     <MESSAGE value="LoginForm working with hashed password (Second Commit)" />
-    <option name="LAST_COMMIT_MESSAGE" value="LoginForm working with hashed password (Second Commit)" />
+    <MESSAGE value="Added Program Functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Program Functionality" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Project2$Program__1_.ic" NAME="Program (1) Coverage Results" MODIFIED="1622975092542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

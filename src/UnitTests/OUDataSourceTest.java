@@ -27,8 +27,10 @@ class OUDataSourceTest {
 
     @Test
     void editCredit() {
+        source.addOU(TestOU);
         source.editCredit(new OU("test", 100));
         assertEquals(100, source.getOU("test").getCredits());
+        source.deleteOU("test");
     }
 
     @Test
@@ -41,7 +43,7 @@ class OUDataSourceTest {
 
     @Test
     void getOU() {
-        assertEquals(TestOU, source.getOU("test"));
+        assertEquals(TestOU.getOuName(), source.getOU("test").getOuName());
     }
 
     @Test
@@ -60,4 +62,5 @@ class OUDataSourceTest {
     @Test
     void close() {
     }
+
 }

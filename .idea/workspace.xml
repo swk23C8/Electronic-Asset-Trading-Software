@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Basic unit testing implemented for OU and User datasource.">
-      <change afterPath="$PROJECT_DIR$/src/UnitTests/OUAssetDataSourceTest.java" afterDir="false" />
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="finishing connecting all the gui screens so users can navigate through each gui with a button press">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUAssetDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUAssetDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/OUAssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUAssetDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ServerForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ServerForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +61,14 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\uni\qut_cab302_project\src\Server\" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OUAssetDataSourceTest.getSize">
+  <component name="RunManager" selected="JUnit.OUDataSourceTest">
     <configuration name="ClientGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.ClientGUI" />
       <module name="qut_cab302_project" />
@@ -96,33 +95,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OUAssetDataSourceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MenuForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.MenuForm" />
       <module name="qut_cab302_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UnitTests.*" />
+          <option name="PATTERN" value="Client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="UnitTests" />
-      <option name="MAIN_CLASS_NAME" value="UnitTests.OUAssetDataSourceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OUAssetDataSourceTest.getSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qut_cab302_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="UnitTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="UnitTests" />
-      <option name="MAIN_CLASS_NAME" value="UnitTests.OUAssetDataSourceTest" />
-      <option name="METHOD_NAME" value="getSize" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,20 +123,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserDataSourceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UnitTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="UnitTests" />
+      <option name="MAIN_CLASS_NAME" value="UnitTests.UserDataSourceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.MenuForm" />
       <item itemvalue="Application.LoginForm" />
       <item itemvalue="Application.ClientGUI" />
+      <item itemvalue="JUnit.UserDataSourceTest" />
       <item itemvalue="JUnit.OUDataSourceTest" />
-      <item itemvalue="JUnit.OUAssetDataSourceTest" />
-      <item itemvalue="JUnit.OUAssetDataSourceTest.getSize" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OUAssetDataSourceTest.getSize" />
-        <item itemvalue="JUnit.OUAssetDataSourceTest" />
         <item itemvalue="JUnit.OUDataSourceTest" />
         <item itemvalue="Application.ClientGUI" />
         <item itemvalue="Application.LoginForm" />
+        <item itemvalue="JUnit.UserDataSourceTest" />
+        <item itemvalue="Application.MenuForm" />
       </list>
     </recent_temporary>
   </component>
@@ -280,14 +276,7 @@
       <option name="project" value="LOCAL" />
       <updated>1622975707278</updated>
     </task>
-    <task id="LOCAL-00017" summary="Basic unit testing implemented for OU and User datasource.">
-      <created>1622976827973</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1622976827973</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,16 +317,5 @@
     <MESSAGE value="LoginForm working with hashed password (Second Commit)" />
     <MESSAGE value="Basic unit testing implemented for OU and User datasource." />
     <option name="LAST_COMMIT_MESSAGE" value="Basic unit testing implemented for OU and User datasource." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/UnitTests/OUAssetDataSourceTest.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

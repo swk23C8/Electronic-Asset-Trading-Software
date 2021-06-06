@@ -4,8 +4,7 @@
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Adding settings (change password gui)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/PasswordForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/PasswordForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/PasswordForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/PasswordForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.MenuForm">
+  <component name="RunManager" selected="Application.LoginForm">
     <configuration name="AllOrdersForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.AllOrdersForm" />
       <module name="qut_cab302_project" />
@@ -129,8 +128,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MenuForm" />
         <item itemvalue="Application.LoginForm" />
+        <item itemvalue="Application.MenuForm" />
         <item itemvalue="Application.LoginForm_1" />
         <item itemvalue="Application.AllOrdersForm" />
         <item itemvalue="Application.ServerManagement" />

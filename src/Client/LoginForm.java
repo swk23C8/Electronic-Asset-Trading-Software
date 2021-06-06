@@ -1,6 +1,7 @@
 package Client;
 
 import Server.DBConnection;
+import Server.UserDataSource;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,20 +19,20 @@ public class LoginForm extends JFrame{
     private JPanel loginPanel;
 
     // maybe this?
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        ClientSocket sock = new ClientSocket();
-        User user = sock.sendLogin(Username.getText(), jPasswordField1.getText());
-        boolean loginVerify = user != null;
-        System.out.println("Username: " + Username.getText());
-        System.out.println("Password: " + jPasswordField1.getText());
-        System.out.println("Login Successful: " + loginVerify);
-        if(loginVerify){
-            this.dispose();
-            new Home(user).setVisible(true);
-        }
-        else
-            jLabel2.setVisible(true);
-    }
+//    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+//        ClientSocket sock = new ClientSocket();
+//        User user = sock.sendLogin(Username.getText(), jPasswordField1.getText());
+//        boolean loginVerify = user != null;
+//        System.out.println("Username: " + Username.getText());
+//        System.out.println("Password: " + jPasswordField1.getText());
+//        System.out.println("Login Successful: " + loginVerify);
+//        if(loginVerify){
+//            this.dispose();
+//            new Home(user).setVisible(true);
+//        }
+//        else
+//            jLabel2.setVisible(true);
+//    }
 
 
     public static void main(String[] args) {
@@ -64,26 +65,10 @@ public class LoginForm extends JFrame{
                     String loginQuery = "SELECT * FROM user WHERE `username` = ? and `password` = ? ";
                     try {
 
-                        PreparedStatement ps = DBConnection.getInstance().prepareStatement(loginQuery);
-                        PreparedStatement ps1 = DBConnection.getInstance().prepareStatement(loginQuery);
-                        ps.setString(1, username);
-                        ps.setString(2, password);
-                        ps1.setString(1, username);
-                        ps1.setString(2, password);
-                        ResultSet rs = ps.executeQuery();
-                        ResultSet rs1 = ps1.executeQuery();
-                        if(rs.next()){
-                            //I cant seem to hide/close the window...
-                            frame.setVisible(false);
-                            frame.dispose();
-                            MenuForm menuForm = new MenuForm();
-                            menuForm.setContentPane(new MenuForm().menuPanel);
-                            menuForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            menuForm.setVisible(true);
-                            menuForm.pack();
-                            menuForm.setTitle("CAB302");
-                        }
-                        else if(rs1.next()){
+                        UserDataSource userDatabase = new UserDataSource();
+
+                        if(userDatabase.getUser(username).getPassword().
+                                equals(userDatabase.passwordCheck(password, userDatabase.getUser(username)))){
                             //I cant seem to hide/close the window...
                             setVisible(false);
                             dispose();
@@ -99,6 +84,7 @@ public class LoginForm extends JFrame{
                             JOptionPane.showMessageDialog(loginButton, "Wrong Username or Password");
                     }
                     catch (Exception ex) {
+                        JOptionPane.showMessageDialog(loginButton, "Wrong Username or Password");
                         Logger.getLogger(LoginForm_1.class.getName()).log(Level.SEVERE,null,ex);
                     }
                 }

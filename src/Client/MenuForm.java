@@ -16,6 +16,7 @@ public class MenuForm extends JFrame{
     public void enableuser(boolean yesno){
 //        WHATEVERONLYADMINSEES.setVisible(yesno);
     }
+
     public MenuForm() {
         organisationButton.addActionListener(new ActionListener() {
             @Override

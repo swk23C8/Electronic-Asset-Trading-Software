@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Adding settings (change password gui)">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Basic unit testing implemented for OU and User datasource.">
       <change afterPath="$PROJECT_DIR$/src/UnitTests/UserDataSourceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm$1.class" afterDir="false" />
@@ -142,8 +142,8 @@
       <item itemvalue="Application.MenuForm" />
       <item itemvalue="Application.LoginForm_1" />
       <item itemvalue="Application.LoginForm" />
-      <item itemvalue="JUnit.UserDataSourceTest" />
       <item itemvalue="Application.ClientGUI" />
+      <item itemvalue="JUnit.UserDataSourceTest" />
     </list>
     <recent_temporary>
       <list>
@@ -308,6 +308,7 @@
     <MESSAGE value="Adding settings (change password gui)" />
     <MESSAGE value="LoginForm working with hashed password" />
     <MESSAGE value="LoginForm working with hashed password (Second Commit)" />
-    <option name="LAST_COMMIT_MESSAGE" value="LoginForm working with hashed password (Second Commit)" />
+    <MESSAGE value="Basic unit testing implemented for OU and User datasource." />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic unit testing implemented for OU and User datasource." />
   </component>
 </project>

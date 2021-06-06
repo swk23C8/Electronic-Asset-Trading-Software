@@ -1,7 +1,7 @@
 package Client;
 
-import Server.DBConnection;
 import Server.UserDataSource;
+import Common.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +17,7 @@ public class LoginForm extends JFrame{
     private JButton loginButton;
     private JPanel loginPanel;
     private LoginForm loginForm;
+    private ServerConnector serverConnection;
 
     public JPanel getLoginPanel()
     {
@@ -41,21 +42,45 @@ public class LoginForm extends JFrame{
         else{
 
             try {
-                UserDataSource userDatabase = new UserDataSource();
-                if(userDatabase.getUser(username).getPassword().
-                        equals(userDatabase.passwordCheck(password, userDatabase.getUser(username)))){
-                    //I cant seem to hide/close the window...
-                    this.dispose();
-                    MenuForm menuForm = new MenuForm();
-                    menuForm.setContentPane(new MenuForm().menuPanel);
-                    menuForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    menuForm.setVisible(true);
-                    menuForm.pack();
-                    menuForm.setTitle("CAB302");
-                    menuForm.enableuser(true);
+                User providedUser = new User(username, password);
+                User existingUser = serverConnection.login(providedUser);
+                if (existingUser == null)
+                {
+                    JOptionPane.showMessageDialog(rootPane, "wrong username or password");
                 }
-                else
-                    JOptionPane.showMessageDialog(loginButton, "Wrong Username or Password");
+                else if(existingUser.getType() == "admin"){
+                    this.dispose();
+                    MenuForm mainMenu = new MenuForm(existingUser, serverConnection);
+                    mainMenu.setVisible(true);
+                    mainMenu.pack();
+                    mainMenu.setLocationRelativeTo(null);
+                    mainMenu.enableuser(false);
+                }
+                else if(existingUser.getType() == "user") {
+                    this.dispose();
+                    MenuForm mainMenu = new MenuForm(existingUser, serverConnection);
+                    mainMenu.setVisible(true);
+                    mainMenu.pack();
+                    mainMenu.setLocationRelativeTo(null);
+                    mainMenu.enableuser(true);
+                }
+                /**
+                 * UserDataSource userDatabase = new UserDataSource();
+                 *                 if(userDatabase.getUser(username).getPassword().
+                 *                         equals(userDatabase.passwordCheck(password, userDatabase.getUser(username)))){
+                 *                     //I cant seem to hide/close the window...
+                 *                     this.dispose();
+                 *                     MenuForm menuForm = new MenuForm();
+                 *                     menuForm.setContentPane(new MenuForm().menuPanel);
+                 *                     menuForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                 *                     menuForm.setVisible(true);
+                 *                     menuForm.pack();
+                 *                     menuForm.setTitle("CAB302");
+                 *                     menuForm.enableuser(true);
+                 *                 }
+                 *                 else
+                 *                     JOptionPane.showMessageDialog(loginButton, "Wrong Username or Password");
+                 */
             }
             catch (Exception ex) {
                 JOptionPane.showMessageDialog(loginButton, "Wrong Username or Password");
@@ -65,7 +90,7 @@ public class LoginForm extends JFrame{
     }
 
 
-    public LoginForm() {
+    public LoginForm(ServerConnector serverConnection) {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -75,6 +100,7 @@ public class LoginForm extends JFrame{
         this.setContentPane(this.getLoginPanel());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+        this.setSize(300,200);
         this.setTitle("CAB302");
     }
 }

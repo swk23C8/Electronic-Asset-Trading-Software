@@ -36,8 +36,8 @@ public class ServerConnector {
 
             // This needs to be
             try {
-                this.HOSTIP = props.getProperty("jdbc.IP");
-                this.PORT = Integer.parseInt(props.getProperty("jdbc.PORT"));
+                this.HOSTIP = props.getProperty("jdbc.ip");
+                this.PORT = Integer.parseInt(props.getProperty("jdbc.port"));
             }
             catch (NumberFormatException e)
             {

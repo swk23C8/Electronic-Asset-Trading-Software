@@ -1,2 +1,2 @@
-jdbc.IP=1.3.2
-jdbc.Port=300
+jdbc.ip=127.0.0.1
+jdbc.port=6666

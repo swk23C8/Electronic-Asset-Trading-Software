@@ -57,7 +57,7 @@ public class ServerManagement {
             start();
         }
         catch (IOException e){
-
+            System.out.println("Failed to connect to server");
         }
     }
     /**
@@ -77,7 +77,7 @@ public class ServerManagement {
 
             // This needs to be
             try {
-                this.PORT = Integer.parseInt(props.getProperty("jdbc.PORT"));
+                this.PORT = Integer.parseInt(props.getProperty("jdbc.port"));
             }
             catch (NumberFormatException e)
             {
@@ -90,9 +90,10 @@ public class ServerManagement {
             ex.printStackTrace();
         }
         //Every 2 hours call reconcile to reconcile database
+        System.out.println("1");
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
         scheduler.scheduleAtFixedRate(() -> reconcile(), 0, 2, TimeUnit.HOURS);
-        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+        try (ServerSocket serverSocket = new ServerSocket(6666)) {
             serverSocket.setSoTimeout(SOCKET_ACCEPT_TIMEOUT);
             for (;;) {
                 if (!running.get()) {
@@ -102,6 +103,8 @@ public class ServerManagement {
 
                 try {
                     final Socket socket = serverSocket.accept();
+                    System.out.println("yay");
+
                     socket.setSoTimeout(SOCKET_READ_TIMEOUT);
 
                     // We have a new connection from a client. Use a runnable and thread to handle

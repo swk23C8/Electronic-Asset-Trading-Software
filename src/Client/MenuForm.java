@@ -1,5 +1,7 @@
 package Client;
 
+import Common.*;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,11 +14,13 @@ public class MenuForm extends JFrame{
     private JLabel welcomeLabel;
     private JButton adminMenuButton;
     private JButton changePasswordButton;
+    private User currentUser;
+    private ServerConnector serverConnection;
 
     public void enableuser(boolean yesno){
 //        WHATEVERONLYADMINSEES.setVisible(yesno);
     }
-    public MenuForm() {
+    public MenuForm(User currentUser, ServerConnector serverConnection) {
         organisationButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -43,13 +47,10 @@ public class MenuForm extends JFrame{
 
             }
         });
-    }
-    public static void main(String[] args) {
-        MenuForm menuForm = new MenuForm();
-        menuForm.setContentPane(new MenuForm().menuPanel);
-        menuForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        menuForm.setVisible(true);
-        menuForm.pack();
-        menuForm.setTitle("CAB302");
+        this.currentUser = currentUser;
+        this.setContentPane(this.menuPanel);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+        this.setTitle("CAB302");
     }
 }

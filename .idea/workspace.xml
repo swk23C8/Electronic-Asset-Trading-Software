@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Adding settings (change password gui)">
-      <change afterPath="$PROJECT_DIR$/src/UnitTests/UserDataSourceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Server/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientconfig.props" beforeDir="false" afterPath="$PROJECT_DIR$/clientconfig.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/UnitTests/ServerManagementTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/UnitTests/ServerManagementTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverconfig.props" beforeDir="false" afterPath="$PROJECT_DIR$/serverconfig.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTests/ServerManagementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTests/ServerManagementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/LoginForm_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -70,7 +75,7 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientGUI">
+  <component name="RunManager" selected="Application.Program (1)">
     <configuration name="ClientGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.ClientGUI" />
       <module name="qut_cab302_project" />
@@ -97,8 +102,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginForm_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client.LoginForm_1" />
+    <configuration name="Program (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.Program" />
       <module name="qut_cab302_project" />
       <extension name="coverage">
         <pattern>
@@ -110,12 +115,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client.MenuForm" />
+    <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.Program" />
       <module name="qut_cab302_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Client.*" />
+          <option name="PATTERN" value="Server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,35 +128,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDataSourceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServerManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.ServerManagement" />
       <module name="qut_cab302_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UnitTests.*" />
+          <option name="PATTERN" value="Server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="UnitTests" />
-      <option name="MAIN_CLASS_NAME" value="UnitTests.UserDataSourceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MenuForm" />
-      <item itemvalue="Application.LoginForm_1" />
       <item itemvalue="Application.LoginForm" />
-      <item itemvalue="JUnit.UserDataSourceTest" />
       <item itemvalue="Application.ClientGUI" />
+      <item itemvalue="Application.ServerManagement" />
+      <item itemvalue="Application.Program" />
+      <item itemvalue="Application.Program (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Program (1)" />
+        <item itemvalue="Application.Program" />
+        <item itemvalue="Application.ServerManagement" />
         <item itemvalue="Application.ClientGUI" />
         <item itemvalue="Application.LoginForm" />
-        <item itemvalue="JUnit.UserDataSourceTest" />
-        <item itemvalue="Application.MenuForm" />
-        <item itemvalue="Application.LoginForm_1" />
       </list>
     </recent_temporary>
   </component>
@@ -309,5 +312,10 @@
     <MESSAGE value="LoginForm working with hashed password" />
     <MESSAGE value="LoginForm working with hashed password (Second Commit)" />
     <option name="LAST_COMMIT_MESSAGE" value="LoginForm working with hashed password (Second Commit)" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Project2$Program__1_.ic" NAME="Program (1) Coverage Results" MODIFIED="1622975092542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Client.*</FILTER>
+    </SUITE>
   </component>
 </project>

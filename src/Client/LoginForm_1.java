@@ -64,6 +64,7 @@ public class LoginForm_1 extends JFrame{
                          *                             dispose();
                          *                         }
                          */
+                        /**
                         PreparedStatement ps = DbConnection.getConnection().prepareStatement(userQuery);
                         PreparedStatement ps1 = DbConnection.getConnection().prepareStatement(adminQuery);
                         ps.setString(1, username);
@@ -90,7 +91,7 @@ public class LoginForm_1 extends JFrame{
                         }
                         else
                             JOptionPane.showMessageDialog(rootPane, "Wrong Username or Password");
-                    } catch (Exception ex) {
+                    **/} catch (Exception ex) {
                         Logger.getLogger(LoginForm_1.class.getName()).log(Level.SEVERE,null,ex);
                     }
                 }

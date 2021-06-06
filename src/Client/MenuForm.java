@@ -1,5 +1,7 @@
 package Client;
 
+import Common.*;
+import Server.ServerManagement;
 import org.junit.jupiter.api.Order;
 
 import javax.swing.*;
@@ -14,6 +16,8 @@ public class MenuForm extends JFrame{
     private JLabel welcomeLabel;
     private JButton adminMenuButton;
     private JButton changePasswordButton;
+    private User existingUser;
+    private ServerConnector connector;
 
     public void enableuser(boolean yesno){
 //        WHATEVERONLYADMINSEES.setVisible(yesno);
@@ -54,7 +58,7 @@ public class MenuForm extends JFrame{
         passwordForm.pack();
         passwordForm.setTitle("CAB302");
     }
-    public MenuForm() {
+    public MenuForm(User existingUser, ServerConnector connector) {
         organisationButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -81,13 +85,12 @@ public class MenuForm extends JFrame{
                 changePasswordButtonActionPerformed(e);
             }
         });
-    }
-    public static void main(String[] args) {
-        MenuForm menuForm = new MenuForm();
-        menuForm.setContentPane(new MenuForm().menuPanel);
-        menuForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        menuForm.setVisible(true);
-        menuForm.pack();
-        menuForm.setTitle("CAB302");
+        this.setContentPane(this.menuPanel);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+        this.pack();
+        this.setTitle("CAB302");
+        this.existingUser = existingUser;
+        this.connector = connector;
     }
 }

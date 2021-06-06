@@ -2,14 +2,10 @@ package Server;
 
 import Common.*;
 
-import javax.swing.*;
 import java.io.*;
-import java.math.BigInteger;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -285,7 +281,7 @@ public class ServerManagement {
                 boolean IsSuccessful;
                 synchronized (OUAssetDatabase)
                 {
-                    IsSuccessful = OUAssetDatabase.deleteOffer((removedOUAsset.getOu()), removedOUAsset.getAsset());
+                    IsSuccessful = OUAssetDatabase.deleteOUAsset((removedOUAsset.getOu()), removedOUAsset.getAsset());
                 }
                 if (IsSuccessful == true)
                 {

@@ -12,6 +12,7 @@ public class PasswordForm extends JFrame{
     private JPasswordField passwordField3;
     private JPasswordField passwordField1;
     private JButton confirmUpdateButton;
+    public JPanel passwordPanel;
     UserData data;
 
 

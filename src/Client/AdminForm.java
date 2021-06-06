@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AdminForm {
+public class AdminForm extends JFrame{
     private JComboBox comboBox1;
     private JTextField textField1;
     private JButton ADDASSETButton;
@@ -24,6 +24,7 @@ public class AdminForm {
     private JButton ADMINButton;
     private JPasswordField passwordField4;
     private JButton confirmCreditAmountButton;
+    public JPanel adminPanel;
 
     public AdminForm() {
         ADDASSETButton.addActionListener(new ActionListener() {

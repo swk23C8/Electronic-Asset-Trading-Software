@@ -1,13 +1,10 @@
 package Client;
 
-import Server.UserDataSource;
 import Common.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -57,7 +54,7 @@ public class LoginForm extends JFrame{
                     mainMenu.setVisible(true);
                     mainMenu.pack();
                     mainMenu.setLocationRelativeTo(null);
-                    mainMenu.enableuser(false);
+                    mainMenu.enableUser(false);
                     System.out.println("admin");
                 }
                 else if(existingUser.getType() == "user") {
@@ -66,7 +63,7 @@ public class LoginForm extends JFrame{
                     mainMenu.setVisible(true);
                     mainMenu.pack();
                     mainMenu.setLocationRelativeTo(null);
-                    mainMenu.enableuser(true);
+                    mainMenu.enableUser(true);
                     System.out.println("user");
                 }
                 /**
@@ -81,7 +78,7 @@ public class LoginForm extends JFrame{
                  *                     menuForm.setVisible(true);
                  *                     menuForm.pack();
                  *                     menuForm.setTitle("CAB302");
-                 *                     menuForm.enableuser(true);
+                 *                     menuForm.enableUser(true);
                  *                 }
                  *                 else
                  *                     JOptionPane.showMessageDialog(loginButton, "Wrong Username or Password");

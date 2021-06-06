@@ -52,7 +52,7 @@ public class LoginForm_1 extends JFrame{
                          *                             mainMenu.setVisible(true);
                          *                             mainMenu.pack();
                          *                             mainMenu.setLocationRelativeTo(null);
-                         *                             mainMenu.enableuser(false);
+                         *                             mainMenu.enableUser(false);
                          *                             dispose();
                          *                         }
                          *                         else if(existingUser.getType() == "user") {
@@ -60,7 +60,7 @@ public class LoginForm_1 extends JFrame{
                          *                             mainMenu.setVisible(true);
                          *                             mainMenu.pack();
                          *                             mainMenu.setLocationRelativeTo(null);
-                         *                             mainMenu.enableuser(true);
+                         *                             mainMenu.enableUser(true);
                          *                             dispose();
                          *                         }
                          */
@@ -78,7 +78,7 @@ public class LoginForm_1 extends JFrame{
                             mainMenu.setVisible(true);
                             mainMenu.pack();
                             mainMenu.setLocationRelativeTo(null);
-                            mainMenu.enableuser(false);
+                            mainMenu.enableUser(false);
                             dispose();
                         }
                         else if(rs1.next()){
@@ -86,7 +86,7 @@ public class LoginForm_1 extends JFrame{
                             mainMenu.setVisible(true);
                             mainMenu.pack();
                             mainMenu.setLocationRelativeTo(null);
-                            mainMenu.enableuser(true);
+                            mainMenu.enableUser(true);
                             dispose();
                         }
                         else

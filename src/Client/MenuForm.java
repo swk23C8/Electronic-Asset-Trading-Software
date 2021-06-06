@@ -19,8 +19,8 @@ public class MenuForm extends JFrame{
     private User existingUser;
     private ServerConnector connector;
 
-    public void enableuser(boolean yesno){
-//        WHATEVERONLYADMINSEES.setVisible(yesno);
+    public void enableUser(boolean yesno){
+        adminMenuButton.setVisible(yesno);
     }
 
     private void organisationButtonActionPerformed(java.awt.event.ActionEvent evt) {

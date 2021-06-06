@@ -15,7 +15,7 @@ public class OrganisationForm extends JFrame{
         cancelOrderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+//                implement algorithm for canceling sell order
             }
         });
     }

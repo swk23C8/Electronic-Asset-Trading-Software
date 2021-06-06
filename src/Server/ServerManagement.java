@@ -417,6 +417,10 @@ public class ServerManagement {
             }
             break;
 
+            case FAIL:
+                break;
+            case SUCCESS:
+                break;
         }
     }
 

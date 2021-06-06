@@ -32,6 +32,7 @@ public class PasswordForm extends JFrame{
             JOptionPane.showMessageDialog(rootPane, "Please enter the new password again");
         }
         else {
+//            implement algorithm to UPDATE/EDIT logged in user's password
 //            User u = new User(username.getText(), password.getText());
 //            data.edit(u);
         }
@@ -40,7 +41,7 @@ public class PasswordForm extends JFrame{
         confirmUpdateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                confirmUpdateButtonActionPerformed(e);
             }
         });
     }

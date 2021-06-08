@@ -24,13 +24,14 @@ public enum Command{
     // OU commands
     ADD_OU,
     GET_OU,
-    EDIT_OU,
+    EDIT_OU_CREDIT,
     REMOVE_OU,
 
     // User commands
     ADD_USER,
     GET_USER,
     REMOVE_USER,
+    GET_SINGLE_USER,
 
     // Login commands
     LOGIN,

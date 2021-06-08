@@ -308,7 +308,6 @@ public class ServerManagement {
                 }
             }
             break;
-
             case GET_OU:{
                 final HashMap<String,Integer> OUList;
                 synchronized (OUDatabase)
@@ -319,7 +318,7 @@ public class ServerManagement {
                 outputStream.flush();
             }
             break;
-            case EDIT_OU:{
+            case EDIT_OU_CREDIT:{
                 final OU chosenOU = (OU) inputStream.readObject();
                 synchronized (OUDatabase)
                 {
@@ -344,7 +343,6 @@ public class ServerManagement {
                 }
             }
             break;
-
             case ADD_USER:{
                 final User newUser = (User) inputStream.readObject();
                 synchronized (userDatabase)
@@ -354,7 +352,15 @@ public class ServerManagement {
 
             }
             break;
-
+            case GET_SINGLE_USER:{
+                final User user = (User) inputStream.readObject();
+                synchronized (userDatabase){
+                    User singleUser = userDatabase.getUser(user.getUsername());
+                    outputStream.writeObject(singleUser);
+                }
+                outputStream.flush();
+            }
+            break;
             case GET_USER:{
                 final Set<String> currentUsers;
                 synchronized (userDatabase)

@@ -1,6 +1,9 @@
 package Client;
 
+import Common.Asset;
+import Common.AssetPossession;
 import Common.OU;
+import Common.User;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -30,32 +33,72 @@ public class AdminForm extends JFrame{
 
     private void addAsset(java.awt.event.ActionEvent evt) {
         ServerConnector serverConnection = new ServerConnector();
-//        add command to add asset
+        String newAsset = textField1.getText();
+        serverConnection.addAsset(new Asset(newAsset));
     }
     private void removeAsset(java.awt.event.ActionEvent evt) {
         ServerConnector serverConnection = new ServerConnector();
-//        add command to remove asset
+        Asset deleteAsset = new Asset(list1.getName());
+        serverConnection.removeAsset(deleteAsset);
     }
+
+    // NOT NEEDED?
     private void assignAdmin(java.awt.event.ActionEvent evt) {
         ServerConnector serverConnection = new ServerConnector();
-//        add command to assign user type ADMIN to user
+        String username = textField4.getText();
+        User changeUser = serverConnection.getSingleUser(username);
+        if (changeUser.getType() == "admin")
+        {
+            JOptionPane.showMessageDialog(rootPane, "User is already an admin");
+        }
+        else if (changeUser.getType() == "user") {
+            serverConnection.removeUser(changeUser);
+            serverConnection.addUser(new User(changeUser.getUsername(),
+                    changeUser.getPassword(),
+                    changeUser.getOu(), "admin"));
+            JOptionPane.showMessageDialog(rootPane, "User type has been changed");
+        }
     }
+
+    // NOT NEEDED?
     private void assignUser(java.awt.event.ActionEvent evt) {
         ServerConnector serverConnection = new ServerConnector();
-//        add command to assign user type USER to user
+        String username = textField4.getText();
+        User changeUser = serverConnection.getSingleUser(username);
+        if (changeUser.getType() == "user")
+        {
+            JOptionPane.showMessageDialog(rootPane, "User is already an user");
+        }
+        else if (changeUser.getType() == "admin" ) {
+            serverConnection.removeUser(changeUser);
+            serverConnection.addUser(new User(changeUser.getUsername(),
+                    changeUser.getPassword(),
+                    changeUser.getOu(), "user"));
+            JOptionPane.showMessageDialog(rootPane, "User type has been changed");
+        }
+
     }
     private void changeAssetAmount(java.awt.event.ActionEvent evt) {
         ServerConnector serverConnection = new ServerConnector();
-//        add command to change asset amount for logged in OU
-
+        String OUName = comboBox1.getSelectedItem().toString();
+        String selectedAsset = list2.getSelectedValue().toString();
+        // Add condition that it must be int??
+        int changeAssetCount = Integer.parseInt(textField5.getText());
+        if (OUName != null && !OUName.equals(""))
+        {
+            serverConnection.editOUAsset(new AssetPossession(OUName, list2.getSelectedValue().toString(), changeAssetCount));
+        }
     }
     private void changeCreditAmount(java.awt.event.ActionEvent evt) {
         ServerConnector serverConnection = new ServerConnector();
-//        add command to change credit amount for logged in OU
-//        if (name.getText() != null && !name.getText().equals("")) {
-//            OU o = new OU(name.getText(), Integer.parseInt(credit.getText()));
-//            data.edit(o);
-//        }
+        //add command to change credit amount for logged in OU
+        String OUName = comboBox1.getSelectedItem().toString();
+        int changeCreditCount = Integer.parseInt(textField6.getText());
+        if (OUName != null && !OUName.equals(""))
+        {
+            serverConnection.editOUCredit(new OU(OUName, changeCreditCount));
+        }
+
     }
     public AdminForm() {
         ADDASSETButton.addActionListener(new ActionListener() {

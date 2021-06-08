@@ -15,7 +15,7 @@ public class UserDataSource {
 
     private static final String UPDATE_PASSWORD = "UPDATE user SET password=? WHERE username=?";
 
-    private static final String  UPDATE_SALT_VALUE = "UPDATE user SET saltValue=? WHERE username=?";
+    private static final String UPDATE_SALT_VALUE = "UPDATE user SET saltValue=? WHERE username=?";
 
     private static final String COUNT_ROWS = "SELECT COUNT(*) FROM user";
 

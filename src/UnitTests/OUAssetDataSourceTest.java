@@ -40,7 +40,7 @@ class OUAssetDataSourceTest {
     @Test
     void offerSet() {
         List<AssetPossession> list = source.offerSet();
-        source.addOuAsset(new AssetPossession("abc", "abc", 0));
+        source.addOuAsset(new AssetPossession("abc", "abc", 10));
         assertNotEquals(list.size(), source.offerSet().size());
         source.deleteOUAsset("abc","abc");
     }

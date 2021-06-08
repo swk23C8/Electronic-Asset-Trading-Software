@@ -310,10 +310,10 @@ public class ServerConnector {
         }
     }
 
-    public void editOU(OU editedOU)
+    public void editOUCredit(OU editedOU)
     {
         try {
-            outputStream.writeObject(Command.EDIT_OU);
+            outputStream.writeObject(Command.EDIT_OU_CREDIT);
             outputStream.writeObject(editedOU);
             outputStream.flush();
         } catch (IOException e) {
@@ -403,6 +403,23 @@ public class ServerConnector {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public User getSingleUser(String userName)
+    {
+        try{
+            outputStream.writeObject(Command.GET_SINGLE_USER);
+            outputStream.writeObject(userName);
+            outputStream.flush();
+            final User user = (User) inputStream.readObject();
+            return user;
+        }catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+
     }
 
     public User login(User loginUser)

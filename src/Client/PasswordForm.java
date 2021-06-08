@@ -2,6 +2,7 @@ package Client;
 
 import Common.User;
 import Server.UserData;
+import Server.UserDataSource;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,11 +14,13 @@ public class PasswordForm extends JFrame{
     private JPasswordField passwordField1;
     private JButton confirmUpdateButton;
     public JPanel passwordPanel;
-    UserData data;
+    private ServerConnector connector;
+    private User user;
 
 
 
     private void confirmUpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {
+
         String password = String.valueOf(passwordField2.getPassword());
         String newPassword = String.valueOf(passwordField1.getPassword());
         String confirmNewPassword = String.valueOf(passwordField3.getPassword());
@@ -32,12 +35,26 @@ public class PasswordForm extends JFrame{
             JOptionPane.showMessageDialog(rootPane, "Please enter the new password again");
         }
         else {
-//            implement algorithm to UPDATE/EDIT logged in user's password
-//            User u = new User(username.getText(), password.getText());
-//            data.edit(u);
+            User mockUser = new User(user.getUsername(), password);
+            if (connector.getSingleUser(user.getUsername()).getPassword().
+                    equals(connector.checkPassword(mockUser))) {
+                if (newPassword.equals(confirmNewPassword)) {
+                    connector.changePassword(new User (user.getUsername(), newPassword));
+                    this.dispose();
+                }
+                else {
+                    JOptionPane.showMessageDialog(rootPane, "New password and Comfirm password is not same!");
+                }
+
+            }
+            else {
+                JOptionPane.showMessageDialog(rootPane, "Wrong Current Password!");
+            }
         }
     }
-    public PasswordForm() {
+    public PasswordForm(User user, ServerConnector connector) {
+        this.user = user;
+        this.connector = connector;
         confirmUpdateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

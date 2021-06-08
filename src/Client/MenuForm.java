@@ -51,8 +51,8 @@ public class MenuForm extends JFrame{
     }
 
     private void changePasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        PasswordForm passwordForm = new PasswordForm();
-        passwordForm.setContentPane(new PasswordForm().passwordPanel);
+        PasswordForm passwordForm = new PasswordForm(existingUser, connector);
+        passwordForm.setContentPane(new PasswordForm(existingUser, connector).passwordPanel);
         passwordForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         passwordForm.setVisible(true);
         passwordForm.pack();

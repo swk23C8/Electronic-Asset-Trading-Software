@@ -412,6 +412,7 @@ public class ServerManagement {
 
             }
             break;
+
             case CHANGE_PASSWORD:
             {
                 final User changeUser = (User) inputStream.readObject();
@@ -420,6 +421,14 @@ public class ServerManagement {
                     userDatabase.changePassword(changeUser);
                 }
                 //Output to server successful change in password for user "username"
+            }
+            break;
+
+            case PASSWORD_CHECK:{
+                final User user = (User) inputStream.readObject();
+                synchronized (userDatabase){
+                    userDatabase.passwordCheck(user.getPassword(), user);
+                }
             }
             break;
 

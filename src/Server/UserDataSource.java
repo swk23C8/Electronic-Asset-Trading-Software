@@ -125,7 +125,7 @@ public class UserDataSource {
             /* BEGIN MISSING CODE */
             addUser.setString(1, User.getUsername());
             addUser.setString(2, saltPassword(User));
-            addUser.setString(3,User.getSaltValue());
+            addUser.setString(3, User.getSaltValue());
             addUser.setString(4, User.getOu());
             addUser.setString(5, User.getType());
             addUser.execute();
@@ -135,13 +135,13 @@ public class UserDataSource {
         }
     }
 
-    public void changePassword(User User) {
+    public void changePassword(User user) {
 
         try {
-            changePassword.setString(1, saltPassword(User));
-            changePassword.setString(2, User.getUsername());
-            changeSaltValue.setString(1, User.getSaltValue());
-            changeSaltValue.setString(2, User.getUsername());
+            changePassword.setString(1, saltPassword(user));
+            changePassword.setString(2, user.getUsername());
+            changeSaltValue.setString(1, user.getSaltValue());
+            changeSaltValue.setString(2, user.getUsername());
             changePassword.executeUpdate();
             changeSaltValue.executeUpdate();
         } catch (SQLException ex) {

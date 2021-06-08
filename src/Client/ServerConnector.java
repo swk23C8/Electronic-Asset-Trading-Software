@@ -440,6 +440,20 @@ public class ServerConnector {
     }
 
 
+    public String checkPassword(User user) {
+        try {
+            outputStream.writeObject(Command.PASSWORD_CHECK);
+            outputStream.writeObject(user);
+            outputStream.flush();
+            final String password = (String) inputStream.readObject();
+            return password;
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     public void changePassword(User changedUser)
     {

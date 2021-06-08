@@ -32,6 +32,7 @@ public enum Command{
     GET_USER,
     REMOVE_USER,
     GET_SINGLE_USER,
+    PASSWORD_CHECK,
 
     // Login commands
     LOGIN,

@@ -48,7 +48,7 @@ public class LoginForm extends JFrame{
                     System.out.println("fail");
                     JOptionPane.showMessageDialog(rootPane, "wrong username or password");
                 }
-                else if(existingUser.getType() == "admin"){
+                else if(existingUser.getType().equals("admin")){
                     this.dispose();
                     MenuForm mainMenu = new MenuForm(existingUser, serverConnection);
                     mainMenu.setVisible(true);
@@ -57,7 +57,7 @@ public class LoginForm extends JFrame{
                     mainMenu.enableUser(false);
                     System.out.println("admin");
                 }
-                else if(existingUser.getType() == "user") {
+                else if(existingUser.getType().equals("user")) {
                     this.dispose();
                     MenuForm mainMenu = new MenuForm(existingUser, serverConnection);
                     mainMenu.setVisible(true);

@@ -263,7 +263,7 @@
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Label"/>
+              <text value="None"/>
             </properties>
           </component>
         </children>
@@ -521,11 +521,13 @@
           </component>
         </children>
       </grid>
-      <component id="caa" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+      <component id="caa" class="javax.swing.JComboBox" binding="comboBox1" custom-create="true" default-binding="true">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+        </properties>
       </component>
     </children>
   </grid>

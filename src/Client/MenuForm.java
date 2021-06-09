@@ -1,8 +1,6 @@
 package Client;
 
 import Common.*;
-import Server.ServerManagement;
-import org.junit.jupiter.api.Order;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,7 +15,7 @@ public class MenuForm extends JFrame{
     private JButton adminMenuButton;
     private JButton changePasswordButton;
     private User existingUser;
-    private ServerConnector connector;
+    private ServerConnector serverConnection;
 
     public void enableUser(boolean yesno){
         adminMenuButton.setVisible(yesno);
@@ -34,7 +32,7 @@ public class MenuForm extends JFrame{
 
     private void allOrdersButtonActionPerformed(java.awt.event.ActionEvent evt) {
         OrderForm orderForm = new OrderForm();
-        orderForm.setContentPane(new OrderForm().orderPanel);
+        orderForm.setContentPane(orderForm.orderPanel);
         orderForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         orderForm.setVisible(true);
         orderForm.pack();
@@ -42,8 +40,8 @@ public class MenuForm extends JFrame{
     }
 
     private void adminMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        AdminForm adminForm = new AdminForm();
-        adminForm.setContentPane(new AdminForm().adminPanel);
+        AdminForm adminForm = new AdminForm(existingUser, serverConnection);
+        adminForm.setContentPane(adminForm.adminPanel);
         adminForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         adminForm.setVisible(true);
         adminForm.pack();
@@ -51,14 +49,14 @@ public class MenuForm extends JFrame{
     }
 
     private void changePasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        PasswordForm passwordForm = new PasswordForm(existingUser, connector);
-        passwordForm.setContentPane(new PasswordForm(existingUser, connector).passwordPanel);
+        PasswordForm passwordForm = new PasswordForm(existingUser, serverConnection);
+        passwordForm.setContentPane(new PasswordForm(existingUser, serverConnection).passwordPanel);
         passwordForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         passwordForm.setVisible(true);
         passwordForm.pack();
         passwordForm.setTitle("CAB302");
     }
-    public MenuForm(User existingUser, ServerConnector connector) {
+    public MenuForm(User existingUser, ServerConnector serverConnection) {
         organisationButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -89,6 +87,6 @@ public class MenuForm extends JFrame{
         this.pack();
         this.setTitle("CAB302");
         this.existingUser = existingUser;
-        this.connector = connector;
+        this.serverConnection = serverConnection;
     }
 }

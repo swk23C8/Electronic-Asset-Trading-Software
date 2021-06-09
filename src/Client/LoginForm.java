@@ -39,7 +39,6 @@ public class LoginForm extends JFrame{
         else{
 
             try {
-                ServerConnector serverConnection = new ServerConnector();
                 User providedUser = new User(username, password);
                 User existingUser = serverConnection.login(providedUser);
                 System.out.println("Begin");
@@ -49,8 +48,8 @@ public class LoginForm extends JFrame{
                     JOptionPane.showMessageDialog(rootPane, "wrong username or password");
                 }
                 else if(existingUser.getType().equals("admin")){
-                    this.dispose();
                     MenuForm mainMenu = new MenuForm(existingUser, serverConnection);
+                    this.dispose();
                     mainMenu.setVisible(true);
                     mainMenu.pack();
                     mainMenu.setLocationRelativeTo(null);
@@ -58,8 +57,8 @@ public class LoginForm extends JFrame{
                     System.out.println("admin");
                 }
                 else if(existingUser.getType().equals("user")) {
-                    this.dispose();
                     MenuForm mainMenu = new MenuForm(existingUser, serverConnection);
+                    this.dispose();
                     mainMenu.setVisible(true);
                     mainMenu.pack();
                     mainMenu.setLocationRelativeTo(null);
@@ -104,5 +103,6 @@ public class LoginForm extends JFrame{
         this.setVisible(true);
         this.setSize(300,200);
         this.setTitle("CAB302");
+        this.serverConnection = serverConnection;
     }
 }

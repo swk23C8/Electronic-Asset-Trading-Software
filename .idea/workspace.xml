@@ -10,8 +10,46 @@
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Asset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/AssetPossession.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/OU.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Offer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/AssetDBtest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/AssetDBtest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/AssetUI$ButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/AssetUI$ClosingListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/AssetUI$NameListListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/AssetUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/OuDBtest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/OuDBtest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/OuUI$ButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/OuUI$ClosingListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/OuUI$NameListListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/OuUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/UserDBtest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/UserDBtest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/UserUI$ButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/UserUI$ClosingListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/UserUI$NameListListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/DBtestUI/UserUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUAssetDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

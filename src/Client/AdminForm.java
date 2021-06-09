@@ -4,11 +4,13 @@ import Common.Asset;
 import Common.AssetPossession;
 import Common.OU;
 import Common.User;
-import Server.UserData;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.HashMap;
 
 public class AdminForm extends JFrame{
     private JComboBox comboBox1;
@@ -38,22 +40,20 @@ public class AdminForm extends JFrame{
     private JRadioButton adminRadioButton;
     public String userType;
     private ButtonGroup userTypeButtonGroup;
-    UserData data;
+    private User existingUser;
+    private ServerConnector serverConnection;
 
     private void addAsset(java.awt.event.ActionEvent evt) {
-        ServerConnector serverConnection = new ServerConnector();
         String newAsset = textField1.getText();
         serverConnection.addAsset(new Asset(newAsset));
     }
     private void removeAsset(java.awt.event.ActionEvent evt) {
-        ServerConnector serverConnection = new ServerConnector();
         Asset deleteAsset = new Asset(list1.getName());
         serverConnection.removeAsset(deleteAsset);
     }
 
     // NOT NEEDED?
     private void assignAdmin(java.awt.event.ActionEvent evt) {
-        ServerConnector serverConnection = new ServerConnector();
         String username = textField4.getText();
         User changeUser = serverConnection.getSingleUser(username);
         if (changeUser.getType() == "admin")
@@ -71,7 +71,6 @@ public class AdminForm extends JFrame{
 
     // NOT NEEDED?
     private void assignUser(java.awt.event.ActionEvent evt) {
-        ServerConnector serverConnection = new ServerConnector();
         String username = textField4.getText();
         User changeUser = serverConnection.getSingleUser(username);
         if (changeUser.getType() == "user")
@@ -88,7 +87,6 @@ public class AdminForm extends JFrame{
 
     }
     private void changeAssetAmount(java.awt.event.ActionEvent evt) {
-        ServerConnector serverConnection = new ServerConnector();
         String OUName = comboBox1.getSelectedItem().toString();
         String selectedAsset = list2.getSelectedValue().toString();
         // Add condition that it must be int??
@@ -99,7 +97,6 @@ public class AdminForm extends JFrame{
         }
     }
     private void changeCreditAmount(java.awt.event.ActionEvent evt) {
-        ServerConnector serverConnection = new ServerConnector();
         //add command to change credit amount for logged in OU
         String OUName = comboBox1.getSelectedItem().toString();
         int changeCreditCount = Integer.parseInt(textField6.getText());
@@ -113,7 +110,6 @@ public class AdminForm extends JFrame{
         System.out.println(userType);
     }
     private void createAccount(java.awt.event.ActionEvent evt) {
-        ServerConnector serverConnection = new ServerConnector();
         String selectedOU = (String) comboBox2.getSelectedItem();
         String finalPassword = String.valueOf(passwordField2.getPassword());
 
@@ -122,11 +118,12 @@ public class AdminForm extends JFrame{
         && passwordField4 != null && !passwordField4.equals("")
         && passwordField2 == passwordField4)
         {
-            User u = new User(textField2.getText(), finalPassword, selectedOU, userType);
-            data.add(u);
+            User newUser = new User(textField2.getText(), finalPassword, selectedOU, userType);
+            serverConnection.addUser(newUser);
         }
     }
-    public AdminForm() {
+
+    public AdminForm(User existingUser, ServerConnector serverConnection) {
         ADDASSETButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -170,5 +167,23 @@ public class AdminForm extends JFrame{
                 getSelectedRadioButton(e);
             }
         });
+        comboBox1.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+
+            }
+        });
+        this.existingUser = existingUser;
+        this.serverConnection = serverConnection;
+        HashMap<String,Integer> OUInfo = serverConnection.getOU();
+        String[] OUNames = OUInfo.keySet().toArray(new String[0]);
+        for (int idx = 0; idx < OUInfo.size(); idx++){
+            comboBox1.addItem(OUNames[idx]);
+        }
+    }
+
+    private void createUIComponents() {
+        comboBox1 = new JComboBox<>();
+        add(comboBox1);
     }
 }

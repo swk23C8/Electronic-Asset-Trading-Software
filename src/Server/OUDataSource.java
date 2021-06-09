@@ -121,9 +121,10 @@ public class OUDataSource {
         try {
             getOU.setString(1, name);
             rs = getOU.executeQuery();
-            rs.next();
-            OU.setOuName(rs.getString("ouName"));
-            OU.setCredits(rs.getInt("credit"));
+            if (rs.next()){
+                OU.setOuName(rs.getString("ouName"));
+                OU.setCredits(rs.getInt("credit"));
+            }
 
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -142,8 +143,9 @@ public class OUDataSource {
         /* BEGIN MISSING CODE */
         try {
             rs = rowCount.executeQuery();
-            rs.next();
-            rowNumber = rs.getInt(1);
+            if (rs.next()){
+                rowNumber = rs.getInt(1);
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

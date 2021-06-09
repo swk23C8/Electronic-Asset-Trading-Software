@@ -396,15 +396,20 @@ public class ServerManagement {
                     final User confirmationInformation = userDatabase.getUser(loginInformation.getUsername());
                     System.out.println("prior check");
 
-                    if (confirmationInformation != null &&
-                            confirmationInformation.getPassword().equals(userDatabase.passwordCheck(loginInformation.getPassword(), confirmationInformation)))
+                    if (confirmationInformation == null)
+                    {
+                        System.out.println("null");
+                        outputStream.writeObject(null);
+                    }
+                    else if (confirmationInformation.getPassword().equals(
+                            userDatabase.passwordCheck(loginInformation.getPassword(), confirmationInformation)))
                     {
                         System.out.println("isright");
                         outputStream.writeObject(confirmationInformation);
                     }
                     else
                     {
-                        System.out.println("null");
+                        System.out.println("iswrong");
                         outputStream.writeObject(null);
                     }
                     //State if login successful on server gui, for user with name...

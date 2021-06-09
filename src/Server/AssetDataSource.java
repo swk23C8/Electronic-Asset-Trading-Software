@@ -121,8 +121,9 @@ public class AssetDataSource {
         try {
             getAsset.setString(1, name);
             rs = getAsset.executeQuery();
-            rs.next();
-            Asset.setAsset(rs.getString("assetName"));
+            if (rs.next()){
+                Asset.setAsset(rs.getString("assetName"));
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -140,8 +141,9 @@ public class AssetDataSource {
         /* BEGIN MISSING CODE */
         try {
             rs = rowCount.executeQuery();
-            rs.next();
-            rowNumber = rs.getInt(1);
+            if (rs.next()){
+                rowNumber = rs.getInt(1);
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

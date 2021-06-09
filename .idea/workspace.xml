@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="planning and some work on implementing on button presses within gui">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Adding settings (change password gui)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/OrganisationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrganisationForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +31,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLExceptionsMapping.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
   <component name="ProjectLevelVcsManager">
@@ -58,8 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="403" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -69,23 +60,26 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\uni\qut_cab302_project\src\Server\" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Program">
-    <configuration name="AllOrdersForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client.AllOrdersForm" />
+  <component name="RunManager" selected="Application.OuDBtest">
+    <configuration name="OuDBtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DBtestUI.OuDBtest" />
       <module name="qut_cab302_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Client.*" />
+          <option name="PATTERN" value="DBtestUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,19 +88,6 @@
       </method>
     </configuration>
     <configuration name="Program (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server.Program" />
-      <module name="qut_cab302_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.Program" />
       <module name="qut_cab302_project" />
       <extension name="coverage">
@@ -119,22 +100,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OUAssetDataSourceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.Program" />
       <module name="qut_cab302_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UnitTests.*" />
+          <option name="PATTERN" value="Server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="UnitTests" />
-      <option name="MAIN_CLASS_NAME" value="UnitTests.OUAssetDataSourceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OfferDataSourceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServerManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.ServerManagement" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OUDataSourceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qut_cab302_project" />
       <extension name="coverage">
         <pattern>
@@ -143,7 +135,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="UnitTests" />
-      <option name="MAIN_CLASS_NAME" value="UnitTests.OfferDataSourceTest" />
+      <option name="MAIN_CLASS_NAME" value="UnitTests.OUDataSourceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,18 +143,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Program" />
-      <item itemvalue="Application.AllOrdersForm" />
+      <item itemvalue="Application.ServerManagement" />
       <item itemvalue="Application.Program (1)" />
-      <item itemvalue="JUnit.OUAssetDataSourceTest" />
-      <item itemvalue="JUnit.OfferDataSourceTest" />
+      <item itemvalue="Application.OuDBtest" />
+      <item itemvalue="JUnit.OUDataSourceTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Program" />
+        <item itemvalue="Application.OuDBtest" />
         <item itemvalue="Application.Program (1)" />
-        <item itemvalue="Application.AllOrdersForm" />
-        <item itemvalue="JUnit.OfferDataSourceTest" />
-        <item itemvalue="JUnit.OUAssetDataSourceTest" />
+        <item itemvalue="Application.ServerManagement" />
+        <item itemvalue="Application.Program" />
+        <item itemvalue="JUnit.OUDataSourceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -287,12 +279,12 @@
       <option name="project" value="LOCAL" />
       <updated>1622975707278</updated>
     </task>
-    <task id="LOCAL-00017" summary="Basic unit testing implemented for OU and User datasource.">
-      <created>1622976827973</created>
+    <task id="LOCAL-00017" summary="PasswordForm implementation">
+      <created>1623135711974</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1622976827973</updated>
+      <updated>1623135711974</updated>
     </task>
     <option name="localTasksCounter" value="18" />
     <servers />
@@ -308,13 +300,28 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/RebrandedClasses" />
+                        <option value="HEAD" />
                       </list>
                     </value>
                   </entry>
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -334,7 +341,18 @@
     <MESSAGE value="LoginForm working with hashed password" />
     <MESSAGE value="LoginForm working with hashed password (Second Commit)" />
     <MESSAGE value="Basic unit testing implemented for OU and User datasource." />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic unit testing implemented for OU and User datasource." />
+    <MESSAGE value="PasswordForm implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="PasswordForm implementation" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Project2$Program__1_.ic" NAME="Program (1) Coverage Results" MODIFIED="1622975092542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

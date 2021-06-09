@@ -16,7 +16,7 @@ public class OrganisationForm extends JFrame{
     private Offer cancelorder;
 
 
-    private void cancelsellOrder(java.awt.event.ActionEvent evt) {
+    private void cancelSellOrder(java.awt.event.ActionEvent evt) {
         try {
             connection = new ServerConnector();
             cancelorder = new Offer();
@@ -40,7 +40,7 @@ public class OrganisationForm extends JFrame{
     public OrganisationForm() {
         cancelOrderButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {cancelsellOrder(e);}
+            public void actionPerformed(ActionEvent e) {cancelSellOrder(e);}
 
         });
     }

@@ -589,7 +589,6 @@ public class ServerManagement {
 
 
         }
-        offerDatabase.close();
         //System.out.println(list.get(7).getOfferType());
     }
 

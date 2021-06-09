@@ -7,6 +7,8 @@ import Server.UserDataSource;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PasswordForm extends JFrame{
     private JPasswordField passwordField2;
@@ -35,21 +37,27 @@ public class PasswordForm extends JFrame{
             JOptionPane.showMessageDialog(rootPane, "Please enter the new password again");
         }
         else {
-            User mockUser = new User(user.getUsername(), password);
-            if (connector.getSingleUser(user.getUsername()).getPassword().
-                    equals(connector.checkPassword(mockUser))) {
-                if (newPassword.equals(confirmNewPassword)) {
-                    connector.changePassword(new User (user.getUsername(), newPassword));
-                    this.dispose();
-                }
-                else {
-                    JOptionPane.showMessageDialog(rootPane, "New password and Comfirm password is not same!");
-                }
-
+            User providedUser = new User(user.getUsername(), password);
+            User existingUser = connector.login(providedUser);
+            System.out.println("Begin");
+            if (existingUser == null)
+            {
+                System.out.println("fail");
+                JOptionPane.showMessageDialog(rootPane, "wrong current password");
             }
             else {
-                JOptionPane.showMessageDialog(rootPane, "Wrong Current Password!");
+                if (newPassword.equals(confirmNewPassword)) {
+                    System.out.println("success");
+                    connector.changePassword(new User(user.getUsername(), newPassword));
+                    JOptionPane.showMessageDialog(rootPane, "Password successfully changed");
+                }
+                else {
+                    System.out.println("fail");
+                    JOptionPane.showMessageDialog(rootPane, "New and confirm password are not same!");
+                }
             }
+
+
         }
     }
     public PasswordForm(User user, ServerConnector connector) {

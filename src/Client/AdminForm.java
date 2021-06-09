@@ -155,75 +155,74 @@ public class AdminForm extends JFrame{
                 }
             }
         }
-    public AdminForm(User existingUser, ServerConnector serverConnection) {
-            ADDASSETButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    addAsset(e);
-                }
-            });
-            REMOVEASSETButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    removeAsset(e);
-
-                }
-            });
-            confirmCreateAccountButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    createAccount(e);
-                }
-            });
-            confirmAssetAmountButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    changeAssetAmount(e);
-                }
-            });
-            confirmCreditAmountButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    changeCreditAmount(e);
-                }
-            });
-            userRadioButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    getSelectedRadioButton(e);
-                }
-            });
-            adminRadioButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    getSelectedRadioButton(e);
-                }
-            });
-            comboBox1.addItemListener(new ItemListener() {
-                @Override
-                public void itemStateChanged(ItemEvent e) {
-
-                }
-            });
-            confirmUpdatePasswordButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    updatePassword(e);
-                }
-            });
-            this.existingUser = existingUser;
-            this.serverConnection = serverConnection;
-            HashMap<String,Integer> OUInfo = serverConnection.getOU();
-            String[] OUNames = OUInfo.keySet().toArray(new String[0]);
-            for (int idx = 0; idx < OUInfo.size(); idx++){
-                comboBox1.addItem(OUNames[idx]);
-            }
     }
+    public AdminForm(User existingUser, ServerConnector serverConnection) {
+        ADDASSETButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addAsset(e);
+            }
+        });
+        REMOVEASSETButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                removeAsset(e);
 
+            }
+        });
+        confirmCreateAccountButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                createAccount(e);
+            }
+        });
+        confirmAssetAmountButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changeAssetAmount(e);
+            }
+        });
+        confirmCreditAmountButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changeCreditAmount(e);
+            }
+        });
+        userRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                getSelectedRadioButton(e);
+            }
+        });
+        adminRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                getSelectedRadioButton(e);
+            }
+        });
+        comboBox1.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+
+            }
+        });
+        confirmUpdatePasswordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updatePassword(e);
+            }
+        });
+        this.existingUser = existingUser;
+        this.serverConnection = serverConnection;
+        HashMap<String,Integer> OUInfo = serverConnection.getOU();
+        String[] OUNames = OUInfo.keySet().toArray(new String[0]);
+        for (int idx = 0; idx < OUInfo.size(); idx++){
+            comboBox1.addItem(OUNames[idx]);
+        }
+    }
 
     private void createUIComponents() {
         comboBox1 = new JComboBox<>();
         add(comboBox1);
-
     }
 }

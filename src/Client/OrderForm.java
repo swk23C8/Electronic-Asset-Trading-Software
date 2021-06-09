@@ -18,6 +18,7 @@ public class OrderForm extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 ServerConnector serverConnection = new ServerConnector();
                 double totalCost = Double.parseDouble(textField1.getText()) * Double.parseDouble(textField2.getText());
+//                if (totalCost <= )
 //                implement algorithm to make buy order
 //                get logged in user's OU
 //                check if user's OU has enough credits to make buy order

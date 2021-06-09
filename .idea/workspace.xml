@@ -3,19 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Adding settings (change password gui)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/LoginForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/MenuForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/PasswordForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/PasswordForm$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/PasswordForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/PasswordForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/OrganisationForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/OrganisationForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/OrganisationForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/OrganisationForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Command.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/PasswordForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/PasswordForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/UserDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/UserDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTests/OUDataSourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTests/OUDataSourceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +43,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLExceptionsMapping.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLExceptionsMapping.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
   <component name="ProjectLevelVcsManager">
@@ -85,7 +84,7 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.OuDBtest">
+  <component name="RunManager" selected="Application.Program (1)">
     <configuration name="OuDBtest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DBtestUI.OuDBtest" />
       <module name="qut_cab302_project" />
@@ -162,10 +161,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OuDBtest" />
         <item itemvalue="Application.Program (1)" />
-        <item itemvalue="Application.ServerManagement" />
         <item itemvalue="Application.Program" />
+        <item itemvalue="Application.OuDBtest" />
+        <item itemvalue="Application.ServerManagement" />
         <item itemvalue="JUnit.OUDataSourceTest" />
       </list>
     </recent_temporary>

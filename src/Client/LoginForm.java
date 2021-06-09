@@ -54,7 +54,7 @@ public class LoginForm extends JFrame{
                     mainMenu.setVisible(true);
                     mainMenu.pack();
                     mainMenu.setLocationRelativeTo(null);
-                    mainMenu.enableUser(false);
+                    mainMenu.enableUser(true);
                     System.out.println("admin");
                 }
                 else if(existingUser.getType().equals("user")) {
@@ -63,7 +63,7 @@ public class LoginForm extends JFrame{
                     mainMenu.setVisible(true);
                     mainMenu.pack();
                     mainMenu.setLocationRelativeTo(null);
-                    mainMenu.enableUser(true);
+                    mainMenu.enableUser(false);
                     System.out.println("user");
                 }
                 /**

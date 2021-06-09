@@ -396,8 +396,8 @@ public class ServerManagement {
                     final User confirmationInformation = userDatabase.getUser(loginInformation.getUsername());
                     System.out.println("prior check");
 
-                    if (confirmationInformation != null && confirmationInformation.getPassword() ==
-                            loginInformation.getPassword())
+                    if (confirmationInformation != null &&
+                            confirmationInformation.getPassword().equals(userDatabase.passwordCheck(loginInformation.getPassword(), confirmationInformation)))
                     {
                         System.out.println("isright");
                         outputStream.writeObject(confirmationInformation);

@@ -4,6 +4,7 @@ import Common.Asset;
 import Common.AssetPossession;
 import Common.OU;
 import Common.User;
+import Server.UserData;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -32,6 +33,12 @@ public class AdminForm extends JFrame{
     public JPanel adminPanel;
     private JButton confirmCreateAccountButton;
     private JButton confirmUpdatePasswordButton;
+    private JComboBox comboBox2;
+    private JRadioButton userRadioButton;
+    private JRadioButton adminRadioButton;
+    public String userType;
+    private ButtonGroup userTypeButtonGroup;
+    UserData data;
 
     private void addAsset(java.awt.event.ActionEvent evt) {
         ServerConnector serverConnection = new ServerConnector();
@@ -101,15 +108,22 @@ public class AdminForm extends JFrame{
             serverConnection.editOUCredit(new OU(OUName, changeCreditCount));
         }
     }
-//    implementing create account functionality
+    private void getSelectedRadioButton(ActionEvent evt) {
+        userType = userTypeButtonGroup.getSelection().getActionCommand();
+        System.out.println(userType);
+    }
     private void createAccount(java.awt.event.ActionEvent evt) {
         ServerConnector serverConnection = new ServerConnector();
+        String selectedOU = (String) comboBox2.getSelectedItem();
+        String finalPassword = String.valueOf(passwordField2.getPassword());
+
         if (textField2 != null && !textField2.equals("")
         && passwordField2 != null && !passwordField2.equals("")
         && passwordField4 != null && !passwordField4.equals("")
         && passwordField2 == passwordField4)
         {
-            User u = new User(textField2.getText(), passwordField2.getPassword(), ou.getText(), type.getText());
+            User u = new User(textField2.getText(), finalPassword, selectedOU, userType);
+            data.add(u);
         }
     }
     public AdminForm() {
@@ -124,18 +138,6 @@ public class AdminForm extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 removeAsset(e);
 
-            }
-        });
-        userButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                assignUser(e);
-            }
-        });
-        adminButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                assignAdmin(e);
             }
         });
         confirmCreateAccountButton.addActionListener(new ActionListener() {
@@ -154,6 +156,18 @@ public class AdminForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 changeCreditAmount(e);
+            }
+        });
+        userRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                getSelectedRadioButton(e);
+            }
+        });
+        adminRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                getSelectedRadioButton(e);
             }
         });
     }

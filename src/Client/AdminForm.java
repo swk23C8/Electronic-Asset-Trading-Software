@@ -25,8 +25,6 @@ public class AdminForm extends JFrame{
     private JButton confirmAssetAmountButton;
     private JTextField textField5;
     private JTextField textField6;
-    private JButton USERButton;
-    private JButton ADMINButton;
     private JPasswordField passwordField4;
     private JButton confirmCreditAmountButton;
     private JButton userButton;
@@ -102,7 +100,17 @@ public class AdminForm extends JFrame{
         {
             serverConnection.editOUCredit(new OU(OUName, changeCreditCount));
         }
-
+    }
+//    implementing create account functionality
+    private void createAccount(java.awt.event.ActionEvent evt) {
+        ServerConnector serverConnection = new ServerConnector();
+        if (textField2 != null && !textField2.equals("")
+        && passwordField2 != null && !passwordField2.equals("")
+        && passwordField4 != null && !passwordField4.equals("")
+        && passwordField2 == passwordField4)
+        {
+            User u = new User(textField2.getText(), passwordField2.getPassword(), ou.getText(), type.getText());
+        }
     }
     public AdminForm() {
         ADDASSETButton.addActionListener(new ActionListener() {
@@ -118,16 +126,22 @@ public class AdminForm extends JFrame{
 
             }
         });
-        USERButton.addActionListener(new ActionListener() {
+        userButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 assignUser(e);
             }
         });
-        ADMINButton.addActionListener(new ActionListener() {
+        adminButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 assignAdmin(e);
+            }
+        });
+        confirmCreateAccountButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                createAccount(e);
             }
         });
         confirmAssetAmountButton.addActionListener(new ActionListener() {

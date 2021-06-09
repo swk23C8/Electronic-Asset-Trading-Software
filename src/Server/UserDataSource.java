@@ -180,13 +180,13 @@ public class UserDataSource {
         try {
             getUser.setString(1, name);
             rs = getUser.executeQuery();
-            rs.next();
-            //What if rs is null?
-            User.setUsername(rs.getString("username"));
-            User.setPassword(rs.getString("password"));
-            User.setSaltValue(rs.getString("saltValue"));
-            User.setOu(rs.getString("ouName"));
-            User.setType(rs.getString("accountType"));
+            if (rs.next()){
+                User.setUsername(rs.getString("username"));
+                User.setPassword(rs.getString("password"));
+                User.setSaltValue(rs.getString("saltValue"));
+                User.setOu(rs.getString("ouName"));
+                User.setType(rs.getString("accountType"));
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -204,8 +204,10 @@ public class UserDataSource {
         /* BEGIN MISSING CODE */
         try {
             rs = rowCount.executeQuery();
-            rs.next();
-            rowNumber = rs.getInt(1);
+            if (rs.next())
+            {
+                rowNumber = rs.getInt(1);
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

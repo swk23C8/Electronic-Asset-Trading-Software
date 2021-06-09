@@ -150,14 +150,14 @@ public class OfferDataSource {
         try {
             getOffer.setInt(1, id);
             rs = getOffer.executeQuery();
-            rs.next();
-            Offer.setId(rs.getInt(1));
-            Offer.setOfferType(rs.getString(2));
-            Offer.setOUName(rs.getString(3));
-            Offer.setAssetName(rs.getString(4));
-            Offer.setQuantity(rs.getInt(5));
-            Offer.setCreditsEach(rs.getInt(6));
-
+            if (rs.next()){
+                Offer.setId(rs.getInt(1));
+                Offer.setOfferType(rs.getString(2));
+                Offer.setOUName(rs.getString(3));
+                Offer.setAssetName(rs.getString(4));
+                Offer.setQuantity(rs.getInt(5));
+                Offer.setCreditsEach(rs.getInt(6));
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -175,8 +175,9 @@ public class OfferDataSource {
         /* BEGIN MISSING CODE */
         try {
             rs = rowCount.executeQuery();
-            rs.next();
-            rowNumber = rs.getInt(1);
+            if (rs.next()){
+                rowNumber = rs.getInt(1);
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

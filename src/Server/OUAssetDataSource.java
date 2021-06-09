@@ -126,10 +126,11 @@ public class OUAssetDataSource {
             getOuAsset.setString(1, ou);
             getOuAsset.setString(2, asset);
             rs = getOuAsset.executeQuery();
-            rs.next();
-            OUAsset.setOu(rs.getString(1));
-            OUAsset.setAsset(rs.getString(2));
-            OUAsset.setQuantity((rs.getInt(3)));
+            if (rs.next()){
+                OUAsset.setOu(rs.getString(1));
+                OUAsset.setAsset(rs.getString(2));
+                OUAsset.setQuantity((rs.getInt(3)));
+            }
 
         } catch (SQLException ex) {
             return null;
@@ -148,8 +149,9 @@ public class OUAssetDataSource {
         /* BEGIN MISSING CODE */
         try {
             rs = rowCount.executeQuery();
-            rs.next();
-            rowNumber = rs.getInt(1);
+            if (rs.next()){
+                rowNumber = rs.getInt(1);
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

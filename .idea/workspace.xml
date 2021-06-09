@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="working on create account GUI functionality, getting some food">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/AssetDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUAssetDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUAssetDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OUDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/OfferDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/ServerManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Server/UserDataSource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
     </list>
@@ -59,7 +58,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="403" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="159" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="205" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />

@@ -36,9 +36,12 @@ public class AdminForm extends JFrame{
     private JComboBox comboBox2;
     private JRadioButton userRadioButton;
     private JRadioButton adminRadioButton;
+    private JPasswordField passwordField5;
     public String userType;
     private ButtonGroup userTypeButtonGroup;
     UserData data;
+    private User user;
+    private ServerConnector connector;
 
     private void addAsset(java.awt.event.ActionEvent evt) {
         ServerConnector serverConnection = new ServerConnector();
@@ -126,6 +129,40 @@ public class AdminForm extends JFrame{
             data.add(u);
         }
     }
+    private void updatePassword(java.awt.event.ActionEvent evt) {
+        String username = String.valueOf(textField3.getText());
+        String password = String.valueOf(passwordField5.getPassword());
+        String newPassword = String.valueOf(passwordField2.getPassword());
+        String confirmNewPassword = String.valueOf(passwordField3.getPassword());
+
+        if (username.trim().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter username");
+        } else if (newPassword.trim().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter current password");
+        } else if (newPassword.trim().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter new password");
+        } else if (confirmNewPassword.trim().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter the new password again");
+        } else {
+            User providedUser = new User(user.getUsername(), password);
+            User existingUser = connector.login(providedUser);
+            System.out.println("Begin");
+            if (existingUser == null) {
+                System.out.println("fail");
+                JOptionPane.showMessageDialog(rootPane, "wrong current password");
+            } else {
+                if (newPassword.equals(confirmNewPassword)) {
+                    System.out.println("success");
+                    connector.changePassword(new User(user.getUsername(), newPassword));
+                    JOptionPane.showMessageDialog(rootPane, "Password successfully changed");
+                } else {
+                    System.out.println("fail");
+                    JOptionPane.showMessageDialog(rootPane, "New and confirm password are not same!");
+                }
+            }
+        }
+    }
+
     public AdminForm() {
         ADDASSETButton.addActionListener(new ActionListener() {
             @Override
@@ -168,6 +205,12 @@ public class AdminForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 getSelectedRadioButton(e);
+            }
+        });
+        confirmUpdatePasswordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updatePassword(e);
             }
         });
     }

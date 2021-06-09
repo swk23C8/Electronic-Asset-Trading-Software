@@ -75,9 +75,7 @@ public class MenuForm extends JFrame{
 
         adminMenuButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                adminMenuButtonActionPerformed(e);
-            }
+            public void actionPerformed(ActionEvent e) { adminMenuButtonActionPerformed(e); }
         });
         changePasswordButton.addActionListener(new ActionListener() {
             @Override

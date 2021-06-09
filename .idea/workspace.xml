@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Adding settings (change password gui)">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Made changes to MenuForm so that windows are 'disposed' instead of the entire program shutting down when you exit non-main-menu window">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/OrganisationForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/OrganisationForm$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/OrganisationForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/OrganisationForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/ServerConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qut_cab302_project/Common/Command.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -297,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623135711974</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Made changes to MenuForm so that windows are 'disposed' instead of the entire program shutting down when you exit non-main-menu window">
+      <created>1623237339130</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1623237339130</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -338,7 +336,8 @@
     <MESSAGE value="LoginForm working with hashed password (Second Commit)" />
     <MESSAGE value="Basic unit testing implemented for OU and User datasource." />
     <MESSAGE value="PasswordForm implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="PasswordForm implementation" />
+    <MESSAGE value="Made changes to MenuForm so that windows are 'disposed' instead of the entire program shutting down when you exit non-main-menu window" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made changes to MenuForm so that windows are 'disposed' instead of the entire program shutting down when you exit non-main-menu window" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -346,6 +345,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.sql.SQLException" package="java.sql" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

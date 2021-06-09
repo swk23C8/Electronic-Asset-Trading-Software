@@ -29,9 +29,11 @@ public class AdminForm extends JFrame{
     private JButton ADMINButton;
     private JPasswordField passwordField4;
     private JButton confirmCreditAmountButton;
-    public JPanel adminPanel;
     private JButton userButton;
     private JButton adminButton;
+    public JPanel adminPanel;
+    private JButton confirmCreateAccountButton;
+    private JButton confirmUpdatePasswordButton;
 
     private void addAsset(java.awt.event.ActionEvent evt) {
         ServerConnector serverConnection = new ServerConnector();

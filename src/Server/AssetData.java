@@ -22,7 +22,7 @@ public class AssetData {
         /* END MISSING CODE */
 
         // add the retrieved data to the list model
-        for (String name : assetData.nameSet()) {
+        for (String name : assetData.assetSet()) {
             listModel.addElement(name);
         }
     }

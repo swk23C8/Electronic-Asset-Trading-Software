@@ -18,11 +18,10 @@ public class ServerConnector {
     private ObjectInputStream inputStream;
 
     private List<Offer> currentOffers = new LinkedList<>();
-    private List<Asset> currentAssets = new LinkedList<>();
     private List<AssetPossession> currentOUAsset = new LinkedList<>();
     private HashMap<String,Integer> currentOUs = new HashMap<>();
     private Set<String> currentUsers = new TreeSet<>();
-
+    private Set<String> currentAssets = new TreeSet<>();
 
 
     /** Constructor for class**/
@@ -148,20 +147,15 @@ public class ServerConnector {
 
     public void addAsset(Asset newAsset)
     {
-        if (newAsset == null)
-        {
-            throw new IllegalArgumentException("Offer cannot be null");
-        }
-        try{
-            outputStream.writeObject(Command.ADD_OFFER);
-            /** Change this to just send a list of strings, though possibly not so multiple offers
-             * can be sent across easily in GetOffers
-             */
-            Asset createdAsset = new Asset("");
-            outputStream.writeObject(createdAsset);
-        } catch (IOException e)
-        {
+        try {
+            outputStream.writeObject(Command.ADD_ASSET);
+            outputStream.writeObject(newAsset);
+            outputStream.flush();
+        } catch (IOException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
             e.printStackTrace();
+
         }
     }
 
@@ -190,14 +184,28 @@ public class ServerConnector {
         }
     }
 
-    public List<Asset> getAsset()
+    public Set<String> getAsset()
     {
         //Remember we need to flush between read and write
         try {
             outputStream.writeObject(Command.GET_ASSET);
             outputStream.flush();
-            currentAssets = (List<Asset>) inputStream.readObject();
+            currentAssets = (Set<String>) inputStream.readObject();
             return currentAssets;
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public Integer getAssetSize() {
+        try {
+            outputStream.writeObject(Command.GET_ASSET_SIZE);
+            outputStream.flush();
+            final Integer assetSize = (Integer) inputStream.readObject();
+            return assetSize;
         } catch (IOException | ClassNotFoundException e) {
             // Print the exception, but no need for a fatal error
             // if the connection with the server happens to be down

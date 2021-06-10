@@ -44,26 +44,29 @@ public class AdminForm extends JFrame{
     private ButtonGroup userTypeButtonGroup;
     private User existingUser;
     private ServerConnector serverConnection;
+    private AssetData assetData;
 
     private void addAsset(java.awt.event.ActionEvent evt) {
         String newAsset = textField1.getText();
-        if (newAsset.trim().equals(""))
-        {
-            JOptionPane.showMessageDialog(rootPane, "Please specify an asset name");
-        }
-        else if (serverConnection.getAsset().contains(new Asset(newAsset))){
-            JOptionPane.showMessageDialog(rootPane, "Asset already exist");
+        if (newAsset.trim().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter new asset");
         }
         else {
-            serverConnection.addAsset(new Asset(newAsset));
+            assetData.add(new Asset(newAsset));
+            JOptionPane.showMessageDialog(rootPane, "New asset successfully added");
         }
     }
     private void removeAsset(java.awt.event.ActionEvent evt) {
-        Asset deleteAsset = new Asset(list1.getSelectedValue().toString());
-        if (serverConnection.removeAsset(deleteAsset) == true)
-        {
-            JOptionPane.showMessageDialog(rootPane, "Asset is deleted");
+        int index = list1.getSelectedIndex();
+        assetData.remove(list1.getSelectedValue());
+        JOptionPane.showMessageDialog(rootPane, "Asset successfully deleted");
+        index--;
+        if (index == -1) {
+            if (assetData.getSize() != 0) {
+                index = 0;
+            }
         }
+        list1.setSelectedIndex(index);
     }
 
     private void addOU(java.awt.event.ActionEvent evt){
@@ -224,5 +227,8 @@ public class AdminForm extends JFrame{
     private void createUIComponents() {
         comboBox1 = new JComboBox<>();
         add(comboBox1);
+        assetData = new AssetData();
+        list1 = new JList(assetData.getModel());
+        add(list1);
     }
 }

@@ -14,6 +14,7 @@ public enum Command{
     ADD_ASSET,
     REMOVE_ASSET,
     GET_ASSET,
+    GET_ASSET_SIZE,
 
     // OUAsset commands
     ADD_OU_ASSET,

@@ -71,7 +71,7 @@ public class AssetDataSource {
     /**
      * Return the set of asset by retrieving information from database.
      */
-    public Set<String> nameSet() {
+    public Set<String> assetSet() {
         Set<String> assetNames = new TreeSet<String>();
         ResultSet rs = null;
 
@@ -89,26 +89,6 @@ public class AssetDataSource {
         return assetNames;
     }
 
-    /**
-     * Return a list of Asset from the information from the database
-     */
-    public List<Asset> AssetSet() {
-        List<Asset> assetList = new LinkedList<>();
-        ResultSet rs = null;
-
-        /* BEGIN MISSING CODE */
-        try {
-            rs = getAssetList.executeQuery();
-            while (rs.next()) {
-                assetList.add(new Asset(rs.getString(1)));
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        /* END MISSING CODE */
-
-        return assetList;
-    }
 
     /**
      * Return the specific asset by retrieving information from database.

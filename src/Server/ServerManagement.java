@@ -228,9 +228,9 @@ public class ServerManagement {
                 {
                     assetDatabase.addAsset(newAsset);
                 }
-                // Would we have the same done with the offer case?
             }
             break;
+
             case REMOVE_ASSET:{
                 final Asset removedAsset = (Asset) inputStream.readObject();
                 boolean isSuccessful;
@@ -249,10 +249,10 @@ public class ServerManagement {
             }
             break;
             case GET_ASSET:{
-                final List<Asset> currentAssets;
+                final Set<String> currentAssets;
                 synchronized (assetDatabase)
                 {
-                    currentAssets = assetDatabase.AssetSet();
+                    currentAssets = assetDatabase.assetSet();
                 }
                 outputStream.writeObject(currentAssets);
                 outputStream.flush();
@@ -266,6 +266,17 @@ public class ServerManagement {
                 }
             }
             break;
+
+            case GET_ASSET_SIZE: {
+                final Integer assetSize;
+                synchronized (assetDatabase) {
+                    assetSize = assetDatabase.getSize();
+                }
+                outputStream.writeObject(assetSize);
+                outputStream.flush();
+            }
+            break;
+
             case GET_OU_ASSET:{
                 final List<AssetPossession> currentOUAsset;
                 synchronized (OUAssetDatabase)

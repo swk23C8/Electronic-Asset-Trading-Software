@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="linked method addOU to listener and checking if method is reading correctly from the textfield.&#10;it's reading from the textfield but its not updating the db">
+      <change afterPath="$PROJECT_DIR$/src/Client/AssetData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/AssetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/AssetData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/AssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/AssetDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +39,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLExceptionsMapping.class" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
   <component name="ProjectLevelVcsManager">
@@ -56,7 +63,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cab302_1.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -72,6 +79,9 @@
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="UnitTests" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Client" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Program (1)">
@@ -152,8 +162,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Program (1)" />
-        <item itemvalue="Application.OuDBtest" />
         <item itemvalue="Application.Program" />
+        <item itemvalue="Application.OuDBtest" />
         <item itemvalue="Application.ServerManagement" />
         <item itemvalue="JUnit.OUDataSourceTest" />
       </list>

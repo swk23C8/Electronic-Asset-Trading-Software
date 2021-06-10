@@ -67,7 +67,8 @@ public class AdminForm extends JFrame{
     }
 
     private void addOU(java.awt.event.ActionEvent evt){
-        String newOU = textField5.getText();
+        String newOU = textField4.getText();
+        System.out.println(newOU);
         if (newOU.trim().equals(""))
         {
             JOptionPane.showMessageDialog(rootPane, "Please specify an OU name");
@@ -212,6 +213,12 @@ public class AdminForm extends JFrame{
         for (int idx = 0; idx < OUInfo.size(); idx++){
             comboBox1.addItem(OUNames[idx]);
         }
+        createNewOrganisationUnitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addOU(e);
+            }
+        });
     }
 
     private void createUIComponents() {

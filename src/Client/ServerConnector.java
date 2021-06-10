@@ -288,7 +288,7 @@ public class ServerConnector {
             /** Change this to just send a list of strings, though possibly not so multiple offers
              * can be sent across easily in GetOffers
              */
-            OU createdOU = new OU("",0);
+            OU createdOU = new OU(newOU.getOuName(),0);
             outputStream.writeObject(createdOU);
         } catch (IOException e) {
             e.printStackTrace();

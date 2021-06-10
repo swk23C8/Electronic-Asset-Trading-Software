@@ -14,6 +14,7 @@ public class OrganisationForm extends JFrame{
     public JPanel organisationPanel;
     private ServerConnector connection;
     private Offer cancelorder;
+    private Offer offer;
 
 
     private void cancelSellOrder(java.awt.event.ActionEvent evt) {

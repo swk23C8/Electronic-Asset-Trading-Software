@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 public class AdminForm extends JFrame{
     private JComboBox comboBox1;
-    private JTextField textField1;
+    private JTextField textField1;  
     private JButton ADDASSETButton;
     private JButton REMOVEASSETButton;
     private JList list1;
@@ -46,47 +46,39 @@ public class AdminForm extends JFrame{
 
     private void addAsset(java.awt.event.ActionEvent evt) {
         String newAsset = textField1.getText();
-        serverConnection.addAsset(new Asset(newAsset));
+        if (newAsset.trim().equals(""))
+        {
+            JOptionPane.showMessageDialog(rootPane, "Please specify an asset name");
+        }
+        else if (serverConnection.getAsset().contains(new Asset(newAsset))){
+            JOptionPane.showMessageDialog(rootPane, "Asset already exist");
+        }
+        else {
+            serverConnection.addAsset(new Asset(newAsset));
+        }
     }
     private void removeAsset(java.awt.event.ActionEvent evt) {
-        Asset deleteAsset = new Asset(list1.getName());
-        serverConnection.removeAsset(deleteAsset);
-    }
-
-    // NOT NEEDED?
-    private void assignAdmin(java.awt.event.ActionEvent evt) {
-        String username = textField4.getText();
-        User changeUser = serverConnection.getSingleUser(username);
-        if (changeUser.getType() == "admin")
+        Asset deleteAsset = new Asset(list1.getSelectedValue().toString());
+        if (serverConnection.removeAsset(deleteAsset) == true)
         {
-            JOptionPane.showMessageDialog(rootPane, "User is already an admin");
-        }
-        else if (changeUser.getType() == "user") {
-            serverConnection.removeUser(changeUser);
-            serverConnection.addUser(new User(changeUser.getUsername(),
-                    changeUser.getPassword(),
-                    changeUser.getOu(), "admin"));
-            JOptionPane.showMessageDialog(rootPane, "User type has been changed");
+            JOptionPane.showMessageDialog(rootPane, "Asset is deleted");
         }
     }
 
-    // NOT NEEDED?
-    private void assignUser(java.awt.event.ActionEvent evt) {
-        String username = textField4.getText();
-        User changeUser = serverConnection.getSingleUser(username);
-        if (changeUser.getType() == "user")
+    private void addOU(java.awt.event.ActionEvent evt){
+        String newOU = textField5.getText();
+        if (newOU.trim().equals(""))
         {
-            JOptionPane.showMessageDialog(rootPane, "User is already an user");
+            JOptionPane.showMessageDialog(rootPane, "Please specify an OU name");
         }
-        else if (changeUser.getType() == "admin" ) {
-            serverConnection.removeUser(changeUser);
-            serverConnection.addUser(new User(changeUser.getUsername(),
-                    changeUser.getPassword(),
-                    changeUser.getOu(), "user"));
-            JOptionPane.showMessageDialog(rootPane, "User type has been changed");
+        else if (serverConnection.getOU().containsKey(newOU)){
+            JOptionPane.showMessageDialog(rootPane, "OU already exist");
         }
-
+        else {
+        serverConnection.addOU(new OU(newOU));
+        }
     }
+
     private void changeAssetAmount(java.awt.event.ActionEvent evt) {
         String OUName = comboBox1.getSelectedItem().toString();
         String selectedAsset = list2.getSelectedValue().toString();

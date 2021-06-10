@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Adding settings (change password gui)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qut_cab302_project/Client/AdminForm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Added AddOU in AdminForm, deleted functions we dont need">
+      <change beforePath="$PROJECT_DIR$/src/Client/OrganisationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrganisationForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +20,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -349,7 +342,8 @@
     <MESSAGE value="LoginForm working with hashed password (Second Commit)" />
     <MESSAGE value="Basic unit testing implemented for OU and User datasource." />
     <MESSAGE value="PasswordForm implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="PasswordForm implementation" />
+    <MESSAGE value="Added AddOU in AdminForm, deleted functions we dont need" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AddOU in AdminForm, deleted functions we dont need" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

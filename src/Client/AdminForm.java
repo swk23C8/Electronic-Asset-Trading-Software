@@ -39,6 +39,7 @@ public class AdminForm extends JFrame{
     private JRadioButton userRadioButton;
     private JRadioButton adminRadioButton;
     private JPasswordField passwordField5;
+    private JButton createNewOrganisationUnitButton;
     public String userType;
     private ButtonGroup userTypeButtonGroup;
     private User existingUser;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="update password functionality in AdminForm">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="fixed some minor error from Chris's commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/OrderForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrderForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623239293669</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fixed some minor error from Chris's commit">
+      <created>1623262000118</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1623262000118</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -350,7 +357,8 @@
     <MESSAGE value="Made changes to MenuForm so that windows are 'disposed' instead of the entire program shutting down when you exit non-main-menu window" />
     <MESSAGE value="Fixed AdminForm GUI, some code standardization" />
     <MESSAGE value="working on create account GUI functionality, getting some food" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on create account GUI functionality, getting some food" />
+    <MESSAGE value="fixed some minor error from Chris's commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some minor error from Chris's commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -15,6 +15,11 @@ public class AssetPossession implements Serializable {
 
     public AssetPossession () {}
 
+    public AssetPossession (String ou, String asset) {
+        this.ou = ou;
+        this.asset = asset;
+    }
+
     public AssetPossession(String ou, String asset, Integer quantity) {
         this.ou = ou;
         this.asset = asset;

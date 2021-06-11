@@ -2,6 +2,7 @@ package Server;
 
 
 import Common.AssetPossession;
+import Common.OU;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class OUAssetDataSource {
 
@@ -20,7 +23,9 @@ public class OUAssetDataSource {
 
     private static final String DELETE_OU_ASSET = "DELETE FROM ouAsset WHERE ouName=? AND assetName=?";
 
-    private static final String Update_Qty = "UPDATE ouAsset SET assetQty=? WHERE ouName=? AND assetName=?";
+    private static final String UPDATE_QTY = "UPDATE ouAsset SET assetQty=? WHERE ouName=? AND assetName=?";
+
+    private static final String GET_ASSET_LIST = "SELECT assetName FROM ouAsset WHERE ouName=?";
 
     private static final String COUNT_ROWS = "SELECT COUNT(*) FROM ouAsset";
 
@@ -33,6 +38,8 @@ public class OUAssetDataSource {
     private PreparedStatement getOuAsset;
 
     private PreparedStatement deleteOuAsset;
+
+    private PreparedStatement getAssetList;
 
     private PreparedStatement editQty;
 
@@ -49,7 +56,8 @@ public class OUAssetDataSource {
             getOuAssetList = connection.prepareStatement(LIST_OU_ASSET);
             getOuAsset = connection.prepareStatement(GET_OU_ASSET);
             deleteOuAsset = connection.prepareStatement(DELETE_OU_ASSET);
-            editQty = connection.prepareStatement(Update_Qty);
+            getAssetList = connection.prepareStatement(GET_ASSET_LIST);
+            editQty = connection.prepareStatement(UPDATE_QTY);
             rowCount = connection.prepareStatement(COUNT_ROWS);
 
         } catch (SQLException ex) {
@@ -97,11 +105,11 @@ public class OUAssetDataSource {
     /**
      * Return the list of asset ou possess by retrieving information from database.
      */
-    public List<AssetPossession> offerSet() {
+    public List<AssetPossession> ouAssetList() {
         List<AssetPossession> ouAssetList = new LinkedList<>();
         ResultSet rs = null;
 
-        /* BEGIN MISSING CODE */
+
         try {
             rs = getOuAssetList.executeQuery();
             while (rs.next()) {
@@ -110,7 +118,7 @@ public class OUAssetDataSource {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        /* END MISSING CODE */
+
 
         return ouAssetList;
     }
@@ -135,8 +143,29 @@ public class OUAssetDataSource {
         } catch (SQLException ex) {
             return null;
         }
-        /* END MISSING CODE */
+
         return OUAsset;
+    }
+
+    /**
+     * Return the list of Asset specific OU possess by retrieving information from database.
+     */
+    public Set<String> assetList(OU ou) {
+        Set<String> assetList = new TreeSet<String>();
+        ResultSet rs = null;
+
+        try {
+            getAssetList.setString(1, ou.getOuName());
+            rs = getAssetList.executeQuery();
+            while (rs.next()) {
+                assetList.add(rs.getString("assetName"));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+
+        return assetList;
     }
 
     /**

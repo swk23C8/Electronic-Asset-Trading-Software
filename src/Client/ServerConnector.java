@@ -22,7 +22,7 @@ public class ServerConnector {
     private HashMap<String,Integer> currentOUs = new HashMap<>();
     private Set<String> currentUsers = new TreeSet<>();
     private Set<String> currentAssets = new TreeSet<>();
-
+    private Set<String> OUAssetList = new TreeSet<>();
 
     /** Constructor for class**/
     public ServerConnector() {
@@ -271,6 +271,40 @@ public class ServerConnector {
             return null;
         }
     }
+
+    public Set<String> getOUAssetList(OU singleOU)
+    {
+        try{
+            outputStream.writeObject(Command.GET_OU_ASSET_LIST);
+            outputStream.writeObject(singleOU);
+            outputStream.flush();
+            OUAssetList = (Set<String>) inputStream.readObject();
+            return OUAssetList;
+        }catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+    public AssetPossession getSingleOUAsset(AssetPossession selectedOUAsset)
+    {
+        try{
+            outputStream.writeObject(Command.GET_SINGLE_OU_ASSET);
+            outputStream.writeObject(selectedOUAsset);
+            outputStream.flush();
+            final AssetPossession singleOUAsset = (AssetPossession) inputStream.readObject();
+            return singleOUAsset;
+        }catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+
+    }
     public void editOUAsset(AssetPossession editedOUAsset)
     {
         try {
@@ -316,6 +350,23 @@ public class ServerConnector {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public OU getSingleOU(OU singleOU)
+    {
+        try{
+            outputStream.writeObject(Command.GET_SINGLE_OU);
+            outputStream.writeObject(singleOU);
+            outputStream.flush();
+            final OU ou = (OU) inputStream.readObject();
+            return ou;
+        }catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+
     }
 
     public void editOUCredit(OU editedOU)
@@ -367,8 +418,7 @@ public class ServerConnector {
             /** Change this to just send a list of strings, though possibly not so multiple offers
              * can be sent across easily in GetOffers
              */
-            User createdUser = new User("","");
-            outputStream.writeObject(createdUser);
+            outputStream.writeObject(newUser);
         } catch (IOException e) {
             e.printStackTrace();
         }

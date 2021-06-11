@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="linked method addOU to listener and checking if method is reading correctly from the textfield.&#10;it's reading from the textfield but its not updating the db">
-      <change afterPath="$PROJECT_DIR$/src/Client/AssetData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/EditOUAssetForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/EditOUAssetForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/OUAssetData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/OUData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AssetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AssetData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/AssetPossession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/AssetPossession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Common/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/AssetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/AssetData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/AssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/AssetDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OUAssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUAssetDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTests/OUAssetDataSourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTests/OUAssetDataSourceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,7 +66,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="18" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="403" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -124,6 +133,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.Program" />
+      <module name="qut_cab302_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServerManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server.ServerManagement" />
       <module name="qut_cab302_project" />
@@ -155,8 +177,8 @@
     <list>
       <item itemvalue="Application.Program" />
       <item itemvalue="Application.ServerManagement" />
-      <item itemvalue="Application.Program (1)" />
       <item itemvalue="Application.OuDBtest" />
+      <item itemvalue="Application.Program (1)" />
       <item itemvalue="JUnit.OUDataSourceTest" />
     </list>
     <recent_temporary>
@@ -304,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623307739301</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Implementation on adding and deleting asset">
+      <created>1623316570976</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1623316570976</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -362,7 +391,8 @@
     <MESSAGE value="PasswordForm implementation" />
     <MESSAGE value="Added AddOU in AdminForm, deleted functions we dont need" />
     <MESSAGE value="linked method addOU to listener and checking if method is reading correctly from the textfield.&#10;it's reading from the textfield but its not updating the db" />
-    <option name="LAST_COMMIT_MESSAGE" value="linked method addOU to listener and checking if method is reading correctly from the textfield.&#10;it's reading from the textfield but its not updating the db" />
+    <MESSAGE value="Implementation on adding and deleting asset" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementation on adding and deleting asset" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -20,11 +20,14 @@ public enum Command{
     ADD_OU_ASSET,
     DELETE_OU_ASSET,
     GET_OU_ASSET,
+    GET_OU_ASSET_LIST,
+    GET_SINGLE_OU_ASSET,
     EDIT_OU_ASSET,
 
     // OU commands
     ADD_OU,
     GET_OU,
+    GET_SINGLE_OU,
     EDIT_OU_CREDIT,
     REMOVE_OU,
 

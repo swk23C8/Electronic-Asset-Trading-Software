@@ -5,8 +5,8 @@ import Common.Asset;
 import javax.swing.*;
 
 public class AssetData {
-    DefaultListModel listModel;
-    ServerConnector connector;
+    private DefaultListModel listModel;
+    private ServerConnector connector;
 
     public AssetData() {
         listModel = new DefaultListModel();

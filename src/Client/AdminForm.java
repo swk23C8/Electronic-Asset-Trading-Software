@@ -6,11 +6,12 @@ import Common.OU;
 import Common.User;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.HashMap;
 
 public class AdminForm extends JFrame{
     private JComboBox comboBox1;
@@ -24,8 +25,6 @@ public class AdminForm extends JFrame{
     private JPasswordField passwordField2;
     private JPasswordField passwordField3;
     private JTextField textField4;
-    private JList list2;
-    private JButton confirmAssetAmountButton;
     private JTextField textField5;
     private JTextField textField6;
     private JPasswordField passwordField4;
@@ -36,20 +35,24 @@ public class AdminForm extends JFrame{
     private JButton confirmCreateAccountButton;
     private JButton confirmUpdatePasswordButton;
     private JComboBox comboBox2;
-    private JRadioButton userRadioButton;
-    private JRadioButton adminRadioButton;
     private JPasswordField passwordField5;
     private JButton createNewOrganisationUnitButton;
-    public String userType;
-    private ButtonGroup userTypeButtonGroup;
+    private JComboBox comboBox3;
+    private JLabel label1;
+    private JButton editOUAssetQtyButton;
     private User existingUser;
     private ServerConnector serverConnection;
     private AssetData assetData;
+    private OUData ouData;
+
 
     private void addAsset(java.awt.event.ActionEvent evt) {
         String newAsset = textField1.getText();
         if (newAsset.trim().equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Please enter new asset");
+        }
+        else if (serverConnection.getAsset().contains(newAsset)) {
+            JOptionPane.showMessageDialog(rootPane, "Asset already exist");
         }
         else {
             assetData.add(new Asset(newAsset));
@@ -80,44 +83,53 @@ public class AdminForm extends JFrame{
             JOptionPane.showMessageDialog(rootPane, "OU already exist");
         }
         else {
-        serverConnection.addOU(new OU(newOU));
+            ouData.add(new OU(newOU));
+            JOptionPane.showMessageDialog(rootPane, "New OU Successfully added");
         }
     }
 
-    private void changeAssetAmount(java.awt.event.ActionEvent evt) {
-        String OUName = comboBox1.getSelectedItem().toString();
-        String selectedAsset = list2.getSelectedValue().toString();
-        // Add condition that it must be int??
-        int changeAssetCount = Integer.parseInt(textField5.getText());
-        if (OUName != null && !OUName.equals(""))
-        {
-            serverConnection.editOUAsset(new AssetPossession(OUName, list2.getSelectedValue().toString(), changeAssetCount));
-        }
+
+    private void displayCurrentCredit (ItemEvent evt) {
+        String selectedOU = (String) comboBox1.getSelectedItem();
+        label1.setText(serverConnection.getSingleOU(new OU(selectedOU)).getCredits().toString());
     }
+
+
     private void changeCreditAmount(java.awt.event.ActionEvent evt) {
         //add command to change credit amount for logged in OU
         String OUName = comboBox1.getSelectedItem().toString();
-        int changeCreditCount = Integer.parseInt(textField6.getText());
-        if (OUName != null && !OUName.equals(""))
-        {
+        try {
+            int changeCreditCount = Integer.parseInt(textField6.getText());
             serverConnection.editOUCredit(new OU(OUName, changeCreditCount));
+            label1.setText(String.valueOf(changeCreditCount));
+            JOptionPane.showMessageDialog(rootPane, "Credit successfully edited");
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter the credit");
         }
-    }
-    private void getSelectedRadioButton(ActionEvent evt) {
-        userType = userTypeButtonGroup.getSelection().getActionCommand();
-        System.out.println(userType);
-    }
-    private void createAccount(java.awt.event.ActionEvent evt) {
-        String selectedOU = (String) comboBox2.getSelectedItem();
-        String finalPassword = String.valueOf(passwordField2.getPassword());
 
-        if (textField2 != null && !textField2.equals("")
-        && passwordField2 != null && !passwordField2.equals("")
-        && passwordField4 != null && !passwordField4.equals("")
-        && passwordField2 == passwordField4)
-        {
-            User newUser = new User(textField2.getText(), finalPassword, selectedOU, userType);
-            serverConnection.addUser(newUser);
+
+
+
+
+    }
+
+    private void createAccount(java.awt.event.ActionEvent evt) {
+        String newUsername = textField2.getText();
+        String initPassword = String.valueOf(passwordField1.getPassword());
+        String finalPassword = String.valueOf(passwordField4.getPassword());
+        String selectedOU = (String) comboBox2.getSelectedItem();
+        String selectedType = (String) comboBox3.getSelectedItem();
+
+        if (newUsername.equals("") || initPassword.equals("") || finalPassword.equals("") ||
+        selectedOU.equals("") || selectedType.equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter all user information");
+        }
+        else if (!initPassword.equals(finalPassword)) {
+            JOptionPane.showMessageDialog(rootPane, "Please confirm your password");
+        }
+        else {
+            serverConnection.addUser(new User(newUsername, initPassword, selectedOU, selectedType));
+            JOptionPane.showMessageDialog(rootPane, "New user successfully added");
         }
     }
     private void updatePassword(java.awt.event.ActionEvent evt) {
@@ -153,6 +165,17 @@ public class AdminForm extends JFrame{
             }
         }
     }
+
+    private void editOUQtyButtonActionPerformed(ActionEvent evt) {
+        String ouName = comboBox1.getSelectedItem().toString();
+        EditOUAssetForm editOUAssetForm = new EditOUAssetForm(new OU(ouName), serverConnection);
+        editOUAssetForm.setContentPane(editOUAssetForm.editPanel);
+        editOUAssetForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        editOUAssetForm.setVisible(true);
+        editOUAssetForm.pack();
+        editOUAssetForm.setTitle("CAB302");
+    }
+
     public AdminForm(User existingUser, ServerConnector serverConnection) {
         ADDASSETButton.addActionListener(new ActionListener() {
             @Override
@@ -173,34 +196,18 @@ public class AdminForm extends JFrame{
                 createAccount(e);
             }
         });
-        confirmAssetAmountButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                changeAssetAmount(e);
-            }
-        });
+
         confirmCreditAmountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 changeCreditAmount(e);
             }
         });
-        userRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                getSelectedRadioButton(e);
-            }
-        });
-        adminRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                getSelectedRadioButton(e);
-            }
-        });
+
         comboBox1.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
-
+                displayCurrentCredit(e);
             }
         });
         confirmUpdatePasswordButton.addActionListener(new ActionListener() {
@@ -211,24 +218,42 @@ public class AdminForm extends JFrame{
         });
         this.existingUser = existingUser;
         this.serverConnection = serverConnection;
-        HashMap<String,Integer> OUInfo = serverConnection.getOU();
-        String[] OUNames = OUInfo.keySet().toArray(new String[0]);
-        for (int idx = 0; idx < OUInfo.size(); idx++){
-            comboBox1.addItem(OUNames[idx]);
-        }
+//        HashMap<String,Integer> OUInfo = serverConnection.getOU();
+//        String[] OUNames = OUInfo.keySet().toArray(new String[0]);
+//        for (int idx = 0; idx < OUInfo.size(); idx++){
+//            comboBox1.addItem(OUNames[idx]);
+//            comboBox2.addItem(OUNames[idx]);
+//        }
+        comboBox3.addItem("admin");
+        comboBox3.addItem("user");
+
         createNewOrganisationUnitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 addOU(e);
             }
         });
+
+        editOUAssetQtyButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                editOUQtyButtonActionPerformed(e);
+            }
+        });
     }
 
     private void createUIComponents() {
-        comboBox1 = new JComboBox<>();
+        ouData = new OUData();
+        comboBox1 = new JComboBox<>(ouData.getModel());
         add(comboBox1);
+        comboBox2 = new JComboBox<>(ouData.getModel());
+        add(comboBox2);
+        comboBox3 = new JComboBox<>();
+        add(comboBox3);
         assetData = new AssetData();
         list1 = new JList(assetData.getModel());
         add(list1);
+
+
     }
 }

@@ -1,13 +1,10 @@
 package UnitTests;
 
 import Common.AssetPossession;
-import Common.OU;
 import Server.OUAssetDataSource;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -39,9 +36,9 @@ class OUAssetDataSourceTest {
 
     @Test
     void offerSet() {
-        List<AssetPossession> list = source.offerSet();
+        List<AssetPossession> list = source.ouAssetList();
         source.addOuAsset(new AssetPossession("abc", "abc", 10));
-        assertNotEquals(list.size(), source.offerSet().size());
+        assertNotEquals(list.size(), source.ouAssetList().size());
         source.deleteOUAsset("abc","abc");
     }
 

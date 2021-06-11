@@ -281,12 +281,31 @@ public class ServerManagement {
                 final List<AssetPossession> currentOUAsset;
                 synchronized (OUAssetDatabase)
                 {
-                    currentOUAsset = OUAssetDatabase.offerSet();
+                    currentOUAsset = OUAssetDatabase.ouAssetList();
                 }
                 outputStream.writeObject(currentOUAsset);
                 outputStream.flush();
             }
             break;
+
+            case GET_OU_ASSET_LIST:{
+                final OU ou = (OU) inputStream.readObject();
+                synchronized (OUAssetDatabase) {
+                    Set<String> ouAsset = OUAssetDatabase.assetList(ou);
+                    outputStream.writeObject(ouAsset);
+                }
+                outputStream.flush();
+            }
+            case GET_SINGLE_OU_ASSET:{
+                final AssetPossession recievedOUAsset = (AssetPossession) inputStream.readObject();
+                synchronized (OUAssetDatabase){
+                    AssetPossession finalOUAsset = OUAssetDatabase.getOuAsset(recievedOUAsset.getOu(),recievedOUAsset.getAsset());
+                    outputStream.writeObject(finalOUAsset);
+                }
+                outputStream.flush();
+            }
+            break;
+
             case DELETE_OU_ASSET:{
                 final AssetPossession removedOUAsset = (AssetPossession) inputStream.readObject();
                 boolean IsSuccessful;
@@ -326,6 +345,15 @@ public class ServerManagement {
                     OUList = OUDatabase.ouList();
                 }
                 outputStream.writeObject(OUList);
+                outputStream.flush();
+            }
+            break;
+            case GET_SINGLE_OU:{
+                final OU ou = (OU) inputStream.readObject();
+                synchronized (OUDatabase){
+                    OU singleOU = OUDatabase.getOU(ou.getOuName());
+                    outputStream.writeObject(singleOU);
+                }
                 outputStream.flush();
             }
             break;

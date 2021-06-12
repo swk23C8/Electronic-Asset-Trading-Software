@@ -87,7 +87,7 @@ public class ServerManagement {
         }
         //Every 2 hours call reconcile to reconcile database
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-        scheduler.scheduleAtFixedRate(() -> reconcile(), 0, 2, TimeUnit.HOURS);
+        scheduler.scheduleAtFixedRate(() -> reconcile(), 2, 2, TimeUnit.HOURS);
         try (ServerSocket serverSocket = new ServerSocket(6666)) {
             serverSocket.setSoTimeout(SOCKET_ACCEPT_TIMEOUT);
             for (;;) {
@@ -308,12 +308,12 @@ public class ServerManagement {
 
             case DELETE_OU_ASSET:{
                 final AssetPossession removedOUAsset = (AssetPossession) inputStream.readObject();
-                boolean IsSuccessful;
+                boolean isSuccessful;
                 synchronized (OUAssetDatabase)
                 {
-                    IsSuccessful = OUAssetDatabase.deleteOUAsset((removedOUAsset.getOu()), removedOUAsset.getAsset());
+                    isSuccessful = OUAssetDatabase.deleteOUAsset((removedOUAsset.getOu()), removedOUAsset.getAsset());
                 }
-                if (IsSuccessful == true)
+                if (isSuccessful == true)
                 {
                     outputStream.writeObject(Command.SUCCESS);
                 }
@@ -332,9 +332,18 @@ public class ServerManagement {
             }
             case ADD_OU:{
                 final OU newOU = (OU) inputStream.readObject();
+                boolean isSuccessful = false;
                 synchronized (OUDatabase)
                 {
-                    OUDatabase.addOU(newOU);
+                    isSuccessful = OUDatabase.addOU(newOU);
+                }
+                if (isSuccessful == true)
+                {
+                    outputStream.writeObject(Command.SUCCESS);
+                }
+                else
+                {
+                    outputStream.writeObject(Command.FAIL);
                 }
             }
             break;

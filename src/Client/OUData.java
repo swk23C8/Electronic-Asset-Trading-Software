@@ -1,20 +1,19 @@
 package Client;
 
 
-import Common.Asset;
 import Common.OU;
 
 import javax.swing.*;
 
 public class OUData {
     private DefaultComboBoxModel comboBoxModel;
-    private ServerConnector connector;
+    private ServerConnector serverConnection;
 
-    public OUData() {
+    public OUData(ServerConnector serverConnection) {
         comboBoxModel = new DefaultComboBoxModel();
-        connector = new ServerConnector();
+        this.serverConnection = serverConnection;
 
-        for (String name : connector.getOU().keySet()) {
+        for (String name : serverConnection.getOU().keySet()) {
             comboBoxModel.addElement(name);
         }
 
@@ -29,7 +28,7 @@ public class OUData {
         }
         if (exist == false) {
             comboBoxModel.addElement(ou.getOuName());
-            connector.addOU(ou);
+            serverConnection.addOU(ou);
         }
 
     }
@@ -38,7 +37,7 @@ public class OUData {
 
         // remove from both list and database
         comboBoxModel.removeElement(key);
-        connector.removeOU(new OU((String) key));
+        serverConnection.removeOU(new OU((String) key));
     }
 
     public ComboBoxModel getModel() {

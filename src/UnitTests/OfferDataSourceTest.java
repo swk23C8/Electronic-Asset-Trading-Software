@@ -24,8 +24,6 @@ class OfferDataSourceTest {
         source.addOffer(offer);
     }
 
-
-
     @AfterEach
     void delete(){
         source.deleteOffer(011);
@@ -43,7 +41,6 @@ class OfferDataSourceTest {
 
     @Test
     void editQty() {
-        int quantity = offer.getQuantity();
         source.editQty(new Offer(011,"sell", "abc", "test2", 100, 1));
         assertEquals(100, source.getOffer(011).getQuantity());
 

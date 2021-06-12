@@ -20,7 +20,10 @@ public class PasswordForm extends JFrame{
     private User user;
 
 
-
+    /**
+     * @param evt Function to confirm the changed password and check if its valid for the
+     *            password updating button
+     */
     private void confirmUpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {
 
         String password = String.valueOf(passwordField2.getPassword());
@@ -60,6 +63,12 @@ public class PasswordForm extends JFrame{
 
         }
     }
+
+    /**
+     * @param user
+     * @param connector
+     * Assign action for button in password form
+     */
     public PasswordForm(User user, ServerConnector connector) {
         this.user = user;
         this.connector = connector;

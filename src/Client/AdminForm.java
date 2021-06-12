@@ -46,6 +46,9 @@ public class AdminForm extends JFrame{
     private OUData ouData;
 
 
+    /**
+     * @param evt Function for the button that add the Asset
+     */
     private void addAsset(java.awt.event.ActionEvent evt) {
         String newAsset = textField1.getText();
         if (newAsset.trim().equals("")) {
@@ -59,6 +62,10 @@ public class AdminForm extends JFrame{
             JOptionPane.showMessageDialog(rootPane, "New asset successfully added");
         }
     }
+
+    /**
+     * @param evt Function for the button that remove the asset
+     */
     private void removeAsset(java.awt.event.ActionEvent evt) {
         int index = list1.getSelectedIndex();
         assetData.remove(list1.getSelectedValue());
@@ -72,6 +79,9 @@ public class AdminForm extends JFrame{
         list1.setSelectedIndex(index);
     }
 
+    /**
+     * @param evt Function for the button that add the OU
+     */
     private void addOU(java.awt.event.ActionEvent evt){
         String newOU = textField4.getText();
         System.out.println(newOU);
@@ -95,6 +105,9 @@ public class AdminForm extends JFrame{
     }
 
 
+    /**
+     * @param evt Function for the button that change the credit of OU
+     */
     private void changeCreditAmount(java.awt.event.ActionEvent evt) {
         //add command to change credit amount for logged in OU
         String OUName = comboBox1.getSelectedItem().toString();
@@ -106,13 +119,11 @@ public class AdminForm extends JFrame{
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(rootPane, "Please enter the credit");
         }
-
-
-
-
-
     }
 
+    /**
+     * @param evt Function that create an account for the logged in admin
+     */
     private void createAccount(java.awt.event.ActionEvent evt) {
         String newUsername = textField2.getText();
         String initPassword = String.valueOf(passwordField1.getPassword());
@@ -132,6 +143,11 @@ public class AdminForm extends JFrame{
             JOptionPane.showMessageDialog(rootPane, "New user successfully added");
         }
     }
+
+
+    /**
+     * @param evt Function for the update password button
+     */
     private void updatePassword(java.awt.event.ActionEvent evt) {
         String username = String.valueOf(textField3.getText());
         String password = String.valueOf(passwordField5.getPassword());
@@ -166,6 +182,9 @@ public class AdminForm extends JFrame{
         }
     }
 
+    /**
+     * @param evt Function for after editing the OU Quantity
+     */
     private void editOUQtyButtonActionPerformed(ActionEvent evt) {
         String ouName = comboBox1.getSelectedItem().toString();
         EditOUAssetForm editOUAssetForm = new EditOUAssetForm(new OU(ouName), serverConnection);
@@ -176,6 +195,11 @@ public class AdminForm extends JFrame{
         editOUAssetForm.setTitle("CAB302");
     }
 
+    /**
+     * Set actionListeners to each button on the form
+     * @param existingUser
+     * @param serverConnection
+     */
     public AdminForm(User existingUser, ServerConnector serverConnection) {
         ADDASSETButton.addActionListener(new ActionListener() {
             @Override
@@ -242,6 +266,9 @@ public class AdminForm extends JFrame{
         });
     }
 
+    /**
+     * Importing data into the UI
+     */
     private void createUIComponents() {
         ouData = new OUData();
         comboBox1 = new JComboBox<>(ouData.getModel());

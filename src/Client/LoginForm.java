@@ -22,6 +22,10 @@ public class LoginForm extends JFrame{
     }
 
 
+    /**
+     * @param evt Function for the login button action,
+     *            check the user and log them into their account
+     */
     // maybe this?
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String username = usernameField.getText();
@@ -91,6 +95,9 @@ public class LoginForm extends JFrame{
     }
 
 
+    /**
+     * @param serverConnection Setup the form and actionListener for the login button
+     */
     public LoginForm(ServerConnector serverConnection) {
         loginButton.addActionListener(new ActionListener() {
             @Override

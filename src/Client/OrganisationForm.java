@@ -17,6 +17,9 @@ public class OrganisationForm extends JFrame{
     private Offer offer;
 
 
+    /**
+     * @param evt Function for canceling order button
+     */
     private void cancelSellOrder(java.awt.event.ActionEvent evt) {
         try {
             connection = new ServerConnector();

@@ -491,6 +491,9 @@ public class ServerManagement {
         running.set(false);
     }
 
+    /**
+     * Implementation of the reconcile function
+     */
     //Function for reconciling
     private static void reconcile()
     {

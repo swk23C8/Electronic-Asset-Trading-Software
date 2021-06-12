@@ -13,13 +13,28 @@ public class AssetPossession implements Serializable {
     private String asset;
     private Integer quantity;
 
+    /**
+     * Empty constructor for the object and
+     * can add information later
+     */
     public AssetPossession () {}
 
+    /**
+     * @param ou
+     * @param asset
+     * Constructor for AssetPossession
+     */
     public AssetPossession (String ou, String asset) {
         this.ou = ou;
         this.asset = asset;
     }
 
+    /**
+     * @param ou
+     * @param asset
+     * @param quantity
+     * Constructor for AssetPossession
+     */
     public AssetPossession(String ou, String asset, Integer quantity) {
         this.ou = ou;
         this.asset = asset;
@@ -27,6 +42,9 @@ public class AssetPossession implements Serializable {
     }
 
 
+    /**
+     * Get and setters for the AssetPossession class
+     */
     public String getOu() {
         return ou;
     }

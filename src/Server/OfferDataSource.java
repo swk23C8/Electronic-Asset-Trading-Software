@@ -83,6 +83,10 @@ public class OfferDataSource {
         }
     }
 
+    /**
+     * @param Offer
+     * Add offer into the history table
+     */
     public void addHistory(Offer Offer) {
         try {
 

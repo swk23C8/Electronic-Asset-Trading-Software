@@ -113,6 +113,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param removedOffer
+     * @return true if offer is removed, false otherwise
+     */
     public boolean removeOffer(Offer removedOffer)
     {
         //Return true if successful, otherwise false
@@ -138,6 +142,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param editedOffer
+     * Edit the offer quantity
+     */
     public void editOffer(Offer editedOffer)
     {
         try {
@@ -151,6 +159,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param newAsset
+     * Add a new asset
+     */
     public void addAsset(Asset newAsset)
     {
         try {
@@ -165,6 +177,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param removedAsset
+     * @return true if the asset is removed, false otherwise
+     */
     public boolean removeAsset(Asset removedAsset)
     {
         //Return true if successful, otherwise false
@@ -190,6 +206,9 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @return A set of asssets in strings
+     */
     public Set<String> getAsset()
     {
         //Remember we need to flush between read and write
@@ -206,6 +225,10 @@ public class ServerConnector {
         }
     }
 
+
+    /**
+     * @return return the size of asset as an integer
+     */
     public Integer getAssetSize() {
         try {
             outputStream.writeObject(Command.GET_ASSET_SIZE);
@@ -220,6 +243,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param newOUAsset
+     * Add new asset within an OU
+     */
     public void addOUAsset(AssetPossession newOUAsset)
     {
         if (newOUAsset == null)
@@ -238,6 +265,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param removedOUAsset Remove OU asset
+     * @return true of the asset is removed the OU, false otherwise
+     */
     public boolean removeOUAsset(AssetPossession removedOUAsset)
     {
         try {
@@ -262,6 +293,9 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @return a list of all assets existing in the database
+     */
     public List<AssetPossession> getOUAsset()
     {
         //Remember we need to flush between read and write
@@ -278,6 +312,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param singleOU
+     * @return a set of asset in string that belongs to a certain OU
+     */
     public Set<String> getOUAssetList(OU singleOU)
     {
         try{
@@ -295,6 +333,10 @@ public class ServerConnector {
 
     }
 
+    /**
+     * @param selectedOUAsset
+     * @return an asset from the database given specific name and OU
+     */
     public AssetPossession getSingleOUAsset(AssetPossession selectedOUAsset)
     {
         try{
@@ -311,6 +353,11 @@ public class ServerConnector {
         }
 
     }
+
+    /**
+     * @param editedOUAsset
+     * Edit the asset that belong to a certain OU
+     */
     public void editOUAsset(AssetPossession editedOUAsset)
     {
         try {
@@ -325,6 +372,10 @@ public class ServerConnector {
     }
 
 
+    /**
+     * @param newOU
+     * @return true if the OU is added, false otherwise
+     */
     public boolean addOU(OU newOU)
     {
         if (newOU == null)
@@ -354,6 +405,9 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @return a Hashmap with OU as key string and credit as int value
+     */
     public HashMap<String,Integer> getOU()
     {
         try {
@@ -369,6 +423,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param singleOU
+     * @return a single OU from the database given the OU name
+     */
     public OU getSingleOU(OU singleOU)
     {
         try{
@@ -386,6 +444,10 @@ public class ServerConnector {
 
     }
 
+    /**
+     * @param editedOU
+     * Edit the credit of an OU
+     */
     public void editOUCredit(OU editedOU)
     {
         try {
@@ -399,6 +461,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param removedOU
+     * @return true if the OU is removed, false otherwise
+     * */
     public boolean removeOU(OU removedOU)
     {
         try {
@@ -424,6 +490,9 @@ public class ServerConnector {
     }
 
 
+    /**
+     * @param newUser Add a new user
+     */
     public void addUser(User newUser)
     {
         if (newUser == null)
@@ -441,6 +510,9 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @return a set of usernames in strings
+     */
     public Set<String> getUser()
     {
         try {
@@ -456,6 +528,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param removedUser
+     * @return true if the user is removed, false otherwise
+     */
     public boolean removeUser(User removedUser)
     {
         try {
@@ -480,6 +556,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param userName
+     * @return a single user object given the username
+     */
     public User getSingleUser(String userName)
     {
         try{
@@ -497,6 +577,10 @@ public class ServerConnector {
 
     }
 
+    /**
+     * @param loginUser
+     * @return return a user from the database if the user exist
+     */
     public User login(User loginUser)
     {
         //Return user if they exist, otherwise null
@@ -515,6 +599,10 @@ public class ServerConnector {
     }
 
 
+    /**
+     * @param user
+     * @return a hashed password string
+     */
     public String checkPassword(User user) {
         try {
             outputStream.writeObject(Command.PASSWORD_CHECK);
@@ -530,6 +618,10 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @param changedUser
+     * Change the user's password
+     */
     public void changePassword(User changedUser)
     {
         try {

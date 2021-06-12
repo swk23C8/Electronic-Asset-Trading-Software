@@ -108,8 +108,6 @@ public class OUAssetDataSource {
     public List<AssetPossession> ouAssetList() {
         List<AssetPossession> ouAssetList = new LinkedList<>();
         ResultSet rs = null;
-
-
         try {
             rs = getOuAssetList.executeQuery();
             while (rs.next()) {

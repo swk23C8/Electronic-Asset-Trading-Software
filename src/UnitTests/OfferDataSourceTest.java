@@ -43,7 +43,6 @@ class OfferDataSourceTest {
     void editQty() {
         source.editQty(new Offer(011,"sell", "abc", "test2", 100, 1));
         assertEquals(100, source.getOffer(011).getQuantity());
-
     }
 
     @Test

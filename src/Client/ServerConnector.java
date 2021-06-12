@@ -75,18 +75,16 @@ public class ServerConnector {
     /**
      * Add offer client command setup
      */
-    private void AddOffer(Offer newOffer) {
+    public void AddOffer(Offer newOffer) {
         if (newOffer == null)
         {
             throw new IllegalArgumentException("Offer cannot be null");
         }
         try{
             outputStream.writeObject(Command.ADD_OFFER);
-            /** Change this to just send a list of strings, though possibly not so multiple offers
-             * can be sent across easily in GetOffers
-             */
-            Offer createdOffer = new Offer(0,"","","", 0,0);
-            outputStream.writeObject(createdOffer);
+
+            outputStream.writeObject(newOffer);
+            outputStream.flush();
         } catch (IOException e)
         {
             e.printStackTrace();

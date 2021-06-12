@@ -133,7 +133,7 @@ public class OfferDataSource {
         try {
             rs = getOfferList.executeQuery();
             while (rs.next()) {
-                offerList.add(new Offer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getInt(6)));
+                offerList.add(new Offer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getString(7)));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

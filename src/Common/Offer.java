@@ -10,7 +10,7 @@ public class Offer implements Serializable {
     private String assetName;
     private Integer quantity;
     private Integer creditsEach;
-
+    private String date;
 
 
     /**
@@ -30,6 +30,16 @@ public class Offer implements Serializable {
         this.creditsEach = creditsEach;
     }
 
+    public Offer(Integer id, String type, String OUName, String assetName, Integer quantity, Integer creditsEach, String date) {
+        this.id = id;
+        this.OUName = OUName;
+        this.offerType = type;
+        this.assetName = assetName;
+        this.quantity = quantity;
+        this.creditsEach = creditsEach;
+        this.date = date;
+    }
+
     public Offer(Integer id, Integer quantity)
     {
         this.id = id;
@@ -43,6 +53,7 @@ public class Offer implements Serializable {
         this.quantity = quantity;
         this.creditsEach = creditsEach;
     }
+
 
     public Offer()
     {
@@ -98,6 +109,14 @@ public class Offer implements Serializable {
 
     public void setCreditsEach(Integer creditsEach) {
         this.creditsEach = creditsEach;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     /** possibly send buy object through to server? otherwise server will likely do most of this**/

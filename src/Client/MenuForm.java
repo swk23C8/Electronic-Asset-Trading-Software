@@ -42,7 +42,7 @@ public class MenuForm extends JFrame{
      * @param evt Create allOrder form when the button is pressed
      */
     private void allOrdersButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        OrderForm orderForm = new OrderForm();
+        OrderForm orderForm = new OrderForm(existingUser, serverConnection);
         orderForm.setContentPane(orderForm.orderPanel);
         orderForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         orderForm.setVisible(true);

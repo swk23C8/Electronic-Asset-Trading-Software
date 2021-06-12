@@ -1,5 +1,7 @@
 package Client;
 
+import Common.OU;
+import Common.User;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,8 +13,13 @@ public class OrderForm extends JFrame{
     private JTextField textField2;
     private JList list1;
     public JPanel orderPanel;
+    private JLabel organisationNameLabel;
+    private JLabel currentUserLabel;
+    private JLabel currentCreditsLabel;
+    private ServerConnector serverConnection;
+    private User existingUser;
 
-    public OrderForm() {
+    public OrderForm(User existingUser, ServerConnector serverConnection) {
         BUYButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -34,5 +41,12 @@ public class OrderForm extends JFrame{
 //                check if OU has sufficient asset(s) user is attempting to sell
             }
         });
+        this.existingUser = existingUser;
+        this.serverConnection = serverConnection;
+        organisationNameLabel.setText(existingUser.getOu());
+        currentUserLabel.setText(existingUser.getUsername());
+        currentCreditsLabel.setText(serverConnection.getSingleOU(new OU(existingUser.getOu())).getCredits().toString());
+    }
+    private void createUIComponents() {
     }
 }

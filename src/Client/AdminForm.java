@@ -12,13 +12,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.HashMap;
 
 public class AdminForm extends JFrame{
     private JComboBox comboBox1;
     private JTextField textField1;  
     private JButton ADDASSETButton;
-    private JButton REMOVEASSETButton;
-    private JList list1;
     private JTextField textField2;
     private JPasswordField passwordField1;
     private JTextField textField3;
@@ -42,8 +41,6 @@ public class AdminForm extends JFrame{
     private JButton editOUAssetQtyButton;
     private User existingUser;
     private ServerConnector serverConnection;
-    private AssetData assetData;
-    private OUData ouData;
 
 
     /**
@@ -58,7 +55,8 @@ public class AdminForm extends JFrame{
             JOptionPane.showMessageDialog(rootPane, "Asset already exist");
         }
         else {
-            assetData.add(new Asset(newAsset));
+            //ADD If statement for adding asset here
+            serverConnection.addAsset(new Asset(newAsset));
             JOptionPane.showMessageDialog(rootPane, "New asset successfully added");
         }
     }
@@ -66,6 +64,9 @@ public class AdminForm extends JFrame{
     /**
      * @param evt Function for the button that remove the asset
      */
+    /**
+
+
     private void removeAsset(java.awt.event.ActionEvent evt) {
         int index = list1.getSelectedIndex();
         assetData.remove(list1.getSelectedValue());
@@ -78,6 +79,8 @@ public class AdminForm extends JFrame{
         }
         list1.setSelectedIndex(index);
     }
+    **/
+
 
     /**
      * @param evt Function for the button that add the OU
@@ -93,7 +96,9 @@ public class AdminForm extends JFrame{
             JOptionPane.showMessageDialog(rootPane, "OU already exist");
         }
         else {
-            ouData.add(new OU(newOU));
+            OU ou = new OU(newOU, 0);
+            serverConnection.addOU(ou);
+            updateOUInformation();
             JOptionPane.showMessageDialog(rootPane, "New OU Successfully added");
         }
     }
@@ -101,7 +106,11 @@ public class AdminForm extends JFrame{
 
     private void displayCurrentCredit (ItemEvent evt) {
         String selectedOU = (String) comboBox1.getSelectedItem();
-        label1.setText(serverConnection.getSingleOU(new OU(selectedOU)).getCredits().toString());
+        try {
+            label1.setText(serverConnection.getSingleOU(new OU(selectedOU)).getCredits().toString());
+        } catch (Exception e) {
+            label1.setText("0");
+        }
     }
 
 
@@ -207,13 +216,6 @@ public class AdminForm extends JFrame{
                 addAsset(e);
             }
         });
-        REMOVEASSETButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                removeAsset(e);
-
-            }
-        });
         confirmCreateAccountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -242,12 +244,8 @@ public class AdminForm extends JFrame{
         });
         this.existingUser = existingUser;
         this.serverConnection = serverConnection;
-//        HashMap<String,Integer> OUInfo = serverConnection.getOU();
-//        String[] OUNames = OUInfo.keySet().toArray(new String[0]);
-//        for (int idx = 0; idx < OUInfo.size(); idx++){
-//            comboBox1.addItem(OUNames[idx]);
-//            comboBox2.addItem(OUNames[idx]);
-//        }
+
+        updateOUInformation();
         comboBox3.addItem("admin");
         comboBox3.addItem("user");
 
@@ -266,21 +264,26 @@ public class AdminForm extends JFrame{
         });
     }
 
+    private void updateOUInformation(){
+        HashMap<String,Integer> OUInfo = serverConnection.getOU();
+        String[] OUNames = OUInfo.keySet().toArray(new String[0]);
+        comboBox1.removeAllItems();
+        comboBox2.removeAllItems();
+        for (int idx = 0; idx < OUInfo.size(); idx++){
+            comboBox1.addItem(OUNames[idx]);
+            comboBox2.addItem(OUNames[idx]);
+        }
+    }
+
     /**
      * Importing data into the UI
      */
     private void createUIComponents() {
-        ouData = new OUData();
-        comboBox1 = new JComboBox<>(ouData.getModel());
+        comboBox1 = new JComboBox<>();
         add(comboBox1);
-        comboBox2 = new JComboBox<>(ouData.getModel());
+        comboBox2 = new JComboBox<>();
         add(comboBox2);
         comboBox3 = new JComboBox<>();
         add(comboBox3);
-        assetData = new AssetData();
-        list1 = new JList(assetData.getModel());
-        add(list1);
-
-
     }
 }

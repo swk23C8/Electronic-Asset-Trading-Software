@@ -32,7 +32,8 @@ public class OU implements Serializable {
      * @param ouName
      */
     public OU(String ouName) {
-        this(ouName, 0);
+        this.ouName = ouName;
+        this.credits = 0;
     }
 
 

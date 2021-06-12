@@ -6,13 +6,13 @@ import javax.swing.*;
 
 public class AssetData {
     private DefaultListModel listModel;
-    private ServerConnector connector;
+    private ServerConnector serverConnection;
 
-    public AssetData() {
+    public AssetData(ServerConnector serverConnection) {
         listModel = new DefaultListModel();
-        connector = new ServerConnector();
+        this.serverConnection = serverConnection;
 
-        for (String name : connector.getAsset()) {
+        for (String name : serverConnection.getAsset()) {
             listModel.addElement(name);
         }
     }
@@ -23,7 +23,7 @@ public class AssetData {
         // if not add to the address book and the list model
         if (!listModel.contains(asset.getAsset())) {
             listModel.addElement(asset.getAsset());
-            connector.addAsset(asset);
+            serverConnection.addAsset(asset);
         }
     }
 
@@ -31,7 +31,7 @@ public class AssetData {
 
         // remove from both list and database
         listModel.removeElement(key);
-        connector.removeAsset(new Asset((String) key));
+        serverConnection.removeAsset(new Asset((String) key));
     }
 
     public ListModel getModel() {
@@ -39,6 +39,6 @@ public class AssetData {
     }
 
     public int getSize() {
-        return connector.getAssetSize();
+        return serverConnection.getAssetSize();
     }
 }

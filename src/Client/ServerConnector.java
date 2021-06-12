@@ -1,5 +1,6 @@
 package Client;
 import Common.*;
+import Server.DBConnection;
 
 import java.io.*;
 import java.net.Socket;
@@ -324,7 +325,7 @@ public class ServerConnector {
     }
 
 
-    public void addOU(OU newOU)
+    public boolean addOU(OU newOU)
     {
         if (newOU == null)
         {
@@ -337,8 +338,19 @@ public class ServerConnector {
              */
             OU createdOU = new OU(newOU.getOuName(),0);
             outputStream.writeObject(createdOU);
-        } catch (IOException e) {
+            outputStream.flush();
+            final Command command = (Command) inputStream.readObject();
+            if (command == Command.SUCCESS)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -531,5 +543,4 @@ public class ServerConnector {
 
         }
     }
-
 }

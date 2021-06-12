@@ -62,15 +62,21 @@ public class OUDataSource {
      * Add OU(oraganizational unit) to the ou table.
      * @param OU The OU object
      */
-    public void addOU(OU OU) {
+    public boolean addOU(OU OU) {
         try {
             /* BEGIN MISSING CODE */
             addOU.setString(1, OU.getOuName());
             addOU.setInt(2, OU.getCredits());
-            addOU.execute();
+            if (addOU.execute()){
+                return true;
+            }
+            else {
+                return false;
+            }
             /* END MISSING CODE */
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return false;
         }
     }
 

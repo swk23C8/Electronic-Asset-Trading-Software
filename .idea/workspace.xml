@@ -1,18 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Added JavaDocs stuffs for forms...">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="linked method addOU to listener and checking if method is reading correctly from the textfield.&#10;it's reading from the textfield but its not updating the db">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_apache_ant_ant_junitlauncher_1_10_9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Assets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/Asset.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/Buy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/OU.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/Offer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/Sell.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/Trades.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/User.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Asset.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Buy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/OU.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Offer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Sell.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/Trades.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/class-use/User.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Common/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Employee.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/OU.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Offers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Tests/AdminTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Tests/UserTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Tests/class-use/AdminTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Tests/class-use/UserTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Tests/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Tests/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Tests/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/Users.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/class-use/Admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/class-use/Assets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/class-use/Employee.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/class-use/OU.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/class-use/Offers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/class-use/Users.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery-ui.overrides.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/module-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/package-use.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-bg_glass_65_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-3.5.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/tag-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qut_cab302_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qut_cab302_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/EditOUAssetForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/EditOUAssetForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/LoginForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/OrganisationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OrganisationForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/PasswordForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/PasswordForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/AssetPossession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/AssetPossession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/OfferDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OfferDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AssetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AssetData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/OUData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/OUData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/OU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/OU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OUDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/UserDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/UserDataSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +131,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLExceptionsMapping.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
   <component name="ProjectLevelVcsManager">
@@ -57,6 +147,10 @@
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -65,7 +159,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cab302_1.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project2" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -159,10 +253,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Program (1)" />
+        <item itemvalue="Application.Program" />
         <item itemvalue="Application.AllOrdersForm" />
         <item itemvalue="Application.OuDBtest" />
         <item itemvalue="Application.ServerManagement" />
-        <item itemvalue="Application.Program" />
       </list>
     </recent_temporary>
   </component>

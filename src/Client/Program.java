@@ -11,6 +11,8 @@ public class Program {
             }
             serverConnection = new ServerConnector();
         }
+
+        //
         if (serverConnection.getIfConnected()){
             LoginForm initialLogin = new LoginForm(serverConnection);
         }

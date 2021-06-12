@@ -39,6 +39,7 @@ public class AdminForm extends JFrame{
     private JComboBox comboBox3;
     private JLabel label1;
     private JButton editOUAssetQtyButton;
+    private JLabel organisationNameLabel;
     private User existingUser;
     private ServerConnector serverConnection;
 
@@ -106,6 +107,7 @@ public class AdminForm extends JFrame{
 
     private void displayCurrentCredit (ItemEvent evt) {
         String selectedOU = (String) comboBox1.getSelectedItem();
+        organisationNameLabel.setText(selectedOU);
         try {
             label1.setText(serverConnection.getSingleOU(new OU(selectedOU)).getCredits().toString());
         } catch (Exception e) {

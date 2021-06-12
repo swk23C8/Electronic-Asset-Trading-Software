@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Added JavaDocs comments for server connector. Some changes to the server connector test.">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="Added JavaDocs stuffs for forms...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/OUAssetDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OUAssetDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTests/OfferDataSourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTests/OfferDataSourceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTests/ServerConnectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTests/ServerConnectorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/AdminForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/AdminForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="403" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -153,8 +151,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.Program (1)" />
-      <item itemvalue="JUnit.ServerConnectorTest" />
       <item itemvalue="Application.Program" />
+      <item itemvalue="JUnit.ServerConnectorTest" />
       <item itemvalue="JUnit.ServerConnectorTest.editOffer" />
       <item itemvalue="JUnit.OfferDataSourceTest.editQty" />
     </list>

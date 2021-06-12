@@ -16,6 +16,7 @@ public class ServerConnector {
     private Socket socket;
     private ObjectOutputStream outputStream;
     private ObjectInputStream inputStream;
+    private boolean isConnected = false;
 
     private List<Offer> currentOffers = new LinkedList<>();
     private List<AssetPossession> currentOUAsset = new LinkedList<>();
@@ -52,6 +53,7 @@ public class ServerConnector {
             // Persist a single connection through the whole lifetime of the application.
             // We will re-use this same connection/socket, rather than repeatedly opening
             // and closing connections.
+            isConnected = true;
             socket = new Socket(HOSTIP, PORT);
             outputStream = new ObjectOutputStream(socket.getOutputStream());
             inputStream = new ObjectInputStream(socket.getInputStream());
@@ -61,10 +63,13 @@ public class ServerConnector {
             // But it wasn't written to handle this, so make sure your
             // server is running beforehand!
             System.out.println("Failed to connect to server");
+            isConnected = false;
         }
     }
 
-    //ADD INTERFACE!!!!!!
+    public boolean getIfConnected(){
+        return isConnected;
+    }
 
     /**
      * Add offer client command setup

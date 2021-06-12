@@ -135,6 +135,9 @@ public class UserDataSource {
         }
     }
 
+    /**
+     * @param user Change user's password given the user's username
+     */
     public void changePassword(User user) {
 
         try {
@@ -148,6 +151,7 @@ public class UserDataSource {
             ex.printStackTrace();
         }
     }
+
     /**
      * Return the set of user by retrieving information from database.
      */

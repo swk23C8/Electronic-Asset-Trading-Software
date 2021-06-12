@@ -25,11 +25,17 @@ public class EditOUAssetForm extends JFrame{
     private OUAssetData ouAssetData;
     private ServerConnector connector;
 
+    /**
+     * @param evt Display the asset
+     */
     private void displayAsset (ListSelectionEvent evt){
         label1.setText(list1.getSelectedValue().toString());
         label2.setText(connector.getSingleOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString())).getQuantity().toString());
     }
 
+    /**
+     * @param evt Edit the asset quantity
+     */
     private void editAssetQty (java.awt.event.ActionEvent evt) {
         try {
             int changeQuantityCount = Integer.parseInt(textField5.getText());
@@ -41,6 +47,11 @@ public class EditOUAssetForm extends JFrame{
         }
     }
 
+    /**
+     * Set button listener to each button on the form
+     * @param selectedOU
+     * @param connector
+     */
     public EditOUAssetForm(OU selectedOU, ServerConnector connector) {
         this.selectedOU = selectedOU;
         this.connector = connector;
@@ -52,7 +63,6 @@ public class EditOUAssetForm extends JFrame{
             }
         });
 
-
         list1.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -61,6 +71,9 @@ public class EditOUAssetForm extends JFrame{
         });
     }
 
+    /**
+     * Import data into the UI
+     */
     private void createUIComponents() {
         ouAssetData = new OUAssetData(selectedOU);
         list1 = new JList(ouAssetData.getModel());

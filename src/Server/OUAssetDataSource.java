@@ -151,7 +151,6 @@ public class OUAssetDataSource {
     public Set<String> assetList(OU ou) {
         Set<String> assetList = new TreeSet<String>();
         ResultSet rs = null;
-
         try {
             getAssetList.setString(1, ou.getOuName());
             rs = getAssetList.executeQuery();
@@ -161,7 +160,6 @@ public class OUAssetDataSource {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-
 
         return assetList;
     }

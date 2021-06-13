@@ -20,6 +20,8 @@ public class ServerConnector {
     private boolean isConnected = false;
     private List<Offer> historyOffers = new LinkedList<>();
     private List<Offer> currentOffers = new LinkedList<>();
+    private List<Offer> historyOffers = new LinkedList<>();
+
     private List<AssetPossession> currentOUAsset = new LinkedList<>();
     private HashMap<String,Integer> currentOUs = new HashMap<>();
     private Set<String> currentUsers = new TreeSet<>();
@@ -103,6 +105,21 @@ public class ServerConnector {
             outputStream.flush();
             currentOffers = (LinkedList<Offer>) inputStream.readObject();
             return currentOffers;
+        } catch (IOException | ClassNotFoundException e) {
+            // Print the exception, but no need for a fatal error
+            // if the connection with the server happens to be down
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public List<Offer> getHistory() {
+        //Remember we need to flush between read and write
+        try {
+            outputStream.writeObject(Command.GET_OFFER_HISTORY);
+            outputStream.flush();
+            historyOffers = (LinkedList<Offer>) inputStream.readObject();
+            return historyOffers;
         } catch (IOException | ClassNotFoundException e) {
             // Print the exception, but no need for a fatal error
             // if the connection with the server happens to be down

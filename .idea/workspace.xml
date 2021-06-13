@@ -3,25 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="linked method addOU to listener and checking if method is reading correctly from the textfield.&#10;it's reading from the textfield but its not updating the db">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/AdminGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/AllOrdersForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/AssetData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ClientGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/DbConnection.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/EditOUAssetForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/EditOUAssetForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/OUAssetData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/OUData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/PasswordForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/PasswordForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBtestUI/AssetDBtest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBtestUI/AssetUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBtestUI/OuDBtest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBtestUI/OuUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBtestUI/UserDBtest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBtestUI/UserUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/AssetData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/OUData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/UserData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTests/ServerConnectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTests/ServerConnectorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +33,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/exceptions/SQLExceptionsMapping.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/Library/mysql-connector-java-8.0.23.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1r09D0TD4AMA1yA1fd5o01H3WFj" />
   <component name="ProjectLevelVcsManager">

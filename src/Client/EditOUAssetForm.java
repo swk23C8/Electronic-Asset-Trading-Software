@@ -32,7 +32,7 @@ public class EditOUAssetForm extends JFrame{
     private void displayAsset (ListSelectionEvent evt){
         label1.setText(list1.getSelectedValue().toString());
         if (connector.getSingleOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString())).getQuantity() == null) {
-            label2.setText("0");
+            label2.setText("null");
         }
         else {
             label2.setText(connector.getSingleOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString())).getQuantity().toString());
@@ -54,10 +54,24 @@ public class EditOUAssetForm extends JFrame{
      */
     private void editAssetQty (java.awt.event.ActionEvent evt) {
         try {
-            int changeQuantityCount = Integer.parseInt(textField5.getText());
-            connector.editOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString(), changeQuantityCount));
-            label2.setText(String.valueOf(changeQuantityCount));
-            JOptionPane.showMessageDialog(rootPane, "Quantity successfully edited");
+            if (connector.getSingleOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString())).getQuantity()== null) {
+                int changeQuantityCount = Integer.parseInt(textField5.getText());
+                connector.addOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString(), changeQuantityCount));
+                label2.setText(String.valueOf(changeQuantityCount));
+                JOptionPane.showMessageDialog(rootPane, "Quantity successfully added");
+            }
+            else if (connector.getSingleOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString())).getQuantity()== 0) {
+                int changeQuantityCount = Integer.parseInt(textField5.getText());
+                connector.editOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString(), changeQuantityCount));
+                label2.setText(String.valueOf(changeQuantityCount));
+                JOptionPane.showMessageDialog(rootPane, "Quantity successfully edited");
+            }
+            else {
+                int changeQuantityCount = Integer.parseInt(textField5.getText());
+                connector.editOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString(), changeQuantityCount));
+                label2.setText(String.valueOf(changeQuantityCount));
+                JOptionPane.showMessageDialog(rootPane, "Quantity successfully edited");
+            }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(rootPane, "Please enter the quantity");
         }

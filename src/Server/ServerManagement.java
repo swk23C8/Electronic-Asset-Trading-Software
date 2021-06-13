@@ -88,7 +88,7 @@ public class ServerManagement {
         //Every 2 hours call reconcile to reconcile database
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
         scheduler.scheduleAtFixedRate(() -> reconcile(), 2, 2, TimeUnit.HOURS);
-        try (ServerSocket serverSocket = new ServerSocket(6666)) {
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             serverSocket.setSoTimeout(SOCKET_ACCEPT_TIMEOUT);
             for (;;) {
                 if (!running.get()) {

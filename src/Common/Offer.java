@@ -50,9 +50,6 @@ public class Offer implements Serializable {
         this.quantity = quantity;
     }
 
-    public Offer(Integer id){
-        this.id = id;
-    }
 
 
     public Offer(String type, String OUName, String assetName, Integer quantity, Integer creditsEach) {

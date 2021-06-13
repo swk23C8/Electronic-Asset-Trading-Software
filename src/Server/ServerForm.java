@@ -4,23 +4,40 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ServerForm {
+public class ServerForm extends JFrame{
     private JButton startServerButton;
     private JButton terminateServerButton;
-    private JTextPane textPane1;
+    private JPanel serverPanel;
+    private ServerManagement serverManagement;
 
+    private JPanel getLoginPanel(){
+        return serverPanel;
+    }
+
+    public void startProgram(){
+        serverManagement = new ServerManagement();
+    }
+
+    public void stopProgram(){
+        serverManagement.shutdown();
+    }
     public ServerForm() {
         startServerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                startProgram();
             }
         });
         terminateServerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                stopProgram();
             }
         });
+        this.setContentPane(this.getLoginPanel());
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+        this.setSize(500,200);
+        this.setTitle("Server");
     }
 }

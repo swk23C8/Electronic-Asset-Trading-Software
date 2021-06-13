@@ -53,7 +53,7 @@ public class ServerManagement {
             start();
         }
         catch (IOException e){
-            System.out.println("Failed to connect to server");
+            //System.out.println("Failed to connect to server");
         }
     }
     /**
@@ -87,7 +87,7 @@ public class ServerManagement {
         }
         //Every 2 hours call reconcile to reconcile database
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-        scheduler.scheduleAtFixedRate(() -> reconcile(), 1, 1, TimeUnit.SECONDS);
+        scheduler.scheduleAtFixedRate(() -> reconcile(), 20, 20, TimeUnit.MINUTES);
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             serverSocket.setSoTimeout(SOCKET_ACCEPT_TIMEOUT);
             for (;;) {
@@ -165,7 +165,6 @@ public class ServerManagement {
         }
         catch (IOException | ClassCastException | ClassNotFoundException e)
         {
-            System.out.println(String.format("Connection %s closed", socket.toString()));
         }
     }
 
@@ -453,22 +452,18 @@ public class ServerManagement {
                 synchronized (userDatabase)
                 {
                     final User confirmationInformation = userDatabase.getUser(loginInformation.getUsername());
-                    System.out.println("prior check");
 
                     if (confirmationInformation == null)
                     {
-                        System.out.println("null");
                         outputStream.writeObject(null);
                     }
                     else if (confirmationInformation.getPassword().equals(
                             userDatabase.passwordCheck(loginInformation.getPassword(), confirmationInformation)))
                     {
-                        System.out.println("isright");
                         outputStream.writeObject(confirmationInformation);
                     }
                     else
                     {
-                        System.out.println("iswrong");
                         outputStream.writeObject(null);
                     }
                     //State if login successful on server gui, for user with name...
@@ -657,20 +652,5 @@ public class ServerManagement {
 
         }
         //System.out.println(list.get(7).getOfferType());
-    }
-
-
-    //Delete this test method at a later point of time
-    public static void main(String[] args) {
-
-        //testing the password verifying function
-        UserDataSource userDatabase = new UserDataSource();
-        String password = "abc123";
-        System.out.println(userDatabase.getUser("n10559540").getPassword().
-                equals(userDatabase.passwordCheck(password, userDatabase.getUser("n10559540"))));
-
-
-        //testing reconcile method
-        reconcile();
     }
 }

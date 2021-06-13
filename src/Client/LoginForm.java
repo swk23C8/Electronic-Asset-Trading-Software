@@ -89,7 +89,7 @@ public class LoginForm extends JFrame{
             }
             catch (Exception ex) {
                 JOptionPane.showMessageDialog(loginButton, "Wrong Username or Password");
-                Logger.getLogger(LoginForm_1.class.getName()).log(Level.SEVERE,null,ex);
+                Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE,null,ex);
             }
         }
     }

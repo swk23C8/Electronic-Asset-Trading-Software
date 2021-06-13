@@ -77,11 +77,12 @@ public class OrderForm extends JFrame{
             if (quantity.trim().equals("") || price.trim().equals("")) {
                 JOptionPane.showMessageDialog(rootPane, "Please enter quantity and price");
             }
-            else if (serverConnection.getSingleOU(new OU(existingUser.getOu())).getCredits() < Integer.parseInt(price)) {
+            else if (serverConnection.getSingleOU(new OU(existingUser.getOu())).getCredits() < Integer.parseInt(price) * Integer.parseInt(quantity)) {
                 JOptionPane.showMessageDialog(rootPane, "Invalid Price! Insufficient OU credit!");
             }
             else {
                 serverConnection.AddOffer(new Offer("buy", existingUser.getOu(), list1.getSelectedValue().toString(), Integer.parseInt(quantity), Integer.parseInt(price)));
+                updateOfferInformation();
                 JOptionPane.showMessageDialog(rootPane, "Buy offer successfully added");
             }
         } catch (NumberFormatException e) {
@@ -105,6 +106,7 @@ public class OrderForm extends JFrame{
                 serverConnection.AddOffer(new Offer("sell", existingUser.getOu(), list1.getSelectedValue().toString(), Integer.parseInt(quantity), Integer.parseInt(price)));
                 serverConnection.editOUAsset(new AssetPossession(existingUser.getOu(), list1.getSelectedValue().toString(),
                         serverConnection.getSingleOUAsset(new AssetPossession(existingUser.getOu(), list1.getSelectedValue().toString())).getQuantity() - Integer.parseInt(quantity)));
+                updateOfferInformation();
                 JOptionPane.showMessageDialog(rootPane, "Sell offer successfully added");
             }
         } catch (NumberFormatException e) {

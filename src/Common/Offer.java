@@ -30,6 +30,15 @@ public class Offer implements Serializable {
         this.creditsEach = creditsEach;
     }
 
+    /** Constructor for full offer information - Used for table
+     * @param id
+     * @param type
+     * @param OUName
+     * @param assetName
+     * @param quantity
+     * @param creditsEach
+     * @param date
+     */
     public Offer(Integer id, String type, String OUName, String assetName, Integer quantity, Integer creditsEach, String date) {
         this.id = id;
         this.OUName = OUName;
@@ -40,10 +49,17 @@ public class Offer implements Serializable {
         this.date = date;
     }
 
+    /** Constructor to get ID
+     * @param id
+     */
     public Offer(Integer id){
         this.id = id;
     }
 
+    /** Constructor to get ID and quantity
+     * @param id
+     * @param quantity
+     */
     public Offer(Integer id, Integer quantity)
     {
         this.id = id;

@@ -150,6 +150,9 @@ public class OfferDataSource {
         return offerList;
     }
 
+    /**
+     * @return Get offers from history table
+     */
     public List<Offer> offerhistorySet() {
         List<Offer> historyList = new LinkedList<>();
         ResultSet rs = null;

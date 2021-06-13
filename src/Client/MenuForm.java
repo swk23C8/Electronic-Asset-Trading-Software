@@ -111,5 +111,6 @@ public class MenuForm extends JFrame{
         this.setTitle("CAB302");
         this.existingUser = existingUser;
         this.serverConnection = serverConnection;
+        welcomeLabel.setText("Welcome: " + existingUser.getUsername() + "(" + existingUser.getType() + ")");
     }
 }

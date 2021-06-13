@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="finalised EditOUAssetForm to be able to&#10;1. edit null assets to an OU&#10;2. update asset qty to 0&#10;3. update asset qty from null to 0&#10;4. update asset qty from 0 to 0&lt;">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="made some changes to &#10;editOUAsset and addOUAsset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/MenuForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MenuForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623576621395</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="made some changes to &#10;editOUAsset and addOUAsset">
+      <created>1623576934868</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1623576934868</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -376,7 +383,8 @@
     <MESSAGE value="made some final changes to AdminForm" />
     <MESSAGE value="Cancelling offer is now working" />
     <MESSAGE value="finalised EditOUAssetForm to be able to&#10;1. edit null assets to an OU&#10;2. update asset qty to 0&#10;3. update asset qty from null to 0&#10;4. update asset qty from 0 to 0&lt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalised EditOUAssetForm to be able to&#10;1. edit null assets to an OU&#10;2. update asset qty to 0&#10;3. update asset qty from null to 0&#10;4. update asset qty from 0 to 0&lt;" />
+    <MESSAGE value="made some changes to &#10;editOUAsset and addOUAsset" />
+    <option name="LAST_COMMIT_MESSAGE" value="made some changes to &#10;editOUAsset and addOUAsset" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

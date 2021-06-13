@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
  */
 public class ServerForm extends JFrame{
     private JButton startServerButton;
-    private JButton terminateServerButton;
     private JPanel serverPanel;
     private ServerManagement serverManagement;
 
@@ -29,12 +28,6 @@ public class ServerForm extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 startProgram();
-            }
-        });
-        terminateServerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                stopProgram();
             }
         });
         this.setContentPane(this.getLoginPanel());

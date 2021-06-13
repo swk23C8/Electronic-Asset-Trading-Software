@@ -270,12 +270,13 @@ public class ServerConnector {
         try{
             outputStream.writeObject(Command.ADD_OU_ASSET);
             outputStream.writeObject(newOUAsset);
+            outputStream.flush();
             /** Change this to just send a list of strings, though possibly not so multiple offers
              * can be sent across easily in GetOffers
              */
-            AssetPossession createdOUAsset = new AssetPossession("","",0);
-            outputStream.writeObject(createdOUAsset);
-            outputStream.flush();
+//            AssetPossession createdOUAsset = new AssetPossession("","",0);
+//            outputStream.writeObject(createdOUAsset);
+//            outputStream.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }

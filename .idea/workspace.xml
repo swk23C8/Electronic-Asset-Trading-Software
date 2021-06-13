@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="linked method addOU to listener and checking if method is reading correctly from the textfield.&#10;it's reading from the textfield but its not updating the db">
+    <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="finalised EditOUAssetForm to be able to&#10;1. edit null assets to an OU&#10;2. update asset qty to 0&#10;3. update asset qty from null to 0&#10;4. update asset qty from 0 to 0&lt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/EditOUAssetForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/EditOUAssetForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/ServerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ServerConnector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623569806341</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="finalised EditOUAssetForm to be able to&#10;1. edit null assets to an OU&#10;2. update asset qty to 0&#10;3. update asset qty from null to 0&#10;4. update asset qty from 0 to 0&lt;">
+      <created>1623576621395</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1623576621395</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -368,7 +375,8 @@
     <MESSAGE value="Added JavaDocs comments for server connector. Some changes to the server connector test." />
     <MESSAGE value="made some final changes to AdminForm" />
     <MESSAGE value="Cancelling offer is now working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cancelling offer is now working" />
+    <MESSAGE value="finalised EditOUAssetForm to be able to&#10;1. edit null assets to an OU&#10;2. update asset qty to 0&#10;3. update asset qty from null to 0&#10;4. update asset qty from 0 to 0&lt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalised EditOUAssetForm to be able to&#10;1. edit null assets to an OU&#10;2. update asset qty to 0&#10;3. update asset qty from null to 0&#10;4. update asset qty from 0 to 0&lt;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

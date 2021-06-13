@@ -32,17 +32,18 @@ public class OrderForm extends JFrame{
     private DefaultTableModel tableModel;
 
     private void updateAssetInformation(){
-        Set<String> AssetInfo = serverConnection.getAsset();
-        String[] AssetNames = AssetInfo.toArray(new String[0]);
+        Set<String> assetInfo = serverConnection.getAsset();
+        String[] assetNames = assetInfo.toArray(new String[0]);
         listModel.removeAllElements();
-        for (int idx = 0; idx < AssetInfo.size(); idx++){
-            listModel.addElement(AssetNames[idx]);
+        for (int idx = 0; idx < assetInfo.size(); idx++){
+            listModel.addElement(assetNames[idx]);
         }
         list1.setModel(listModel);
     }
 
     private void displayAssetQuantity (ListSelectionEvent evt){
-        if (serverConnection.getSingleOUAsset(new AssetPossession(existingUser.getOu(), list1.getSelectedValue().toString())).getQuantity() == null) {
+        if (serverConnection.getSingleOUAsset(new AssetPossession(existingUser.getOu(),
+                list1.getSelectedValue().toString())).getQuantity() == null) {
             label1.setText("0");
         }
         else {

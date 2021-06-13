@@ -30,8 +30,8 @@ public class MenuForm extends JFrame{
      * @param evt Create orgamnisation form when the organisation button is pressed
      */
     private void organisationButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        OrganisationForm organisationForm = new OrganisationForm();
-        organisationForm.setContentPane(new OrganisationForm().organisationPanel);
+        OrganisationForm organisationForm = new OrganisationForm(existingUser, new OU(existingUser.getOu()), serverConnection);
+        organisationForm.setContentPane(new OrganisationForm(existingUser, new OU(existingUser.getOu()),serverConnection).organisationPanel);
         organisationForm.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         organisationForm.setVisible(true);
         organisationForm.pack();

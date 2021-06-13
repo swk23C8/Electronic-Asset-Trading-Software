@@ -131,13 +131,16 @@ class ServerConnectorTest {
 
     @Test
     void getOUAssetList() {
-        List<AssetPossession> list = OUAssetSource.ouAssetList();
-        assertEquals(list.size(), server.getOUAsset().size());
+        Set<String> list = OUAssetSource.assetList(TestOU);
+        assertEquals(1, list.size());;
+        assertEquals(list, server.getOUAssetList(TestOU));
+
     }
 
     @Test
     void getSingleOUAsset() {
         AssetPossession get = server.getSingleOUAsset(assetOU);
+
         assertEquals(get.getOu(), assetOU.getOu());
     }
 

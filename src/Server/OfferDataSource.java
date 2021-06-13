@@ -18,6 +18,8 @@ public class OfferDataSource {
 
     private static final String LIST_OFFERS = "SELECT * FROM currentTrade";
 
+    private static final String LIST_HISTORY = "SELECT * FROM tradeHistory";
+
     private static final String GET_OFFER = "SELECT * FROM currentTrade WHERE offerID=?";
 
     private static final String DELETE_OFFER = "DELETE FROM currentTrade WHERE offerID=?";
@@ -42,6 +44,8 @@ public class OfferDataSource {
 
     private PreparedStatement rowCount;
 
+    private PreparedStatement getOfferHistoryList;
+
     /**
      * Constructor for the configuration of the database connection.
      */
@@ -56,6 +60,7 @@ public class OfferDataSource {
             deleteOffer = connection.prepareStatement(DELETE_OFFER);
             editQty = connection.prepareStatement(Update_Qty);
             rowCount = connection.prepareStatement(COUNT_ROWS);
+            getOfferHistoryList = connection.prepareStatement(LIST_HISTORY);
 
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -141,6 +146,24 @@ public class OfferDataSource {
         /* END MISSING CODE */
 
         return offerList;
+    }
+
+    public List<Offer> offerhistorySet() {
+        List<Offer> historyList = new LinkedList<>();
+        ResultSet rs = null;
+
+        /* BEGIN MISSING CODE */
+        try {
+            rs = getOfferHistoryList.executeQuery();
+            while (rs.next()) {
+                historyList.add(new Offer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getString(7)));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        /* END MISSING CODE */
+
+        return historyList;
     }
 
     /**

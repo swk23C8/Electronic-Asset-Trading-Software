@@ -38,6 +38,7 @@ public class OrderForm extends JFrame{
         for (int idx = 0; idx < AssetInfo.size(); idx++){
             listModel.addElement(AssetNames[idx]);
         }
+        list1.setModel(listModel);
     }
 
     private void displayAssetQuantity (ListSelectionEvent evt){

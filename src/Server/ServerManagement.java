@@ -214,6 +214,17 @@ public class ServerManagement {
                 // Print to Server GUI "Information"
             }
             break;
+            case GET_OFFER_HISTORY:{
+                final List<Offer> historyOffer;
+                synchronized (offerDatabase) {
+                    historyOffer = offerDatabase.offerhistorySet();
+                }
+                outputStream.writeObject(historyOffer);
+                outputStream.flush();
+                // Print to Server GUI "Information"
+            }
+
+            break;
             case EDIT_OFFER:{
                 final Offer editOffer = (Offer) inputStream.readObject();
                 synchronized (offerDatabase)

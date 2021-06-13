@@ -41,7 +41,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="9a1ea" class="javax.swing.JLabel">
+                  <component id="9a1ea" class="javax.swing.JLabel" binding="label1">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -84,7 +84,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="2bbc0" class="javax.swing.JLabel">
+                  <component id="2bbc0" class="javax.swing.JLabel" binding="label2">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -119,9 +119,11 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="4c3a" class="javax.swing.JList" binding="list1" default-binding="true">
+              <component id="4c3a" class="javax.swing.JList" binding="list1" custom-create="true" default-binding="true">
                 <constraints/>
-                <properties/>
+                <properties>
+                  <model/>
+                </properties>
               </component>
             </children>
           </scrollpane>
@@ -151,7 +153,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="2406" class="javax.swing.JTable" binding="table1" default-binding="true">
+              <component id="2406" class="javax.swing.JTable" binding="table1" custom-create="true" default-binding="true">
                 <constraints/>
                 <properties/>
               </component>
@@ -191,7 +193,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="a787d" class="javax.swing.JTable" binding="table2" default-binding="true">
+              <component id="a787d" class="javax.swing.JTable" binding="table2" custom-create="true" default-binding="true">
                 <constraints/>
                 <properties/>
               </component>

@@ -40,6 +40,10 @@ public class Offer implements Serializable {
         this.date = date;
     }
 
+    public Offer(Integer id){
+        this.id = id;
+    }
+
     public Offer(Integer id, Integer quantity)
     {
         this.id = id;

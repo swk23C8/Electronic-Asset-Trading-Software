@@ -9,6 +9,7 @@ public enum Command{
     REMOVE_OFFER,
     GET_OFFERS,
     EDIT_OFFER,
+    GET_OFFER_HISTORY,
 
     // Asset commands
     ADD_ASSET,

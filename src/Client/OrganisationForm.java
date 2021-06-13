@@ -98,9 +98,8 @@ public class OrganisationForm extends JFrame{
      */
     private void cancelOrder(ActionEvent evt) {
         try {
-            table1 = (JTable)evt.getSource();
             int selectedRow = table1.getSelectedRow();
-            int selectedColumn = table1.getSelectedColumn();
+            int selectedColumn = 0;
             int offerID = (int)table1.getValueAt(selectedRow,selectedColumn);
 
             cancelOrder = new Offer(offerID);
@@ -111,6 +110,8 @@ public class OrganisationForm extends JFrame{
             else
             {
                 serverConnection.removeOffer(cancelOrder);
+                updateOfferInformation();
+                JOptionPane.showMessageDialog(rootPane, "Offer cancelled successfully!");
             }
         }
         catch (Exception ex)
@@ -128,8 +129,8 @@ public class OrganisationForm extends JFrame{
     public OrganisationForm(User user, ServerConnector serverConnection ) {
         cancelOrderButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {cancelOrder(e);
+            public void actionPerformed(ActionEvent e) {
+                cancelOrder(e);
             }
         });
         this.serverConnection = serverConnection;

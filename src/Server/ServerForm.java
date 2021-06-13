@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Form for the Server to start or shutdown
+ */
 public class ServerForm extends JFrame{
     private JButton startServerButton;
     private JButton terminateServerButton;

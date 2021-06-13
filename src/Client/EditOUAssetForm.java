@@ -24,6 +24,7 @@ public class EditOUAssetForm extends JFrame{
     private OU selectedOU;
     private OUAssetData ouAssetData;
     private ServerConnector connector;
+    private AssetData allAssetData;
 
     /**
      * @param evt Display the asset
@@ -75,8 +76,11 @@ public class EditOUAssetForm extends JFrame{
      * Import data into the UI
      */
     private void createUIComponents() {
+        allAssetData = new AssetData(connector);
         ouAssetData = new OUAssetData(selectedOU);
-        list1 = new JList(ouAssetData.getModel());
+//        list1 = new JList(ouAssetData.getModel());
+//        add(list1);
+        list1 = new JList(allAssetData.getModel());
         add(list1);
 
 

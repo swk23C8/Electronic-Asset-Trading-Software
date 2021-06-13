@@ -109,9 +109,13 @@ public class OrganisationForm extends JFrame{
             }
             else
             {
-                serverConnection.removeOffer(cancelOrder);
-                updateOfferInformation();
-                JOptionPane.showMessageDialog(rootPane, "Offer cancelled successfully!");
+                if (serverConnection.removeOffer(cancelOrder)) {
+                    updateOfferInformation();
+                    JOptionPane.showMessageDialog(rootPane, "Offer cancelled successfully!");
+                }
+                else {
+                    JOptionPane.showMessageDialog(rootPane, "Error canceling with server");
+                }
             }
         }
         catch (Exception ex)

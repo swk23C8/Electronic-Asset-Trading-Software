@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.Set;
 
 public class EditOUAssetForm extends JFrame{
     private JButton confirmAssetAmountButton;
@@ -22,16 +23,30 @@ public class EditOUAssetForm extends JFrame{
     private JLabel label4;
     private JList list1;
     private OU selectedOU;
-    private OUAssetData ouAssetData;
     private ServerConnector connector;
-    private AssetData allAssetData;
+    private DefaultListModel listModel;
 
     /**
      * @param evt Display the asset
      */
     private void displayAsset (ListSelectionEvent evt){
         label1.setText(list1.getSelectedValue().toString());
-        label2.setText(connector.getSingleOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString())).getQuantity().toString());
+        if (connector.getSingleOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString())).getQuantity() == null) {
+            label2.setText("0");
+        }
+        else {
+            label2.setText(connector.getSingleOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString())).getQuantity().toString());
+        }
+    }
+
+    private void updateAssetInformation(){
+        Set<String> AssetInfo = connector.getAsset();
+        String[] AssetNames = AssetInfo.toArray(new String[0]);
+        listModel.removeAllElements();
+        for (int idx = 0; idx < AssetInfo.size(); idx++){
+            listModel.addElement(AssetNames[idx]);
+        }
+        list1.setModel(listModel);
     }
 
     /**
@@ -57,6 +72,7 @@ public class EditOUAssetForm extends JFrame{
         this.selectedOU = selectedOU;
         this.connector = connector;
         label4.setText(selectedOU.getOuName());
+        updateAssetInformation();
         confirmAssetAmountButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,11 +92,9 @@ public class EditOUAssetForm extends JFrame{
      * Import data into the UI
      */
     private void createUIComponents() {
-        allAssetData = new AssetData(connector);
-        ouAssetData = new OUAssetData(selectedOU);
-//        list1 = new JList(ouAssetData.getModel());
-//        add(list1);
-        list1 = new JList(allAssetData.getModel());
+
+        listModel = new DefaultListModel();
+        list1 = new JList(listModel);
         add(list1);
 
 

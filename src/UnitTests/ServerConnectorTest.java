@@ -1,6 +1,5 @@
 package UnitTests;
 
-import Client.AssetData;
 import Client.ServerConnector;
 import Common.*;
 import Server.*;

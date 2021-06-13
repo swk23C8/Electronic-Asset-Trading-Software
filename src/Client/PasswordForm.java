@@ -1,14 +1,10 @@
 package Client;
 
 import Common.User;
-import Server.UserData;
-import Server.UserDataSource;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class PasswordForm extends JFrame{
     private JPasswordField passwordField2;

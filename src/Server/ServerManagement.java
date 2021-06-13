@@ -169,6 +169,15 @@ public class ServerManagement {
         }
     }
 
+    /**
+     * @param socket
+     * @param inputStream
+     * @param outputStream
+     * @param command
+     * @throws IOException
+     * @throws ClassNotFoundException
+     * Handles the command sent from the server connector and execute database functions based on commands
+     */
     private void handleCommand(Socket socket, ObjectInputStream inputStream, ObjectOutputStream outputStream,
                                Command command) throws IOException, ClassNotFoundException
     {

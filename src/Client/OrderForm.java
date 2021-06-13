@@ -31,6 +31,9 @@ public class OrderForm extends JFrame{
     private DefaultListModel listModel;
     private DefaultTableModel tableModel;
 
+    /**
+     * Update the asset inforamtion in the list in GUI
+     */
     private void updateAssetInformation(){
         Set<String> assetInfo = serverConnection.getAsset();
         String[] assetNames = assetInfo.toArray(new String[0]);
@@ -41,6 +44,10 @@ public class OrderForm extends JFrame{
         list1.setModel(listModel);
     }
 
+    /**
+     * @param evt
+     * Display the asset quantity based on selected asset in GUI
+     */
     private void displayAssetQuantity (ListSelectionEvent evt){
         if (serverConnection.getSingleOUAsset(new AssetPossession(existingUser.getOu(),
                 list1.getSelectedValue().toString())).getQuantity() == null) {
@@ -51,6 +58,9 @@ public class OrderForm extends JFrame{
         }
     }
 
+    /**
+     * Update the offer table in the GUI
+     */
     private void updateOfferInformation() {
         List<Offer> OfferList = serverConnection.GetOffers();
         for (int idx = 0; idx < tableModel.getRowCount(); idx++) {
@@ -71,6 +81,10 @@ public class OrderForm extends JFrame{
         }
     }
 
+    /**
+     * @param evt
+     * Functions for when the buy button is pressed. Add a buy offer.
+     */
     private void buyButtonPerformed(ActionEvent evt) {
         try {
             String quantity = textField1.getText();
@@ -92,6 +106,10 @@ public class OrderForm extends JFrame{
 
     }
 
+    /**
+     * @param evt
+     * Functions for when the sell button pressed. Add a sell offer.
+     */
     private void sellButtonPerformed(ActionEvent evt) {
         try {
             String quantity = textField1.getText();
@@ -117,8 +135,10 @@ public class OrderForm extends JFrame{
     }
 
 
-
-
+    /** Assign the button actions and setup form
+     * @param existingUser
+     * @param serverConnection
+     */
     public OrderForm(User existingUser, ServerConnector serverConnection) {
         BUYButton.addActionListener(new ActionListener() {
             @Override
@@ -148,6 +168,10 @@ public class OrderForm extends JFrame{
             }
         });
     }
+
+    /**
+     * Import data from database to UI components
+     */
     private void createUIComponents() {
         listModel = new DefaultListModel();
         list1 = new JList(listModel);

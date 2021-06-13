@@ -141,6 +141,9 @@ public class ServerConnector {
         }
     }
 
+    /**
+     * @return a list of offers from the history table
+     */
     public List<Offer> getHistory() {
         //Remember we need to flush between read and write
         try {

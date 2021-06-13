@@ -39,6 +39,9 @@ public class EditOUAssetForm extends JFrame{
         }
     }
 
+    /**
+     * Update assets information in the GUI
+     */
     private void updateAssetInformation(){
         Set<String> AssetInfo = connector.getAsset();
         String[] AssetNames = AssetInfo.toArray(new String[0]);

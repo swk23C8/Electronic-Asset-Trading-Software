@@ -2,6 +2,9 @@ package Client;
 
 public class Program {
 
+    /**
+     * @param args Initiate and connect to the server. If success launch the client.
+     */
     public static void main(String[] args) {
         ServerConnector serverConnection = new ServerConnector();
         int maxAttempts = 5;

@@ -69,27 +69,10 @@ public class LoginForm extends JFrame{
                     mainMenu.enableUser(false);
                     System.out.println("user");
                 }
-                /**
-                 * UserDataSource userDatabase = new UserDataSource();
-                 *                 if(userDatabase.getUser(username).getPassword().
-                 *                         equals(userDatabase.passwordCheck(password, userDatabase.getUser(username)))){
-                 *                     //I cant seem to hide/close the window...
-                 *                     this.dispose();
-                 *                     MenuForm menuForm = new MenuForm();
-                 *                     menuForm.setContentPane(new MenuForm().menuPanel);
-                 *                     menuForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                 *                     menuForm.setVisible(true);
-                 *                     menuForm.pack();
-                 *                     menuForm.setTitle("CAB302");
-                 *                     menuForm.enableUser(true);
-                 *                 }
-                 *                 else
-                 *                     JOptionPane.showMessageDialog(loginButton, "Wrong Username or Password");
-                 */
             }
             catch (Exception ex) {
                 JOptionPane.showMessageDialog(loginButton, "Wrong Username or Password");
-                Logger.getLogger(LoginForm_1.class.getName()).log(Level.SEVERE,null,ex);
+                Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE,null,ex);
             }
         }
     }

@@ -32,7 +32,7 @@ public class EditOUAssetForm extends JFrame{
     private void displayAsset (ListSelectionEvent evt){
         label1.setText(list1.getSelectedValue().toString());
         if (connector.getSingleOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString())).getQuantity() == null) {
-            label2.setText("null");
+            label2.setText("0");
         }
         else {
             label2.setText(connector.getSingleOUAsset(new AssetPossession(selectedOU.getOuName(), list1.getSelectedValue().toString())).getQuantity().toString());
@@ -72,8 +72,8 @@ public class EditOUAssetForm extends JFrame{
                 label2.setText(String.valueOf(changeQuantityCount));
                 JOptionPane.showMessageDialog(rootPane, "Quantity successfully edited");
             }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(rootPane, "Please enter the quantity");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Asset hasn't been selected or Please enter the quantity in number format");
         }
     }
 

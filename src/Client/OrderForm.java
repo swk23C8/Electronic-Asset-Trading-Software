@@ -85,8 +85,8 @@ public class OrderForm extends JFrame{
                 updateOfferInformation();
                 JOptionPane.showMessageDialog(rootPane, "Buy offer successfully added");
             }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(rootPane, "Please enter in number format");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Asset hasn't been selected or Please enter in number format");
         }
 
     }
@@ -109,8 +109,8 @@ public class OrderForm extends JFrame{
                 updateOfferInformation();
                 JOptionPane.showMessageDialog(rootPane, "Sell offer successfully added");
             }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(rootPane, "Please enter in number format");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Asset hasn't been selected or Please enter in number format");
         }
 
     }

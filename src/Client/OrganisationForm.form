@@ -165,7 +165,7 @@
             </constraints>
             <properties>
               <font size="20" style="1"/>
-              <text value="Current Orders:"/>
+              <text value="Current Offers:"/>
             </properties>
           </component>
           <component id="9d7a2" class="javax.swing.JButton" binding="cancelOrderButton" default-binding="true">
@@ -205,7 +205,7 @@
             </constraints>
             <properties>
               <font size="20" style="1"/>
-              <text value="Order History:"/>
+              <text value="Completed Offer History:"/>
             </properties>
           </component>
         </children>

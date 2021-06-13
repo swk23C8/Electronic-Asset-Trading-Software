@@ -120,7 +120,7 @@ public class OrganisationForm extends JFrame{
         }
         catch (Exception ex)
         {
-            JOptionPane.showMessageDialog(rootPane, "Order already canceled or does not exist?");
+            JOptionPane.showMessageDialog(rootPane, "Offer hasn't been selected or Order already canceled or does not exist?");
         }
     }
 

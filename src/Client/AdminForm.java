@@ -128,7 +128,7 @@ public class AdminForm extends JFrame{
             label1.setText(String.valueOf(changeCreditCount));
             JOptionPane.showMessageDialog(rootPane, "Credit successfully edited");
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(rootPane, "Please enter the credit");
+            JOptionPane.showMessageDialog(rootPane, "Please enter the credit in number format");
         }
     }
 

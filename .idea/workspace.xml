@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d227321f-670d-49b4-9d4a-a29c28dd86c9" name="Default Changelist" comment="linked method addOU to listener and checking if method is reading correctly from the textfield.&#10;it's reading from the textfield but its not updating the db">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTests/ServerManagementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTests/ServerManagementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qut_cab302_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/qut_cab302_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerManagement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +76,8 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\University\2021\CAB302\Project5" />
+      <recent name="D:\University\2021\CAB302\Project5\src" />
       <recent name="D:\uni\qut_cab302_project\src\Server\" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -342,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623585979726</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Further server modification to enable a simple start button">
+      <created>1623586676416</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1623586676416</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -407,7 +417,8 @@
     <MESSAGE value="made some changes to &#10;editOUAsset and addOUAsset" />
     <MESSAGE value="Added integrated build changes, and shifted unit tests location" />
     <MESSAGE value="Modified server form to be a form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified server form to be a form" />
+    <MESSAGE value="Further server modification to enable a simple start button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Further server modification to enable a simple start button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

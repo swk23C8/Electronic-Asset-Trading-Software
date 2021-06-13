@@ -177,7 +177,7 @@ public class ServerManagement {
      * @throws ClassNotFoundException
      * Handles the command sent from the server connector and execute database functions based on commands
      */
-    private void handleCommand(Socket socket, ObjectInputStream inputStream, ObjectOutputStream outputStream,
+    public void handleCommand(Socket socket, ObjectInputStream inputStream, ObjectOutputStream outputStream,
                                Command command) throws IOException, ClassNotFoundException
     {
         //if the datasource classes are used, remember to do synchronized (instance) {} when using this
@@ -519,7 +519,7 @@ public class ServerManagement {
      * Implementation of the reconcile function
      */
     //Function for reconciling
-    private static void reconcile()
+    public void reconcile()
     {
         OfferDataSource offerDatabase = new OfferDataSource();
         List<Offer> listOfOffers = offerDatabase.offerSet();
